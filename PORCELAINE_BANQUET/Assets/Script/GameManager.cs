@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        player._Update();
+        player.Step();
 
     }
 }
