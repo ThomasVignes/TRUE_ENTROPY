@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/PORCELAINE_BANQUET/[Ll]ibrary/
+/PORCELAINE_BANQUET/[Tt]emp/
+/PORCELAINE_BANQUET/[Oo]bj/
+/PORCELAINE_BANQUET/[Bb]uild/
+/PORCELAINE_BANQUET/[Bb]uilds/
+/PORCELAINE_BANQUET/[Ll]ogs/
+/PORCELAINE_BANQUET/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
