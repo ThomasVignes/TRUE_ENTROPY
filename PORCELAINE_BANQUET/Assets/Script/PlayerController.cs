@@ -19,14 +19,20 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPos;
     private Vector3 targetDir;
 
+    public bool Moving { get { return agent.remainingDistance > minDistanceToMove; } }
+
     public void Init()
     {
         agent = GetComponent<NavMeshAgent>();
     }
-
     public void _Update()
     {
-        animator.SetBool("Walking", agent.remainingDistance > minDistanceToMove && !rotating);
+        animator.SetBool("Walking", Moving && !rotating);
+        
+        if (Moving)
+        {
+            targetDir.y = transform.position.y;
+        }
 
         if (rotating)
         {
@@ -47,18 +53,10 @@ public class PlayerController : MonoBehaviour
     public void SetDestination(Vector3 pos)
     {
         targetDir = Vector3.Normalize(pos - transform.position);
-        targetDir.y = transform.position.y;
 
         targetPos = pos;
 
-        if (Vector3.Angle(transform.forward, targetDir) > minAngleToMove)
-        {
-            rotating = true;
-            agent.ResetPath();
-        }
-        else
-        {
-            agent.SetDestination(targetPos);
-        }
+        rotating = true;
+        agent.ResetPath();
     }
 }
