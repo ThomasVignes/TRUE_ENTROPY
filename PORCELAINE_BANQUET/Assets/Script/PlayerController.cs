@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,8 +19,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetDir;
     private Vector3 lastAgentVelocity;
     private NavMeshPath lastAgentPath;
+    private Interactable targetInteractable;
 
-    private bool computing;
+    private bool computing, movingToInteractable, canInteract;
 
     public bool Moving { get { return agent.remainingDistance > minDistanceToMove; } }
 
@@ -29,8 +29,25 @@ public class PlayerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
     }
+
     public void Step()
     {
+        if (agent.velocity.magnitude > 0.15f && !canInteract && movingToInteractable)
+        {
+            canInteract = true;
+        }
+
+        if (movingToInteractable && agent.velocity.magnitude < 0.15f && canInteract)
+        {
+            if (targetInteractable != null)
+            {
+                canInteract = false;
+                movingToInteractable = false;
+                targetInteractable.Interact();
+                targetInteractable = null;
+            }
+        }
+
         animator.SetBool("Walking", Moving && !rotating);
         
         if (computing)
@@ -79,7 +96,18 @@ public class PlayerController : MonoBehaviour
 
     public void SetDestination(Vector3 pos)
     {
-        //targetDir = Vector3.Normalize(pos - transform.position);
+        targetPos = pos;
+
+        agent.ResetPath();
+
+        agent.SetDestination(targetPos);
+
+        computing = true;
+    }
+
+    public void SetDestination(Vector3 pos, Interactable interactable)
+    {
+        targetInteractable = interactable;
 
         targetPos = pos;
 
@@ -103,6 +131,9 @@ public class PlayerController : MonoBehaviour
         agent.velocity = lastAgentVelocity;
         agent.SetPath(lastAgentPath);
 
-        
+        if (targetInteractable != null)
+        {
+            movingToInteractable = true;
+        }
     }
 }
