@@ -1,6 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
+
+[System.Serializable]
+public class Conditions
+{
+    public string Name;
+    public bool Met;
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -9,13 +18,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask moveLayer, interactLayer;
     [SerializeField] private GameObject currentCam, vnCam;
 
+    public List<Conditions> conditions = new List<Conditions>();
+
+    private CameraZone currentCamZone;
+
     [HideInInspector] public DialogueManager DialogueManager;
 
     public bool VNMode { get { return vnMode; } }
 
     bool vnMode;
     PlayerController player;
-
+    private List<Character> characters = new List<Character>();
 
     private void Awake()
     {
@@ -28,6 +41,17 @@ public class GameManager : MonoBehaviour
         DialogueManager = FindObjectOfType<DialogueManager>();
 
         DialogueManager.Init();
+
+        Character[] chars = FindObjectsOfType<Character>();
+
+        foreach (Character c in chars)
+        {
+            if (!(c is PlayerController))
+            {
+                c.Init();
+                characters.Add(c);
+            }
+        }
     }
 
     private void Update()
@@ -40,6 +64,7 @@ public class GameManager : MonoBehaviour
                 DialogueManager.TryEndDialogue();
             }
 
+            DialogueManager.Step();
             return;
         }
 
@@ -47,6 +72,11 @@ public class GameManager : MonoBehaviour
             TryClick();
 
         player.Step();
+
+        foreach (Character c in characters)
+        {
+            c.Step();
+        }
     }
 
     private void TryClick()
@@ -78,7 +108,39 @@ public class GameManager : MonoBehaviour
     {
         vnMode = yes;
 
-        currentCam.SetActive(!yes);
+        //currentCam.SetActive(!yes);
         vnCam.SetActive(yes);
+
+        currentCamZone.active = !yes;
+    }
+
+    public void NewArea(string areaName)
+    {
+
+    }
+
+    public void SetCamZone(CameraZone zone)
+    {
+        currentCamZone = zone;
+    }
+
+    public void UpdateCondition(string condition, bool state)
+    {
+        foreach (var c in conditions)
+        {
+            if (c.Name == condition)
+                c.Met = state;
+        }
+    }
+
+    public bool GetCondition(string condition)
+    {
+        foreach (var c in conditions)
+        {
+            if (c.Name == condition)
+                return c.Met;
+        }
+
+        return false;
     }
 }

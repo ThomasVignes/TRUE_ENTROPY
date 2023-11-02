@@ -12,6 +12,7 @@ public class Dialogue : MonoBehaviour
 public class Line
 {
     public string Text;
+    public string Action;
     public List<Answer> Answers = new List<Answer>();
 }
 
@@ -19,6 +20,7 @@ public class Line
 public class Answer
 {
     public string Text;
+    public bool DialogueEnd;
     public bool BranchToCurrent = true;
-    public string BranchTo;
+    public int BranchIndex;
 }
