@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Step()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && writing)
+        if (Input.GetMouseButtonDown(0) && writing)
         {
             skip = true;
         }

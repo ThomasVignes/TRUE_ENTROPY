@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using Whumpus;
 
 [System.Serializable]
 public class Conditions
@@ -15,8 +16,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private LayerMask moveLayer, interactLayer;
+    [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer;
     [SerializeField] private GameObject currentCam, vnCam;
+    [SerializeField] private CameraZone firstCamZone;
 
     public List<Conditions> conditions = new List<Conditions>();
 
@@ -52,6 +54,8 @@ public class GameManager : MonoBehaviour
                 characters.Add(c);
             }
         }
+
+        currentCamZone = firstCamZone;
     }
 
     private void Update()
@@ -84,6 +88,12 @@ public class GameManager : MonoBehaviour
         RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
+                return;
+        }
 
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactLayer))

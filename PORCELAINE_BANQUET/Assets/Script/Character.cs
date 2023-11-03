@@ -80,6 +80,8 @@ public class Character : MonoBehaviour
                 rotating = false;
                 ResumePath();
             }
+
+            Debug.Log(Vector3.Angle(transform.forward, targetDir));
         }
     }
 
