@@ -11,17 +11,23 @@ public class Interactable : MonoBehaviour
 
     [SerializeField] private Transform interactionSpot;
 
-    private bool done;
+    protected bool done;
 
-    public virtual void Interact()
+    public void Interact()
     {
         if (!done)
         {
             OnInteract?.Invoke();
+            InteractEffects();
 
             if (!Repeatable)
                 done = true;
         }
+    }
+
+    protected virtual void InteractEffects()
+    {
+
     }
 
     public Vector3 GetTargetPosition()

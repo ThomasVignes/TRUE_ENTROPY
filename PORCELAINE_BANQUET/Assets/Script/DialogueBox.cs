@@ -14,10 +14,8 @@ public class DialogueBox : Interactable
     [SerializeField] private string puppet;
     [SerializeField] private int dialogueReference;
 
-    public override void Interact()
+    protected override void InteractEffects()
     {
-        base.Interact();
-
         StartCoroutine(C_SwitchDialogue());
     }
 

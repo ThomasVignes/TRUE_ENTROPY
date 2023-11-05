@@ -13,8 +13,8 @@ public class DialogueManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private List<Puppet> puppets = new List<Puppet>();
     [SerializeField] private List<Dialogue> dialogues = new List<Dialogue>();
-    [SerializeField] private GameObject VNInterface, VNScene;
-    [SerializeField] private TextMeshProUGUI characterDialogue;
+    [SerializeField] private GameObject VNInterface, VNScene, Specific;
+    [SerializeField] private TextMeshProUGUI characterDialogue, observationDialogue;
     [SerializeField] private List<GameObject> answerButtons = new List<GameObject>();
 
     [SerializeField] private Transform puppetPivot;
@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     private bool skip;
     private bool writing;
     private bool selecting;
+    private bool specific, endSpecific;
 
     public void Init()
     {
@@ -45,9 +46,15 @@ public class DialogueManager : MonoBehaviour
 
     public void Step()
     {
-        if (Input.GetMouseButtonDown(0) && writing)
+        if (Input.GetMouseButtonDown(0))
         {
-            skip = true;
+            if (writing)
+                skip = true;
+
+            if (endSpecific)
+            {
+                EndSpecific();
+            }
         }
     }
 
@@ -191,6 +198,54 @@ public class DialogueManager : MonoBehaviour
 
 
         LoadDialogue(false);
+    }
+
+    public void WriteSpecific(string text)
+    {
+        StartCoroutine(C_Specific(text));
+    }
+
+    IEnumerator C_Specific(string text)
+    {
+        specific = true;
+
+        Specific.SetActive(true);
+
+        observationDialogue.text = "";
+
+        writing = true;
+
+        foreach (char c in text)
+        {
+            observationDialogue.text += c;
+
+            if (skip)
+            {
+                break;
+            }
+
+            yield return new WaitForSeconds(delayBetweenLetters);
+        }
+
+        writing = false;
+
+        if (skip)
+        {
+            observationDialogue.text = text;
+            skip = false;
+        }
+
+        endSpecific = true;
+    }
+
+    public void EndSpecific()
+    {
+        specific = false;
+        endSpecific = false;
+
+        Specific.SetActive(false);
+
+        GameManager.Instance.EndComment();
     }
 }
 

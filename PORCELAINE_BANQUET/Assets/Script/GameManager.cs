@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public bool VNMode { get { return vnMode; } }
 
-    bool vnMode;
+    bool vnMode, commentMode;
     PlayerController player;
     private List<Character> characters = new List<Character>();
 
@@ -60,14 +60,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (commentMode)
+        {
+            DialogueManager.Step();
+            return;
+        }
+
         if (vnMode)
         {
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                SetVNMode(false);
-                DialogueManager.TryEndDialogue();
-            }
-
             DialogueManager.Step();
             return;
         }
@@ -122,6 +122,23 @@ public class GameManager : MonoBehaviour
         vnCam.SetActive(yes);
 
         currentCamZone.active = !yes;
+    }
+
+    public void WriteComment(string text)
+    {
+        if (commentMode)
+            return;
+
+        commentMode = true;
+        DialogueManager.WriteSpecific(text);
+    }
+
+    public void EndComment()
+    {
+        if (!commentMode)
+            return;
+
+        commentMode = false;
     }
 
     public void NewArea(string areaName)
