@@ -75,7 +75,7 @@ namespace Whumpus
                     Destroy(m_ConfigurableJoint);
 
                 if (rb != null)
-                    Destroy(rb);
+                    rb.isKinematic = true;
             }
             parent = transform.parent;
             localPos = transform.localPosition;

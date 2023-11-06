@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer;
     [SerializeField] private GameObject currentCam, vnCam;
     [SerializeField] private CameraZone firstCamZone;
+    [SerializeField] private Character character;
 
     public List<Conditions> conditions = new List<Conditions>();
 
@@ -95,14 +96,14 @@ public class GameManager : MonoBehaviour
 
             if (interactable != null)
             {
-                player.SetDestination(interactable.GetTargetPosition(), interactable);
+                character.SetDestination(interactable.GetTargetPosition(), interactable);
             }
         }
         else
         {
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, moveLayer))
             {
-                player.SetDestination(hit.point);
+                character.SetDestination(hit.point);
             }
         }
 
