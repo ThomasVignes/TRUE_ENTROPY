@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 {
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
-    [SerializeField] protected float minAngleToMove;
+    [SerializeField] protected float minAngleToMove, minDistanceToInteract;
 
     [Header("Animation (Common)")]
     [SerializeField] protected float minDistanceToMove;
@@ -39,12 +39,17 @@ public class Character : MonoBehaviour
 
         if (movingToInteractable && agent.velocity.magnitude < 0.15f && canInteract)
         {
-            if (targetInteractable != null)
+            float distance = Vector3.Distance(transform.position, targetPos);
+
+            if (distance < minDistanceToInteract)
             {
-                canInteract = false;
-                movingToInteractable = false;
-                targetInteractable.Interact();
-                targetInteractable = null;
+                if (targetInteractable != null)
+                {
+                    canInteract = false;
+                    movingToInteractable = false;
+                    targetInteractable.Interact();
+                    targetInteractable = null;
+                }
             }
         }
 

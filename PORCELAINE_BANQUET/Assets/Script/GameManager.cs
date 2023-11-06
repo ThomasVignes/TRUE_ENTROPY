@@ -89,13 +89,6 @@ public class GameManager : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
-            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
-                return;
-        }
-
-
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactLayer))
         {
             Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
@@ -112,6 +105,25 @@ public class GameManager : MonoBehaviour
                 player.SetDestination(hit.point);
             }
         }
+
+        /*
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
+
+            if (interactable != null)
+            {
+                player.SetDestination(interactable.GetTargetPosition(), interactable);
+                return;
+            }
+
+            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(moveLayer)) 
+            {
+                player.SetDestination(hit.point);
+                return;
+            }
+        }
+        */
     }
 
     public void SetVNMode(bool yes)
