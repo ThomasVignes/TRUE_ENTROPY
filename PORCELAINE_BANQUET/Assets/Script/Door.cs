@@ -17,24 +17,25 @@ public class Door : Interactable
         if (CanOpen)
         {
             if (!isOpen)
-            {
-                animator.SetBool("Open", true);
-
-                isOpen = true;
-
-                GetComponent<BoxCollider>().enabled = false;
-                NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
-
-                if (obstacle != null)
-                    obstacle.enabled = false;
-            }
+                ToggleDoor(true);
         }
         else
         {
             if (lockedMessage != "")
-            {
                 GameManager.Instance.WriteComment(lockedMessage);
-            }
         }
+    }
+
+    public void ToggleDoor(bool open)
+    {
+        animator.SetBool("Open", open);
+
+        isOpen = open;
+
+        GetComponent<BoxCollider>().enabled = !open;
+        NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
+
+        if (obstacle != null)
+            obstacle.enabled = !open;
     }
 }

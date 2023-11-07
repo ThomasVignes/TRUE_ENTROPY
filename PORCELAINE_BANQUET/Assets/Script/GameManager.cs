@@ -12,6 +12,13 @@ public class Conditions
     public bool Met;
 }
 
+[System.Serializable]
+public class Area
+{
+    public string Name;
+    public AudioSource Music;
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -20,8 +27,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject currentCam, vnCam;
     [SerializeField] private CameraZone firstCamZone;
     [SerializeField] private Character character;
+    [SerializeField] private float clickdelay;
 
     public List<Conditions> conditions = new List<Conditions>();
+    public List<Area> areas = new List<Area>();
+
+    private string currentArea;
 
     private CameraZone currentCamZone;
 
@@ -32,6 +43,8 @@ public class GameManager : MonoBehaviour
     bool vnMode, commentMode;
     PlayerController player;
     private List<Character> characters = new List<Character>();
+    private int clicked;
+    private float clicktime;
 
     private void Awake()
     {
@@ -74,7 +87,11 @@ public class GameManager : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0))
+        {
             TryClick();
+
+            //player.ToggleRun(HandleDoubleClick());
+        }
 
         player.Step();
 
@@ -82,6 +99,23 @@ public class GameManager : MonoBehaviour
         {
             c.Step();
         }
+    }
+
+    private bool HandleDoubleClick()
+    {
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
+
+        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            return true;
+
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+
+        return false;
     }
 
     private void TryClick()
@@ -163,7 +197,19 @@ public class GameManager : MonoBehaviour
 
     public void NewArea(string areaName)
     {
-
+        foreach (var item in areas)
+        {
+            if (item.Name == areaName)
+            {
+                if (item.Name != currentArea)
+                {
+                    item.Music.Play();
+                    currentArea = item.Name;
+                }
+            }
+            else
+                item.Music.Stop();
+        }
     }
 
     public void SetCamZone(CameraZone zone)

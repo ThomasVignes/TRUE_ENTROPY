@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
     [SerializeField] protected float minAngleToMove, minDistanceToInteract;
+    [SerializeField] protected float sprintMultiplier;
 
     [Header("Animation (Common)")]
     [SerializeField] protected float minDistanceToMove;
@@ -20,6 +21,7 @@ public class Character : MonoBehaviour
     protected Vector3 lastAgentVelocity;
     protected NavMeshPath lastAgentPath;
     protected Interactable targetInteractable;
+    protected float originalSpeed;
 
     protected bool computing, movingToInteractable, canInteract;
 
@@ -28,6 +30,23 @@ public class Character : MonoBehaviour
     public void Init()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        originalSpeed = agent.speed;
+    }
+
+    public void ToggleRun(bool run)
+    {
+        if (run)
+        {
+            agent.speed = originalSpeed * sprintMultiplier;
+            animator.SetFloat("MoveState", 1);
+        }
+        else
+        {
+            agent.speed = originalSpeed;
+
+            animator.SetFloat("MoveState", 0);
+        } 
     }
 
     public virtual void Step()
@@ -85,8 +104,6 @@ public class Character : MonoBehaviour
                 rotating = false;
                 ResumePath();
             }
-
-            Debug.Log(Vector3.Angle(transform.forward, targetDir));
         }
     }
 
@@ -146,13 +163,13 @@ public class Character : MonoBehaviour
     {
         lastAgentVelocity = agent.velocity;
         lastAgentPath = agent.path;
-        agent.velocity = Vector3.zero;
+        //agent.velocity = Vector3.zero;
         agent.ResetPath();
     }
 
     protected virtual void ResumePath()
     {
-        agent.velocity = lastAgentVelocity;
+        //agent.velocity = lastAgentVelocity;
         agent.SetPath(lastAgentPath);
 
         if (targetInteractable != null)
