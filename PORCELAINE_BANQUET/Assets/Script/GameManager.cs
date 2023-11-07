@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer;
+    [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers;
     [SerializeField] private GameObject currentCam, vnCam;
     [SerializeField] private CameraZone firstCamZone;
     [SerializeField] private Character character;
@@ -90,26 +90,33 @@ public class GameManager : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        /*
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactLayer))
         {
             Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
 
             if (interactable != null)
             {
-                character.SetDestination(interactable.GetTargetPosition(), interactable);
+                player.SetDestination(interactable.GetTargetPosition(), interactable);
             }
         }
         else
         {
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, moveLayer))
             {
-                character.SetDestination(hit.point);
+                player.SetDestination(hit.point);
             }
         }
+        */
 
-        /*
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
         {
+            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
+            {
+                return;
+            }
+
             Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
 
             if (interactable != null)
@@ -124,7 +131,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
-        */
+        
     }
 
     public void SetVNMode(bool yes)

@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI characterDialogue, observationDialogue;
     [SerializeField] private List<GameObject> answerButtons = new List<GameObject>();
 
-    [SerializeField] private Transform puppetPivot;
+    [SerializeField] private List<Transform> puppetPivots = new List<Transform>();
 
     private int currentPuppetIndex;
     private GameObject currentPuppet;
@@ -76,8 +76,8 @@ public class DialogueManager : MonoBehaviour
                 currentPuppetIndex = puppets.IndexOf(item);
 
                 currentPuppet = item.VNPuppet;
-                currentPuppet.transform.position = puppetPivot.position;
-                currentPuppet.transform.rotation = puppetPivot.rotation;
+                currentPuppet.transform.position = puppetPivots[item.PivotIndex].position;
+                currentPuppet.transform.rotation = puppetPivots[item.PivotIndex].rotation;
 
                 currentAnimator = currentPuppet.GetComponentInChildren<Animator>();
                 break;
@@ -254,6 +254,7 @@ public class Puppet
 {
     public string Name;
     public GameObject VNPuppet;
+    public int PivotIndex;
 
     public Vector3 OriginalPos;
 

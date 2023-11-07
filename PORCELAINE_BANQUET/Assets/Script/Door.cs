@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Door : Interactable
 {
@@ -22,6 +23,10 @@ public class Door : Interactable
                 isOpen = true;
 
                 GetComponent<BoxCollider>().enabled = false;
+                NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
+
+                if (obstacle != null)
+                    obstacle.enabled = false;
             }
         }
         else
