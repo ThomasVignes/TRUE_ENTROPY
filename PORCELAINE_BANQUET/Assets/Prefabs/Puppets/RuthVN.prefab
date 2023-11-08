@@ -778,14 +778,14 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 400
-    positionDamper: 1
+    positionSpring: 100
+    positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 400
-    positionDamper: 1
+    positionSpring: 100
+    positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_SlerpDrive:
@@ -2455,8 +2455,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.7671115, z: 1}
-  m_Center: {x: -0.000000015374903, y: 1.3513151, z: 0.00000003306639}
+  m_Size: {x: 1.4553273, y: 3.1844187, z: 0.99999946}
+  m_Center: {x: -0.22766422, y: 0.6426617, z: 0.00000003023841}
 --- !u!136 &630147733903302681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2476,10 +2476,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47
+  m_Radius: 0.7672216
   m_Height: 1.0383303
   m_Direction: 2
-  m_Center: {x: 0.000000103819495, y: -0.0000016159962, z: 0.030834477}
+  m_Center: {x: -0.2927335, y: -0.22843003, z: 0.030834477}
 --- !u!1 &1576214287709044804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,8 +3961,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.7671115, z: 1}
-  m_Center: {x: -0.000000015374903, y: 1.3513151, z: 0.00000003306639}
+  m_Size: {x: 1.2921689, y: 3.1323218, z: 0.99999946}
+  m_Center: {x: 0.14608468, y: 0.66870475, z: 0.00000001124496}
 --- !u!136 &3345219122922334322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3982,10 +3982,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47
-  m_Height: 1.0383303
+  m_Radius: 0.77712077
+  m_Height: 1.0383298
   m_Direction: 2
-  m_Center: {x: 0.000000103819495, y: -0.0000016159962, z: 0.030834477}
+  m_Center: {x: 0.19371058, y: -0.21547343, z: 0.030834485}
 --- !u!1 &2424908256053422214
 GameObject:
   m_ObjectHideFlags: 0
@@ -7883,14 +7883,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetTo: 0
-  Weight: 3
-  AdditionalDamping: 1
+  Weight: 7
+  AdditionalDamping: 2
   Mass: 1
   LimitVelocity: 1
   LimitAngularVelocity: 1
   MaxVelocity: 1000
   MaxAngularVelocity: 1000
-  EnableProjection: 1
+  EnableProjection: 0
   BaseLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -12384,14 +12384,14 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 400
-    positionDamper: 1
+    positionSpring: 100
+    positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 400
-    positionDamper: 1
+    positionSpring: 100
+    positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_SlerpDrive:

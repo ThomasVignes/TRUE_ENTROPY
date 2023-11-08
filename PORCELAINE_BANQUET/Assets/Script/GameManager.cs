@@ -123,26 +123,6 @@ public class GameManager : MonoBehaviour
         RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        /*
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactLayer))
-        {
-            Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
-
-            if (interactable != null)
-            {
-                player.SetDestination(interactable.GetTargetPosition(), interactable);
-            }
-        }
-        else
-        {
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, moveLayer))
-            {
-                player.SetDestination(hit.point);
-            }
-        }
-        */
-
         
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
         {
@@ -156,6 +136,12 @@ public class GameManager : MonoBehaviour
             if (interactable != null)
             {
                 player.SetDestination(interactable.GetTargetPosition(), interactable);
+
+                if (interactable is PickupInteractable)
+                {
+                    player.PickUpAnim();
+                }
+
                 return;
             }
 

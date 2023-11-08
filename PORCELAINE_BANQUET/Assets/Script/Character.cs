@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected Animator animator;
     protected NavMeshAgent agent;
 
-    protected bool rotating, running;
+    protected bool rotating, running, willPickUp;
     protected Vector3 targetPos;
     protected Vector3 targetDir;
     protected Vector3 lastAgentVelocity;
@@ -25,8 +25,8 @@ public class Character : MonoBehaviour
 
     protected bool computing, movingToInteractable, canInteract;
 
-    public bool Moving { get { return agent.remainingDistance > minDistanceToMove; } }
-    //public bool Running { get { return running; } }
+    public bool Moving { get { if (gameObject.activeInHierarchy && agent.enabled) { return agent.remainingDistance > minDistanceToMove; } else { return false; } } }
+
 
     public void Init()
     {
@@ -68,6 +68,12 @@ public class Character : MonoBehaviour
                     movingToInteractable = false;
                     targetInteractable.Interact();
                     targetInteractable = null;
+
+                    if (willPickUp)
+                    {
+                        willPickUp = false;
+                        animator.SetTrigger("PickUp");
+                    }
                 }
             }
         }
@@ -154,6 +160,8 @@ public class Character : MonoBehaviour
 
     public void SetDestination(Vector3 pos, Interactable interactable)
     {
+        willPickUp = false;
+
         targetInteractable = interactable;
 
         targetPos = pos;
@@ -182,5 +190,10 @@ public class Character : MonoBehaviour
         {
             movingToInteractable = true;
         }
+    }
+
+    public void PickUpAnim()
+    {
+        willPickUp = true;
     }
 }

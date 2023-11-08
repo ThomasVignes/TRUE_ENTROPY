@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
     [Header("Interactable Settings (Common)")]
     public UnityEvent OnInteract;
     public bool Repeatable;
+    public bool VanishOnDone;
 
     [SerializeField] private Transform interactionSpot;
 
@@ -21,7 +22,12 @@ public class Interactable : MonoBehaviour
             InteractEffects();
 
             if (!Repeatable)
+            {
                 done = true;
+                
+                if (VanishOnDone)
+                    gameObject.SetActive(false);
+            }
         }
     }
 
