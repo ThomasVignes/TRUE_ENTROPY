@@ -5,12 +5,19 @@ using UnityEngine.AI;
 
 public class Door : Interactable
 {
+    public bool StartOpen;
+
     [SerializeField] private string lockedMessage;
     [SerializeField] private Animator animator;
 
     public bool CanOpen;
 
     private bool isOpen;
+
+    private void Start()
+    {
+        ToggleDoor(StartOpen);
+    }
 
     protected override void InteractEffects()
     {
