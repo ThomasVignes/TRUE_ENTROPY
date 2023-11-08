@@ -8,14 +8,14 @@ public class Character : MonoBehaviour
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
     [SerializeField] protected float minAngleToMove, minDistanceToInteract;
-    [SerializeField] protected float sprintMultiplier;
+    [SerializeField] protected float runMultiplier;
 
     [Header("Animation (Common)")]
     [SerializeField] protected float minDistanceToMove;
     [SerializeField] protected Animator animator;
     protected NavMeshAgent agent;
 
-    protected bool rotating;
+    protected bool rotating, running;
     protected Vector3 targetPos;
     protected Vector3 targetDir;
     protected Vector3 lastAgentVelocity;
@@ -26,6 +26,7 @@ public class Character : MonoBehaviour
     protected bool computing, movingToInteractable, canInteract;
 
     public bool Moving { get { return agent.remainingDistance > minDistanceToMove; } }
+    //public bool Running { get { return running; } }
 
     public void Init()
     {
@@ -38,15 +39,14 @@ public class Character : MonoBehaviour
     {
         if (run)
         {
-            agent.speed = originalSpeed * sprintMultiplier;
             animator.SetFloat("MoveState", 1);
         }
         else
         {
-            agent.speed = originalSpeed;
-
             animator.SetFloat("MoveState", 0);
-        } 
+        }
+
+        running = run;
     }
 
     public virtual void Step()
@@ -92,6 +92,12 @@ public class Character : MonoBehaviour
         {
             targetDir.y = transform.position.y;
         }
+
+        if (running && agent.speed != originalSpeed * runMultiplier)
+            agent.speed = originalSpeed * runMultiplier;
+
+        if (!running && agent.speed != originalSpeed)
+            agent.speed = originalSpeed;
 
         if (rotating)
         {

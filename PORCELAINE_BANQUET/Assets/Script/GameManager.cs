@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         {
             TryClick();
 
-            //player.ToggleRun(HandleDoubleClick());
+            player.ToggleRun(HandleDoubleClick());
         }
 
         player.Step();
