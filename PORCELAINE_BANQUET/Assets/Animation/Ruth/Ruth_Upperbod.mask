@@ -52,7 +52,7 @@ AvatarMask:
   - m_Path: Tina_Root/Tina_Pelvis/Tina_R_Leg_Thigh/Tina_R_Leg_Tibia/Tina_R_Foot01/Tina_R_Foot02/Tina_R_Foot_Nub
     m_Weight: 0
   - m_Path: Tina_Root/Tina_Pelvis/Tina_Spine01
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Tina_Root/Tina_Pelvis/Tina_Spine01/Tina_Spine02
     m_Weight: 1
   - m_Path: Tina_Root/Tina_Pelvis/Tina_Spine01/Tina_Spine02/Tina_Spine03
