@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Whumpus;
 
 [System.Serializable]
@@ -17,6 +19,7 @@ public class Area
 {
     public string Name;
     public AudioSource Music;
+    public float Volume;
 }
 
 public class GameManager : MonoBehaviour
@@ -28,19 +31,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CameraZone firstCamZone;
     [SerializeField] private Character character;
     [SerializeField] private float clickdelay;
+    [SerializeField] private TextMeshProUGUI endText;
 
     public List<Conditions> conditions = new List<Conditions>();
     public List<Area> areas = new List<Area>();
 
     private string currentArea;
+    private float currentVolume;
+    private AudioSource currentAudioSource;
 
     private CameraZone currentCamZone;
 
     [HideInInspector] public DialogueManager DialogueManager;
+    [HideInInspector] public ScreenEffects ScreenEffects;
 
     public bool VNMode { get { return vnMode; } }
 
-    bool vnMode, commentMode;
+    bool vnMode, commentMode, end;
     PlayerController player;
     private List<Character> characters = new List<Character>();
     private int clicked;
@@ -53,6 +60,8 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
 
         player.Init();
+
+        ScreenEffects = GetComponent<ScreenEffects>();
 
         DialogueManager = FindObjectOfType<DialogueManager>();
 
@@ -70,10 +79,17 @@ public class GameManager : MonoBehaviour
         }
 
         currentCamZone = firstCamZone;
+
+        endText.text = "";
     }
 
     private void Update()
     {
+        if (end)
+        {
+            return;
+        }
+
         if (commentMode)
         {
             DialogueManager.Step();
@@ -99,6 +115,40 @@ public class GameManager : MonoBehaviour
         {
             c.Step();
         }
+    }
+
+    public void EndGame(string message)
+    {
+        end = true;
+
+        StartCoroutine(C_EndTimer(message));
+    }
+
+    IEnumerator C_EndTimer(string message)
+    {
+        SetAmbianceVolume(0f);
+        ScreenEffects.FadeTo(1, 0.3f);
+
+        yield return new WaitForSeconds(1.4f);
+
+        endText.text = "";
+
+        foreach (char c in message)
+        {
+            yield return new WaitForSeconds(0.06f);
+            EffectsManager.Instance.audioManager.Play("Click");
+
+            endText.text += c;
+        }
+
+        yield return new WaitForSeconds(1.7f);
+
+        endText.text = "";
+        EffectsManager.Instance.audioManager.Play("Gunshot");
+
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(0);
     }
 
     private bool HandleDoubleClick()
@@ -190,7 +240,9 @@ public class GameManager : MonoBehaviour
                 if (item.Name != currentArea)
                 {
                     item.Music.Play();
+                    currentAudioSource = item.Music;
                     currentArea = item.Name;
+                    currentVolume = currentAudioSource.volume;
                 }
             }
             else
@@ -212,7 +264,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool GetCondition(string condition)
+    public bool ConditionMet(string condition)
     {
         foreach (var c in conditions)
         {
@@ -221,5 +273,10 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void SetAmbianceVolume(float sound)
+    {
+        currentAudioSource.volume = currentVolume * sound;
     }
 }

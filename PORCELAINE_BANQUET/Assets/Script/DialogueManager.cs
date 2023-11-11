@@ -13,11 +13,12 @@ public class DialogueManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private List<Puppet> puppets = new List<Puppet>();
     [SerializeField] private List<Dialogue> dialogues = new List<Dialogue>();
-    [SerializeField] private GameObject VNInterface, VNScene, Specific;
+    [SerializeField] private GameObject VNInterface, VNScene, Specific, Camera;
     [SerializeField] private TextMeshProUGUI characterDialogue, observationDialogue;
     [SerializeField] private List<GameObject> answerButtons = new List<GameObject>();
 
     [SerializeField] private List<Transform> puppetPivots = new List<Transform>();
+    [SerializeField] private List<Transform> cameraPivots = new List<Transform>();
 
     private int currentPuppetIndex;
     private GameObject currentPuppet;
@@ -26,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     private int currentLine;
     private DialogueBox currentDialogueBox;
 
+    private Vector3 cameraPosOriginal;
     private bool skip;
     private bool writing;
     private bool selecting;
@@ -42,6 +44,8 @@ public class DialogueManager : MonoBehaviour
         {
             item.SetActive(false);
         }
+
+        cameraPosOriginal = Camera.transform.position;
     }
 
     public void Step()
@@ -79,6 +83,9 @@ public class DialogueManager : MonoBehaviour
                 currentPuppet.transform.position = puppetPivots[item.PivotIndex].position;
                 currentPuppet.transform.rotation = puppetPivots[item.PivotIndex].rotation;
 
+                Camera.transform.position = cameraPivots[item.CameraIndex].position;
+                Camera.transform.rotation = cameraPivots[item.CameraIndex].rotation;
+
                 currentAnimator = currentPuppet.GetComponentInChildren<Animator>();
                 break;
             }
@@ -87,6 +94,39 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = index;
 
         LoadDialogue(true);
+    }
+
+    public void JumpToOtherDialogue(string puppet, int index)
+    {
+        Puppet newPuppet = null;
+
+        foreach (var item in puppets)
+        {
+            if (item.Name == puppet)
+            {
+                newPuppet = item;
+                break;
+            }
+        }
+
+        currentDialogue = 0;
+        currentLine = 0;
+
+        if (newPuppet != puppets[currentPuppetIndex])
+        {
+            currentAnimator.SetTrigger("Reset");
+            puppets[currentPuppetIndex].ResetPos();
+
+            StartDialogue(puppet, index, currentDialogueBox);
+        }
+        else
+        {
+            currentDialogueBox.End();
+            currentDialogueBox = null;
+
+            currentDialogue = index;
+            LoadDialogue(true);
+        }
     }
 
     public void LoadDialogue(bool hasDelay)
@@ -151,8 +191,19 @@ public class DialogueManager : MonoBehaviour
             {
                 if (line.Answers[i].Text != "")
                 {
-                    answerButtons[i].SetActive(true);
-                    answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = line.Answers[i].Text;
+                    if (line.Answers[i].ConditionNeeded == "")
+                    {
+                        answerButtons[i].SetActive(true);
+                        answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = line.Answers[i].Text;
+                    }
+                    else
+                    {
+                        if (GameManager.Instance.ConditionMet(line.Answers[i].ConditionNeeded))
+                        {
+                            answerButtons[i].SetActive(true);
+                            answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = line.Answers[i].Text;
+                        }
+                    }
                 }
             }
         }
@@ -167,6 +218,7 @@ public class DialogueManager : MonoBehaviour
         GameManager.Instance.SetVNMode(false);
         currentAnimator.SetTrigger("Reset");
         puppets[currentPuppetIndex].ResetPos();
+        Camera.transform.position = cameraPosOriginal;
 
         currentDialogue = 0;
         currentLine = 0;
@@ -185,6 +237,13 @@ public class DialogueManager : MonoBehaviour
 
         Answer answer = dialogues[currentDialogue].Lines[currentLine].Answers[index];
 
+        if (answer.JumpDialogue)
+        {
+            JumpToOtherDialogue(dialogues[answer.DialogueIndex].PuppetName, answer.DialogueIndex);
+            return;
+        }
+            
+
         if (answer.DialogueEnd)
         {
             TryEndDialogue();
@@ -195,7 +254,6 @@ public class DialogueManager : MonoBehaviour
             currentLine++;
         else
             currentLine = answer.BranchIndex;
-
 
         LoadDialogue(false);
     }
@@ -255,6 +313,7 @@ public class Puppet
     public string Name;
     public GameObject VNPuppet;
     public int PivotIndex;
+    public int CameraIndex;
 
     public Vector3 OriginalPos;
 

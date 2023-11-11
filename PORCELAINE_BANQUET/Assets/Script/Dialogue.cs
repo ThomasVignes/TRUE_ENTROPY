@@ -19,8 +19,14 @@ public class Line
 [System.Serializable]
 public class Answer
 {
+    [Header("General Parameters")]
     public string Text;
+    public string ConditionNeeded;
     public bool DialogueEnd;
     public bool BranchToCurrent = true;
     public int BranchIndex;
+
+    [Header("Dialogue Jump Parameters")]
+    public bool JumpDialogue;
+    public int DialogueIndex;
 }
