@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
@@ -25,8 +26,11 @@ public class Answer
     public bool DialogueEnd;
     public bool BranchToCurrent = true;
     public int BranchIndex;
+    public UnityEvent Delegate;
 
     [Header("Dialogue Jump Parameters")]
     public bool JumpDialogue;
     public int DialogueIndex;
+
+
 }

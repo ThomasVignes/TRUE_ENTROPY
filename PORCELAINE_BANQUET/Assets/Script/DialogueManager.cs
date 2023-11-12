@@ -121,7 +121,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            currentDialogueBox.End();
+            if (currentDialogueBox != null)
+                currentDialogueBox.End();
+
             currentDialogueBox = null;
 
             currentDialogue = index;
@@ -236,6 +238,8 @@ public class DialogueManager : MonoBehaviour
         selecting = false;
 
         Answer answer = dialogues[currentDialogue].Lines[currentLine].Answers[index];
+
+        answer.Delegate?.Invoke();
 
         if (answer.JumpDialogue)
         {

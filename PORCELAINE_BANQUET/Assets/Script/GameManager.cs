@@ -141,12 +141,12 @@ public class GameManager : MonoBehaviour
             endText.text += c;
         }
 
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(2.3f);
 
         endText.text = "";
         EffectsManager.Instance.audioManager.Play("Gunshot");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(0);
     }

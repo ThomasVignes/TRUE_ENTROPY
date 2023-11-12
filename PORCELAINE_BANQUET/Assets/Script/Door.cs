@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Door : Interactable
 {
@@ -9,6 +10,8 @@ public class Door : Interactable
 
     [SerializeField] private string lockedMessage;
     [SerializeField] private Animator animator;
+
+    public UnityEvent OnOpen;
 
     public bool CanOpen;
 
@@ -44,5 +47,13 @@ public class Door : Interactable
 
         if (obstacle != null)
             obstacle.enabled = !open;
+
+        if (open)
+            OnOpen?.Invoke();
+    }
+
+    public void Unlock()
+    {
+        CanOpen = true;
     }
 }
