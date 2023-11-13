@@ -62,6 +62,13 @@ MonoBehaviour:
     loop: 0
     mixerLayer: 
     source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 65795c6c6e185304ba84a9e0f2f442b6, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}

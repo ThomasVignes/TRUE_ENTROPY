@@ -255,12 +255,12 @@ public class GameManager : MonoBehaviour
         currentCamZone = zone;
     }
 
-    public void UpdateCondition(string condition, bool state)
+    public void UpdateCondition(string condition)
     {
         foreach (var c in conditions)
         {
             if (c.Name == condition)
-                c.Met = state;
+                c.Met = true;
         }
     }
 
