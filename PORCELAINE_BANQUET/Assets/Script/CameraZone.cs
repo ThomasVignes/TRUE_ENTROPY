@@ -30,6 +30,7 @@ public class CameraZone : MonoBehaviour
     [Header("Behaviour Specific Params")]
     [SerializeField] float PathDamping = 1f;
     public float Offset;
+    [SerializeField] private GameObject switchObject;
 
     private GameObject target;
     private Transform direction;
@@ -89,6 +90,12 @@ public class CameraZone : MonoBehaviour
                 Vcam.gameObject.SetActive(true);
             }
 
+            if (switchObject != null)
+            {
+                if (!switchObject.gameObject.activeSelf)
+                    switchObject.gameObject.SetActive(true);
+            }
+
             if (Template == Template.PathAiming)
             {
                 dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
@@ -99,9 +106,18 @@ public class CameraZone : MonoBehaviour
                 dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
             }
         }
-        else if (Vcam.gameObject.activeInHierarchy)
+        else
         {
-            Vcam.gameObject.SetActive(false);
+            if (Vcam.gameObject.activeInHierarchy)
+            {
+                Vcam.gameObject.SetActive(false);
+            }
+
+            if (switchObject != null)
+            {
+                if (switchObject.gameObject.activeSelf)
+                    switchObject.gameObject.SetActive(false);
+            }
         }
     }
 

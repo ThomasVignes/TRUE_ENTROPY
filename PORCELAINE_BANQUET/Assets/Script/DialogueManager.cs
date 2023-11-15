@@ -228,8 +228,11 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = 0;
         currentLine = 0;
 
-        currentDialogueBox.End();
-        currentDialogueBox = null;
+        if (currentDialogueBox != null)
+        {
+            currentDialogueBox.End();
+            currentDialogueBox = null;
+        }
     }
     #endregion
 
