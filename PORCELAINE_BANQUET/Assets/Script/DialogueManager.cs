@@ -218,7 +218,10 @@ public class DialogueManager : MonoBehaviour
         VNInterface.SetActive(false);
         VNScene.SetActive(false);
         GameManager.Instance.SetVNMode(false);
-        currentAnimator.SetTrigger("Reset");
+
+        if (currentAnimator != null)
+            currentAnimator.SetTrigger("Reset");
+
         puppets[currentPuppetIndex].ResetPos();
         Camera.transform.position = cameraPosOriginal;
 
