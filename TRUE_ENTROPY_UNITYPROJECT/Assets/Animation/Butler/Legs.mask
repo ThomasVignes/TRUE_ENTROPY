@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Legs
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Terrence
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_L_Leg_Thigh
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_L_Leg_Thigh/Terrence_L_Leg_Shin
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_L_Leg_Thigh/Terrence_L_Leg_Shin/Terrence_L_Leg_Foot01
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_L_Leg_Thigh/Terrence_L_Leg_Shin/Terrence_L_Leg_Foot01/Terrence_L_Leg_Foot02
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_L_Leg_Thigh/Terrence_L_Leg_Shin/Terrence_L_Leg_Foot01/Terrence_L_Leg_Foot02/Terrence_L_Leg_nub
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_R_Leg_Thigh
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_R_Leg_Thigh/Terrence_R_Leg_Shin
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_R_Leg_Thigh/Terrence_R_Leg_Shin/Terrence_R_Leg_Foot01
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_R_Leg_Thigh/Terrence_R_Leg_Shin/Terrence_R_Leg_Foot01/Terrence_R_Leg_Foot02
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_R_Leg_Thigh/Terrence_R_Leg_Shin/Terrence_R_Leg_Foot01/Terrence_R_Leg_Foot02/Terrence_R_Leg_nub
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_Spine01
+    m_Weight: 1
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Index01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Index01/Terrence_L_Arm_Hand_Index02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Index01/Terrence_L_Arm_Hand_Index02/Terrence_L_Arm_Hand_Index03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Index01/Terrence_L_Arm_Hand_Index02/Terrence_L_Arm_Hand_Index03/Terrence_L_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_LittleFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_LittleFinger01/Terrence_L_Arm_Hand_LittleFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_LittleFinger01/Terrence_L_Arm_Hand_LittleFinger02/Terrence_L_Arm_Hand_LittleFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_LittleFinger01/Terrence_L_Arm_Hand_LittleFinger02/Terrence_L_Arm_Hand_LittleFinger03/Terrence_L_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_MiddleFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_MiddleFinger01/Terrence_L_Arm_Hand_MiddleFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_MiddleFinger01/Terrence_L_Arm_Hand_MiddleFinger02/Terrence_L_Arm_Hand_MiddleFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_MiddleFinger01/Terrence_L_Arm_Hand_MiddleFinger02/Terrence_L_Arm_Hand_MiddleFinger03/Terrence_L_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_RingerFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_RingerFinger01/Terrence_L_Arm_Hand_RingerFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_RingerFinger01/Terrence_L_Arm_Hand_RingerFinger02/Terrence_L_Arm_Hand_RingerFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_RingerFinger01/Terrence_L_Arm_Hand_RingerFinger02/Terrence_L_Arm_Hand_RingerFinger03/Terrence_L_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Thumb01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Thumb01/Terrence_L_Arm_Hand_Thumb02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Thumb01/Terrence_L_Arm_Hand_Thumb02/Terrence_L_Arm_Hand_Thumb03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_L_Shoulder/Terrence_L_Arm_Arm/Terrence_L_Arm_Forearm/Terrence_L_Arm_Hand/Terrence_L_Arm_Hand_Thumb01/Terrence_L_Arm_Hand_Thumb02/Terrence_L_Arm_Hand_Thumb03/Terrence_L_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_Neck
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_Neck/Terrence_Head
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_Neck/Terrence_Head/Terrence_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Index01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Index01/Terrence_R_Arm_Hand_Index03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Index01/Terrence_R_Arm_Hand_Index03/Terrence_R_Arm_Hand_Index02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Index01/Terrence_R_Arm_Hand_Index03/Terrence_R_Arm_Hand_Index02/Terrence_R_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_LittleFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_LittleFinger01/Terrence_R_Arm_Hand_LittleFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_LittleFinger01/Terrence_R_Arm_Hand_LittleFinger02/Terrence_R_Arm_Hand_LittleFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_LittleFinger01/Terrence_R_Arm_Hand_LittleFinger02/Terrence_R_Arm_Hand_LittleFinger03/Terrence_R_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_RingFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_RingFinger01/Terrence_R_Arm_Hand_RingFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_RingFinger01/Terrence_R_Arm_Hand_RingFinger02/Terrence_R_Arm_Hand_RingFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_RingFinger01/Terrence_R_Arm_Hand_RingFinger02/Terrence_R_Arm_Hand_RingFinger03/Terrence_R_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Thumb01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Thumb01/Terrence_R_Arm_Hand_Thumb02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Thumb01/Terrence_R_Arm_Hand_Thumb02/Terrence_R_Arm_Hand_Thumb03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_Hand_Thumb01/Terrence_R_Arm_Hand_Thumb02/Terrence_R_Arm_Hand_Thumb03/Terrence_R_Arm_nub
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_HandMiddleFinger01
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_HandMiddleFinger01/Terrence_R_Arm_HandMiddleFinger02
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_HandMiddleFinger01/Terrence_R_Arm_HandMiddleFinger02/Terrence_R_Arm_HandMiddleFinger03
+    m_Weight: 0
+  - m_Path: Terrence_Pelvis/Terrence_Spine01/Terrence_Spine02/Terrence_Spine03/Terrence_R_Shoulder/Terrence_R_Arm_Arm/Terrence_R_Arm_Forearm/Terrence_R_Arm_Hand/Terrence_R_Arm_HandMiddleFinger01/Terrence_R_Arm_HandMiddleFinger02/Terrence_R_Arm_HandMiddleFinger03/Terrence_R_Arm_nub
+    m_Weight: 0
