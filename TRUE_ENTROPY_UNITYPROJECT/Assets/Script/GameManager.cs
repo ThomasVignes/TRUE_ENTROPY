@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Xml.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -37,12 +38,14 @@ public class GameManager : MonoBehaviour
     public List<Area> areas = new List<Area>();
 
     [SerializeField] AudioSource overrideAudio;
+    [SerializeField] GameObject inventoryCanvas;
 
     private string currentArea;
     private float currentVolume;
     private AudioSource currentAudioSource;
 
     private CameraZone currentCamZone;
+    private CursorManager cursorManager;
 
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
@@ -64,6 +67,9 @@ public class GameManager : MonoBehaviour
         player.Init();
 
         ScreenEffects = GetComponent<ScreenEffects>();
+
+        cursorManager = GetComponent<CursorManager>();
+        cursorManager.Init();
 
         DialogueManager = FindObjectOfType<DialogueManager>();
 
@@ -89,17 +95,20 @@ public class GameManager : MonoBehaviour
     {
         if (end)
         {
+            cursorManager.SetCursorType(CursorType.Base);
             return;
         }
 
         if (commentMode)
         {
+            cursorManager.SetCursorType(CursorType.Base);
             DialogueManager.Step();
             return;
         }
 
         if (vnMode)
         {
+            cursorManager.SetCursorType(CursorType.Base);
             DialogueManager.Step();
             return;
         }
@@ -117,6 +126,8 @@ public class GameManager : MonoBehaviour
         {
             c.Step();
         }
+
+        CursorHover();
     }
 
     public void EndDemo()
@@ -235,6 +246,37 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void CursorHover()
+    {
+        RaycastHit hit;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
+        {
+            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
+            {
+                cursorManager.SetCursorType(CursorType.Base);
+                return;
+            }
+
+            Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
+
+            if (interactable != null)
+            {
+                cursorManager.SetCursorType(CursorType.Look);
+
+                return;
+            }
+
+            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(moveLayer))
+            {
+                cursorManager.SetCursorType(CursorType.Move);
+                return;
+            }
+        }
+    }
+
     public void SetVNMode(bool yes)
     {
         vnMode = yes;
@@ -243,6 +285,8 @@ public class GameManager : MonoBehaviour
         vnCam.SetActive(yes);
 
         currentCamZone.active = !yes;
+
+        inventoryCanvas.SetActive(!yes);
     }
 
     public void WriteComment(string text)
