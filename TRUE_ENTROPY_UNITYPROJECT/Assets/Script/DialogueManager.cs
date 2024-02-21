@@ -186,24 +186,41 @@ public class DialogueManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(delayBetweenLetters);
-
+         
         for (int i = 0; i < 3; i++)
         {
             if (i < line.Answers.Count)
             {
                 if (line.Answers[i].Text != "")
                 {
+                    string txt = line.Answers[i].Text;
+
+                    if (line.Answers[i].DialogueEnd && !line.Answers[i].JumpDialogue)
+                    {
+                        string[] spl = txt.Split('(');
+
+                        if (spl.Length > 1)
+                        {
+                            if ((spl[1].ToLower())[0] == 'l')
+                            {
+                                txt = spl[0];
+                            }
+                        }
+
+                        txt += "(Leave)";
+                    }
+
                     if (line.Answers[i].ConditionNeeded == "")
                     {
                         answerButtons[i].SetActive(true);
-                        answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = line.Answers[i].Text;
+                        answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = txt;
                     }
                     else
                     {
                         if (GameManager.Instance.ConditionMet(line.Answers[i].ConditionNeeded))
                         {
                             answerButtons[i].SetActive(true);
-                            answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = line.Answers[i].Text;
+                            answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = txt;
                         }
                     }
                 }
