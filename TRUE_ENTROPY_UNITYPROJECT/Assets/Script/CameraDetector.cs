@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.SceneView;
 
 public class CameraDetector : MonoBehaviour
 {
@@ -12,36 +13,37 @@ public class CameraDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<CameraZone>() != null)
+        CameraZone cameraZone = other.gameObject.GetComponent<CameraZone>();
+
+        if (other.gameObject.GetComponent<CustomCameraZone>() != null && cameraZone == null)
+            cameraZone = other.gameObject.GetComponent<CustomCameraZone>().CameraZone;
+
+        if (cameraZone != null)
         {
-            SwitchCam(other.gameObject.GetComponent<CameraZone>());
-            GameManager.Instance.NewArea(other.gameObject.GetComponent<CameraZone>().Ambiance);
+            SwitchCam(cameraZone);
+
+            if (cameraZone.ChangeVolume)
+                GameManager.Instance.NewArea(cameraZone.Ambiance, cameraZone.NewVolume);
+            else
+                GameManager.Instance.NewArea(cameraZone.Ambiance);
+
             ChangedCam?.Invoke();
         }
 
-        if (other.gameObject.GetComponent<CustomCameraZone>() != null)
-        {
-            SwitchCam(other.gameObject.GetComponent<CustomCameraZone>().CameraZone);
-            GameManager.Instance.NewArea(other.gameObject.GetComponent<CustomCameraZone>().CameraZone.Ambiance);
-            ChangedCam?.Invoke();
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<CameraZone>() != null)
-        {
-            if (CurrentCam == other.gameObject.GetComponent<CameraZone>())
-            {
-                LastCamCheck(other.gameObject.GetComponent<CameraZone>());
-            }
-        }
+        CameraZone cameraZone = other.gameObject.GetComponent<CameraZone>();
 
-        if (other.gameObject.GetComponent<CustomCameraZone>() != null)
+        if (other.gameObject.GetComponent<CustomCameraZone>() != null && cameraZone == null)
+            cameraZone = other.gameObject.GetComponent<CustomCameraZone>().CameraZone;
+
+        if (cameraZone != null)
         {
-            if (CurrentCam == other.gameObject.GetComponent<CustomCameraZone>().CameraZone)
+            if (CurrentCam == cameraZone)
             {
-                LastCamCheck(other.gameObject.GetComponent<CustomCameraZone>().CameraZone);
+                LastCamCheck(cameraZone);
             }
         }
     }
@@ -67,17 +69,21 @@ public class CameraDetector : MonoBehaviour
         }
     }
 
-    private void LastCamCheck(CameraZone zone)
+    private void LastCamCheck(CameraZone cameraZone)
     {
         if (LastCam != null)
             CurrentCam = LastCam;
 
         CurrentCam.active = true;
-        GameManager.Instance.NewArea(zone.Ambiance);
+
+        if (cameraZone.ChangeVolume)
+            GameManager.Instance.NewArea(cameraZone.Ambiance, cameraZone.NewVolume);
+        else
+            GameManager.Instance.NewArea(cameraZone.Ambiance);
 
         if (LastCam != null)
         {
-            LastCam = zone;
+            LastCam = cameraZone;
             LastCam.active = false;
         }
 

@@ -20,7 +20,7 @@ public class Area
 {
     public string Name;
     public AudioSource Music;
-    public float Volume;
+    [HideInInspector] public float OriginalVolume;
 }
 
 public class GameManager : MonoBehaviour
@@ -89,6 +89,11 @@ public class GameManager : MonoBehaviour
         currentCamZone = firstCamZone;
 
         endText.text = "";
+
+        foreach (var area in areas)
+        {
+            area.OriginalVolume = area.Music.volume;
+        }
     }
 
     private void Update()
@@ -315,9 +320,36 @@ public class GameManager : MonoBehaviour
         {
             if (item.Name == areaName)
             {
+                item.Music.volume = item.OriginalVolume;
+
                 if (item.Name != currentArea)
                 {
                     item.Music.Play();
+                    currentAudioSource = item.Music;
+                    currentArea = item.Name;
+                    currentVolume = currentAudioSource.volume;
+                }
+            }
+            else
+                item.Music.Stop();
+        }
+    }
+
+    public void NewArea(string areaName, float volume)
+    {
+        if (overrideAmbiance)
+            return;
+
+        foreach (var item in areas)
+        {
+            if (item.Name == areaName)
+            {
+                item.Music.volume = volume;
+
+                if (item.Name != currentArea)
+                {
+                    item.Music.Play();
+
                     currentAudioSource = item.Music;
                     currentArea = item.Name;
                     currentVolume = currentAudioSource.volume;

@@ -20,6 +20,9 @@ public enum Template
 public class CameraZone : MonoBehaviour
 {
     public string Ambiance;
+    public bool ChangeVolume;
+    public float NewVolume = 1;
+
     [SerializeField] Template Template;
     [Header("Custom camera")]
     [SerializeField] Behaviour Behaviour;
