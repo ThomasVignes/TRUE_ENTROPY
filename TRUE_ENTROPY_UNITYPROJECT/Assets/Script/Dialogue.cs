@@ -24,6 +24,7 @@ public class Answer
     public string Text;
     public string ConditionNeeded;
     public bool DialogueEnd;
+    public bool HideLeavePrompt;
     public bool BranchToCurrent = true;
     public int BranchIndex;
     public UnityEvent Delegate;

@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
                 introTimer = Time.time + introDelay;
 
                 player.WakeUp();
+                player.Injure(true);
             }
 
             if (introTimer < Time.time && gettingUp)

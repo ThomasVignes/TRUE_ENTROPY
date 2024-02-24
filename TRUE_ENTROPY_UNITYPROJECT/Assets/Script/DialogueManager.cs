@@ -195,7 +195,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     string txt = line.Answers[i].Text;
 
-                    if (line.Answers[i].DialogueEnd && !line.Answers[i].JumpDialogue)
+                    if (line.Answers[i].DialogueEnd && !line.Answers[i].JumpDialogue && !line.Answers[i].HideLeavePrompt)
                     {
                         string[] spl = txt.Split('(');
 
