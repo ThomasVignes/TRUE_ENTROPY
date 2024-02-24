@@ -8,7 +8,7 @@ public class ScreenEffects : MonoBehaviour
 {
     [SerializeField] private Image blackScreen, oumuamua;
 
-    private void Start()
+    public void StartFade()
     {
         oumuamua.DOFade(0, 0.01f);
         FadeTo(1, 0.01f);

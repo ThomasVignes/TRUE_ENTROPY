@@ -33,12 +33,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField] private float clickdelay;
     [SerializeField] private TextMeshProUGUI endText;
+    [SerializeField] private float introDelay;
 
     public List<Conditions> conditions = new List<Conditions>();
     public List<Area> areas = new List<Area>();
 
-    [SerializeField] AudioSource overrideAudio;
+    [SerializeField] AudioSource overrideAudio, startAudio;
     [SerializeField] GameObject inventoryCanvas;
+
 
     private string currentArea;
     private float currentVolume;
@@ -52,7 +54,10 @@ public class GameManager : MonoBehaviour
 
     public bool VNMode { get { return vnMode; } }
 
-    bool vnMode, commentMode, end, overrideAmbiance;
+    bool vnMode, commentMode, end, overrideAmbiance, intro, gettingUp, ready;
+    float introTimer;
+
+
     PlayerController player;
     private List<Character> characters = new List<Character>();
     private int clicked;
@@ -94,10 +99,57 @@ public class GameManager : MonoBehaviour
         {
             area.OriginalVolume = area.Music.volume;
         }
+
+        StartCoroutine(C_Start());
+    }
+
+    IEnumerator C_Start()
+    {
+        ScreenEffects.FadeTo(1, 0.01f);
+        AudioListener.volume = 0;
+
+        yield return new WaitForSeconds(2.3f);
+
+        EffectsManager.Instance.audioManager.Play("Gunshot");
+
+        yield return new WaitForSeconds(3f);
+
+        AudioListener.volume = 1;
+
+        ScreenEffects.StartFade();
+        intro = true;
+        ready = true;
     }
 
     private void Update()
     {
+        if (!ready)
+            return;
+
+        if (intro)
+        {
+            cursorManager.SetCursorType(CursorType.Base);
+
+            if (Input.GetMouseButtonDown(0) && !gettingUp)
+            {
+                gettingUp = true;
+                introTimer = Time.time + introDelay;
+
+                player.WakeUp();
+            }
+
+            if (introTimer < Time.time && gettingUp)
+            {
+                gettingUp = false;
+                intro = false;
+
+                player.Ready();
+                WriteComment("Ugh. My head.");
+            }
+
+            return;
+        }
+
         if (end)
         {
             cursorManager.SetCursorType(CursorType.Base);

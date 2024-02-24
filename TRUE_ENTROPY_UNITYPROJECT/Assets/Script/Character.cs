@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
     public bool Moving { get { if (gameObject.activeInHierarchy && agent.enabled) { return agent.remainingDistance > minDistanceToMove; } else { return false; } } }
 
 
-    public void Init()
+    public virtual void Init()
     {
         agent = GetComponent<NavMeshAgent>();
 
