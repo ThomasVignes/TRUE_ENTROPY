@@ -12,7 +12,7 @@ public class EventArea : MonoBehaviour
 
     public GameObject Specific;
 
-    public bool Repeatable;
+    public bool Repeatable, OnExit;
 
     public float Delay;
 
@@ -51,6 +51,9 @@ public class EventArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (OnExit)
+            return;
+
         if (other.gameObject.layer == WhumpusUtilities.ToLayer(Layer) && !eventStarted)
         {
             eventStarted = true;
@@ -60,6 +63,29 @@ public class EventArea : MonoBehaviour
         {
             eventStarted = true;
             delayTimer = Delay;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!OnExit)
+            return;
+
+        if (other.gameObject.layer == WhumpusUtilities.ToLayer(Layer))
+        {
+            OnTrigger.Invoke();
+            if (!Repeatable)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (other.gameObject == Specific)
+        {
+            OnTrigger.Invoke();
+            if (!Repeatable)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

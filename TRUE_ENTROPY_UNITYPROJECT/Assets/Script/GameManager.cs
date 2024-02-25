@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
+        DialogueManager.TryEndDialogue();
         SetAmbianceVolume(1f);
         ScreenEffects.StartFade();
         intro = true;
@@ -141,8 +142,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!ready)
+        if (!ready || end)
+        {
+            cursorManager.SetCursorType(CursorType.Base);
             return;
+        }
 
         if (intro)
         {
@@ -166,12 +170,6 @@ public class GameManager : MonoBehaviour
                 WriteComment("Ugh. My head.");
             }
 
-            return;
-        }
-
-        if (end)
-        {
-            cursorManager.SetCursorType(CursorType.Base);
             return;
         }
 
@@ -237,10 +235,10 @@ public class GameManager : MonoBehaviour
     {
         end = true;
 
-        StartCoroutine(C_EndTimer(message));
+        StartCoroutine(C_RestartTimer(message));
     }
 
-    IEnumerator C_EndTimer(string message)
+    IEnumerator C_RestartTimer(string message)
     {
         SetAmbianceVolume(0f);
         ScreenEffects.FadeTo(1, 0.3f);
@@ -269,7 +267,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = startPos;
         player.transform.rotation = startRot;
         player.ResetState();
-        SetVNMode(false);
+ 
         end = false;
 
         StartCoroutine(C_Restart());
@@ -371,6 +369,9 @@ public class GameManager : MonoBehaviour
         currentCamZone.active = !yes;
 
         inventoryCanvas.SetActive(!yes);
+
+        if (!yes)
+            ghostManager.UpdateManager();
     }
 
     public void WriteComment(string text)
