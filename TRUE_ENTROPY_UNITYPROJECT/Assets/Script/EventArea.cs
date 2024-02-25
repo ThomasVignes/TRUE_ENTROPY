@@ -34,6 +34,7 @@ public class EventArea : MonoBehaviour
             if (delayTimer == 0)
             {
                 PlayEvent();
+                eventStarted = false;
             }
         }
     }

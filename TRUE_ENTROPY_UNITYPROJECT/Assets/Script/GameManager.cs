@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioSource overrideAudio, startAudio;
     [SerializeField] GameObject inventoryCanvas;
+    [SerializeField] GameObject ghostPrefab;
 
 
     private string currentArea;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     private CameraZone currentCamZone;
     private CursorManager cursorManager;
+    private GhostManager ghostManager;
 
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
@@ -59,6 +61,8 @@ public class GameManager : MonoBehaviour
 
 
     PlayerController player;
+    Vector3 startPos;
+    Quaternion startRot;
     private List<Character> characters = new List<Character>();
     private int clicked;
     private float clicktime;
@@ -80,6 +84,11 @@ public class GameManager : MonoBehaviour
 
         DialogueManager.Init();
 
+        ghostManager = FindObjectOfType<GhostManager>();
+
+        ghostManager.UpdateManager();
+
+
         Character[] chars = FindObjectsOfType<Character>();
 
         foreach (Character c in chars)
@@ -100,6 +109,9 @@ public class GameManager : MonoBehaviour
             area.OriginalVolume = area.Music.volume;
         }
 
+        startPos = player.transform.position;
+        startRot = player.transform.rotation;
+
         StartCoroutine(C_Start());
     }
 
@@ -112,10 +124,16 @@ public class GameManager : MonoBehaviour
 
         EffectsManager.Instance.audioManager.Play("Gunshot");
 
-        yield return new WaitForSeconds(3f);
-
         AudioListener.volume = 1;
 
+        StartCoroutine(C_Restart());
+    }
+
+    IEnumerator C_Restart()
+    {
+        yield return new WaitForSeconds(3f);
+
+        SetAmbianceVolume(1f);
         ScreenEffects.StartFade();
         intro = true;
         ready = true;
@@ -244,9 +262,17 @@ public class GameManager : MonoBehaviour
         endText.text = "";
         EffectsManager.Instance.audioManager.Play("Gunshot");
 
-        yield return new WaitForSeconds(3f);
+        GameObject go = Instantiate(ghostPrefab);
+        go.transform.position = player.transform.position;
+        go.transform.rotation = player.transform.rotation;
 
-        SceneManager.LoadScene(0);
+        player.transform.position = startPos;
+        player.transform.rotation = startRot;
+        player.ResetState();
+        SetVNMode(false);
+        end = false;
+
+        StartCoroutine(C_Restart());
     }
 
     private bool HandleDoubleClick()
@@ -377,7 +403,10 @@ public class GameManager : MonoBehaviour
 
                 if (item.Name != currentArea)
                 {
+                    ghostManager.UpdateManager();
+
                     item.Music.Play();
+
                     currentAudioSource = item.Music;
                     currentArea = item.Name;
                     currentVolume = currentAudioSource.volume;
@@ -401,6 +430,8 @@ public class GameManager : MonoBehaviour
 
                 if (item.Name != currentArea)
                 {
+                    ghostManager.UpdateManager();
+
                     item.Music.Play();
 
                     currentAudioSource = item.Music;
@@ -464,6 +495,7 @@ public class GameManager : MonoBehaviour
 
     public void SetAmbianceVolume(float sound)
     {
-        currentAudioSource.volume = currentVolume * sound;
+        if (currentAudioSource != null)
+            currentAudioSource.volume = currentVolume * sound;
     }
 }

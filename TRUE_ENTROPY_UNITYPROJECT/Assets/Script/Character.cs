@@ -37,7 +37,11 @@ public class Character : MonoBehaviour
 
     public void Injure(bool injure)
     {
+        if (injure == injured)
+            return;
+
         injured = injure;
+
         animator.SetFloat("MoveState", 2);
     }
 

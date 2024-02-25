@@ -27,6 +27,15 @@ public class PlayerController : Character
     {
         rb.transform.localPosition = new Vector3(resetPos.x, rb.transform.localPosition.y, resetPos.z);
         rb.isKinematic = false;
-        Destroy(copyPosRot);
+        copyPosRot.enabled = false;
+    }
+
+    public void ResetState()
+    {
+        agent.enabled = false;
+        animator.SetTrigger("Reset");
+        rb.isKinematic = true;
+        copyPosRot.enabled = true;  
+        agent.enabled = true;
     }
 }
