@@ -49,7 +49,20 @@ public class Door : Interactable
             obstacle.enabled = !open;
 
         if (open)
-            OnOpen?.Invoke();
+            OnOpen?.Invoke(); 
+    }
+
+    public void ToggleDoorNoEvent(bool open)
+    {
+        animator.SetBool("Open", open);
+
+        isOpen = open;
+
+        GetComponent<BoxCollider>().enabled = !open;
+        NavMeshObstacle obstacle = GetComponent<NavMeshObstacle>();
+
+        if (obstacle != null)
+            obstacle.enabled = !open;
     }
 
     public void Unlock()
