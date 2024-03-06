@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class MainMenuMaster : MonoBehaviour
 {
@@ -17,9 +18,10 @@ public class MainMenuMaster : MonoBehaviour
     [SerializeField] private Image BlackScreen;
     [SerializeField] private Animator hungAnimator, cam;
     [SerializeField] private GameObject FirstMenuButton, FirstOptionButton, Main, OptionsMenu;
-    [SerializeField] private GameObject MainCam, OptionsCam;
+    [SerializeField] private GameObject MainCam, OptionsCam, disclaimer, title;
+    [SerializeField] private AudioSource click;
 
-    
+    bool disclaimerMode;
 
     private void Awake()
     {
@@ -43,9 +45,17 @@ public class MainMenuMaster : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKey || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
-            StartGame();
+            if (!CanInput)
+                return;
+
+            click.Play();
+
+            if (!disclaimerMode)
+                StartDisclaimer();
+            else
+                StartGame();
         }
     }
 
@@ -81,13 +91,23 @@ public class MainMenuMaster : MonoBehaviour
         }
     }
 
+    public void StartDisclaimer()
+    {
+        if (CanInput)
+        {
+            CanInput = false;
+            //hungAnimator.SetTrigger("Kidnap");
+            StartCoroutine(DisclaimerCoroutine());
+        }
+    }
+
     public void StartGame()
     {
         if (CanInput)
         {
             CanInput = false;
             //hungAnimator.SetTrigger("Kidnap");
-            StartCoroutine(StartGameCoroutine());
+            StartCoroutine(C_StartGame());
         }
     }
 
@@ -128,13 +148,23 @@ public class MainMenuMaster : MonoBehaviour
         OptionsMenu.SetActive(false);
     }
 
-    IEnumerator StartGameCoroutine()
+    IEnumerator DisclaimerCoroutine()
     {
-        //yield return new WaitForSeconds(0.7f);
+        BlackFadeTo(1, 0.7f);
+        yield return new WaitForSeconds(1.3f);
+        disclaimer.SetActive(true);
+        title.SetActive(false);
+        BlackFadeTo(0, 0.7f);
+        yield return new WaitForSeconds(1);
 
-        yield return new WaitForSeconds(0.3f);
-        BlackFadeTo(1, 1.7f);
-        yield return new WaitForSeconds(2.3f);
+        disclaimerMode = true;
+        CanInput = true;
+    }
+
+    IEnumerator C_StartGame()
+    {
+        BlackFadeTo(1, 0.7f);
+        yield return new WaitForSeconds(1.3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -149,11 +179,13 @@ public class MainMenuMaster : MonoBehaviour
 
     public void BlackFadeTo(int value)
     {
+        BlackScreen.DOKill();
         BlackScreen.DOFade(value, 1.3f);
     }
 
     public void BlackFadeTo(int value, float speed)
     {
+        BlackScreen.DOKill();
         BlackScreen.DOFade(value, speed);
     }
 }
