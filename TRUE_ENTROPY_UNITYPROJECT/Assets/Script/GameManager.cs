@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        player = FindObjectOfType<PlayerController>();
+        if (player == null)
+            player = FindObjectOfType<PlayerController>();
 
         player.Init();
 
@@ -202,6 +203,11 @@ public class GameManager : MonoBehaviour
         }
 
         CursorHover();
+    }
+
+    public void InjurePlayer(bool injure)
+    {
+        player.Injure(injure);
     }
 
     public void EndDemo()
