@@ -198,12 +198,12 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            player.Special(true);
+            player.ToggleSpecial(true);
         }
 
         if (Input.GetMouseButtonUp(1))
         {
-            player.Special(false);
+            player.ToggleSpecial(false);
         }
 
         player.Step();
@@ -317,29 +317,36 @@ public class GameManager : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
         {
-            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
+            if (player.SpecialMode)
             {
-                return;
+                player.Special();
             }
-
-            Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
-
-            if (interactable != null)
+            else
             {
-                player.SetDestination(interactable.GetTargetPosition(), interactable);
-
-                if (interactable is PickupInteractable)
+                if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
                 {
-                    player.PickUpAnim();
+                    return;
                 }
 
-                return;
-            }
+                Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
 
-            if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(moveLayer)) 
-            {
-                player.SetDestination(hit.point);
-                return;
+                if (interactable != null)
+                {
+                    player.SetDestination(interactable.GetTargetPosition(), interactable);
+
+                    if (interactable is PickupInteractable)
+                    {
+                        player.PickUpAnim();
+                    }
+
+                    return;
+                }
+
+                if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(moveLayer))
+                {
+                    player.SetDestination(hit.point);
+                    return;
+                }
             }
         }
         

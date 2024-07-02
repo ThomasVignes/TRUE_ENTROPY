@@ -24,7 +24,9 @@ public class Character : MonoBehaviour
     protected float originalSpeed;
 
     protected bool computing, movingToInteractable, canInteract;
+    protected bool specialMode;
 
+    public bool SpecialMode { get { return specialMode; } }
     public bool Moving { get { if (gameObject.activeInHierarchy && agent.enabled) { return agent.remainingDistance > minDistanceToMove; } else { return false; } } }
 
 
@@ -139,9 +141,15 @@ public class Character : MonoBehaviour
         }
     }
 
-    public virtual void Special(bool active)
+    public virtual void ToggleSpecial(bool active)
     {
+        specialMode = active;
+    }
 
+    public virtual void Special()
+    {
+        if (!specialMode)
+            return;
     }
 
     protected void SetDirection()
