@@ -139,6 +139,11 @@ public class Character : MonoBehaviour
         }
     }
 
+    public virtual void Special(bool active)
+    {
+
+    }
+
     protected void SetDirection()
     {
         targetDir = Vector3.Normalize(agent.path.corners[1] - transform.position);

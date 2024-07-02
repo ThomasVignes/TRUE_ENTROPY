@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
 
+    public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
 
     bool vnMode, commentMode, end, overrideAmbiance, intro, gettingUp, ready;
@@ -193,6 +194,16 @@ public class GameManager : MonoBehaviour
             TryClick();
 
             player.ToggleRun(HandleDoubleClick());
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            player.Special(true);
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            player.Special(false);
         }
 
         player.Step();

@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 public class PlayerController : Character
 {
-    [SerializeField] CopyPosRot copyPosRot;
-    [SerializeField] Rigidbody rb;
-    [SerializeField] Vector3 resetPos;
+    [SerializeField] protected CopyPosRot copyPosRot;
+    [SerializeField] protected Rigidbody rb;
+    [SerializeField] protected Vector3 resetPos;
 
 
     public override void Init()
@@ -18,12 +18,12 @@ public class PlayerController : Character
         rb.isKinematic = true;
     }
 
-    public void WakeUp()
+    public virtual void WakeUp()
     {
         animator.SetTrigger("WakeUp");
     }
 
-    public void Ready()
+    public virtual void Ready()
     {
         rb.transform.localPosition = new Vector3(resetPos.x, rb.transform.localPosition.y, resetPos.z);
         rb.isKinematic = false;
