@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
+    [Header("Special (Common)")]
+    [SerializeField] protected CursorType cursorType;
+
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
     [SerializeField] protected float minAngleToMove, minDistanceToInteract;
@@ -28,6 +31,7 @@ public class Character : MonoBehaviour
 
     public bool SpecialMode { get { return specialMode; } }
     public bool Moving { get { if (gameObject.activeInHierarchy && agent.enabled) { return agent.remainingDistance > minDistanceToMove; } else { return false; } } }
+    public CursorType CursorType { get { return cursorType; } }
 
 
     public virtual void Init()

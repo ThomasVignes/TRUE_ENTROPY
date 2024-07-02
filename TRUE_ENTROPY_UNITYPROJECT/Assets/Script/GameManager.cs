@@ -360,6 +360,12 @@ public class GameManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
         {
+            if (player.SpecialMode)
+            {
+                cursorManager.SetCursorType(player.CursorType);
+                return;
+            }
+
             if (hit.transform.gameObject.layer == WhumpusUtilities.ToLayer(wallLayer))
             {
                 cursorManager.SetCursorType(CursorType.Base);

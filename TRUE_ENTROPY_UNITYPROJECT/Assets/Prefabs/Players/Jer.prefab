@@ -3728,15 +3728,15 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
@@ -4545,15 +4545,15 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
@@ -7327,15 +7327,15 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 8000
     positionDamper: 1
-    maximumForce: 3.4028233e+38
+    maximumForce: 2000
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
@@ -11922,7 +11922,7 @@ ConfigurableJoint:
   m_ConnectedAnchor: {x: -0.00000017334008, y: -0.00000016852641, z: 0.0000006981715}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 2
+  m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
   m_AngularXMotion: 0
@@ -11932,7 +11932,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -12852,6 +12852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3957f49a5270f23498acebcddc1b1510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorType: 3
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2

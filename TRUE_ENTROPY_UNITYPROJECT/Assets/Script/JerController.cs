@@ -9,7 +9,7 @@ public class JerController : PlayerController
     [SerializeField] Rig legIK;
     [SerializeField] GameObject hipGun, handGun;
     LayerMask ignoreLayers;
-    bool Aiming;
+    bool Aiming, RigOn;
 
     public override void Init()
     {
@@ -45,17 +45,14 @@ public class JerController : PlayerController
         if (active)
         {
             PausePath();
-
-            legIK.weight = 1;
         }
         else
         {
             agent.ResetPath();
-
-            legIK.weight = 0f;
         }
 
         animator.SetBool("Aim", active);
+        RigOn = active;
     }
 
     public override void Step()
@@ -79,5 +76,10 @@ public class JerController : PlayerController
         {
             base.Step();
         }
+
+        if (RigOn)
+            legIK.weight = Mathf.Lerp(legIK.weight, 1, Time.deltaTime * 4);
+        else
+            legIK.weight = Mathf.Lerp(legIK.weight, 0, Time.deltaTime * 4);
     }
 }
