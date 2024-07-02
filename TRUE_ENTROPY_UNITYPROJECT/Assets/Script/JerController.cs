@@ -6,8 +6,8 @@ using UnityEngine.Animations.Rigging;
 
 public class JerController : PlayerController
 {
-
     [SerializeField] Rig legIK;
+    [SerializeField] GameObject hipGun, handGun;
     LayerMask ignoreLayers;
     bool Aiming;
 
@@ -18,6 +18,9 @@ public class JerController : PlayerController
         ignoreLayers = GameManager.Instance.IgnoreLayers;
 
         legIK.weight = 0;
+
+        hipGun.SetActive(true);
+        handGun.SetActive(false);
     }
 
     public override void Special()
@@ -32,6 +35,9 @@ public class JerController : PlayerController
         base.ToggleSpecial(active);
 
         Aiming = active;
+
+        hipGun.SetActive(!active);
+        handGun.SetActive(active);
 
         computing = false;
         agent.isStopped = active;
