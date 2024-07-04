@@ -150,7 +150,7 @@ public class Character : MonoBehaviour
         specialMode = active;
     }
 
-    public virtual void Special()
+    public virtual void Special(Vector3 spot)
     {
         if (!specialMode)
             return;

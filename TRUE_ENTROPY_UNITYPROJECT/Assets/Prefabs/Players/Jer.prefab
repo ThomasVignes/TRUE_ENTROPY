@@ -9885,6 +9885,37 @@ Transform:
   m_Father: {fileID: 1679962854546032842}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -15.308489, y: 3.0027792, z: -97.62483}
+--- !u!1 &6491523027586874078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038858393263556615}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038858393263556615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491523027586874078}
+  m_LocalRotation: {x: 0.0000002868472, y: -1, z: -0.000000226937, w: 0.0000007192135}
+  m_LocalPosition: {x: -0.2408, y: 0.0961, z: 0.0003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8576360539586004816}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: -180}
 --- !u!1 &6508490587293721157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,25 +11967,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 0
+    spring: 100
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -5
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 5
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 0
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 10
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 10
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -11982,15 +12013,15 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
+    positionSpring: 30000
+    positionDamper: 1
+    maximumForce: 2000
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
+    positionSpring: 3000
+    positionDamper: 1
+    maximumForce: 2000
     useAcceleration: 0
   m_SlerpDrive:
     serializedVersion: 4
@@ -12863,9 +12894,14 @@ MonoBehaviour:
   copyPosRot: {fileID: 1444328346101022563}
   rb: {fileID: 8388845832119114756}
   resetPos: {x: -0.00009011149, y: 0.9111375, z: 0.04616464}
+  shootCD: 0.67
+  drawDelay: 0.3
   legIK: {fileID: 7377324655593113487}
   hipGun: {fileID: 4217805012461405945}
   handGun: {fileID: 8957249352980749802}
+  muzzle: {fileID: 6491523027586874078}
+  shootParticle: {fileID: 1336949550903370, guid: ca5194d3810c6ba40b9ddcdfc6552fb1, type: 3}
+  muzzleParticle: {fileID: 1336949550903370, guid: b53255c3ce9525b4cadcb998f8d5d190, type: 3}
 --- !u!195 &8115798271488374891
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13929,7 +13965,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c955cd6258eefed4ca39c8fa943d9c3a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18ca2665ce62c4f4092817c784f7e49b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1038858393263556615}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ca2665ce62c4f4092817c784f7e49b, type: 3}
 --- !u!4 &8576360539586004816 stripped

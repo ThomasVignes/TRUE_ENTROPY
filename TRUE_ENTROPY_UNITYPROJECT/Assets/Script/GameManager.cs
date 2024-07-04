@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
+    [HideInInspector] public HitstopManager HitstopManager;
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
@@ -89,6 +90,8 @@ public class GameManager : MonoBehaviour
         ghostManager = FindObjectOfType<GhostManager>();
 
         ghostManager.UpdateManager();
+
+        HitstopManager = FindObjectOfType<HitstopManager>();
 
 
         Character[] chars = FindObjectsOfType<Character>();
@@ -319,7 +322,7 @@ public class GameManager : MonoBehaviour
         {
             if (player.SpecialMode)
             {
-                player.Special();
+                player.Special(hit.point);
             }
             else
             {

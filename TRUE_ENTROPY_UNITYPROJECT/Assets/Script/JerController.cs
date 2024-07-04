@@ -6,10 +6,13 @@ using UnityEngine.Animations.Rigging;
 
 public class JerController : PlayerController
 {
+    [SerializeField] float shootCD, drawDelay;
     [SerializeField] Rig legIK;
-    [SerializeField] GameObject hipGun, handGun;
+    [SerializeField] GameObject hipGun, handGun, muzzle;
+    [SerializeField] GameObject shootParticle, muzzleParticle;
     LayerMask ignoreLayers;
     bool Aiming, RigOn;
+    float shootTimer;
 
     public override void Init()
     {
@@ -23,11 +26,23 @@ public class JerController : PlayerController
         handGun.SetActive(false);
     }
 
-    public override void Special()
+    public override void Special(Vector3 spot)
     {
-        base.Special();
+        if (shootTimer > Time.time)
+            return;
+
+        shootTimer = Time.time + shootCD;
+
+        base.Special(spot);
 
         animator.SetTrigger("Shoot");
+
+        GameManager.Instance.HitstopManager.StartHitstop();
+
+        GameObject go = Instantiate(shootParticle, spot, Quaternion.identity);
+
+        go = Instantiate(muzzleParticle, muzzle.transform.position, muzzle.transform.rotation);
+
     }
 
     public override void ToggleSpecial(bool active)
@@ -38,6 +53,11 @@ public class JerController : PlayerController
 
         hipGun.SetActive(!active);
         handGun.SetActive(active);
+
+        if (Aiming)
+        {
+            shootTimer = Time.time + drawDelay;
+        }
 
         computing = false;
         agent.isStopped = active;

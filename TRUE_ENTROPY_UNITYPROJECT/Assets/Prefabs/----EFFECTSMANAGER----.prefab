@@ -69,6 +69,34 @@ MonoBehaviour:
     loop: 0
     mixerLayer: 
     source: {fileID: 0}
+  - name: LeftFabric
+    clip: {fileID: 8300000, guid: f032c0d4fad967e4f8373d36f55732c2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: RightFabric
+    clip: {fileID: 8300000, guid: f032c0d4fad967e4f8373d36f55732c2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: LeftSolid
+    clip: {fileID: 8300000, guid: 8d6824b39307d674fa87232fd7a5317f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: RightSolid
+    clip: {fileID: 8300000, guid: 4ba24d2e0a967d64d924758145d2643b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}
@@ -104,7 +132,7 @@ Transform:
   - {fileID: 6055004262476004451}
   - {fileID: 4379220878010770370}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2577924485865205203
 MonoBehaviour:
