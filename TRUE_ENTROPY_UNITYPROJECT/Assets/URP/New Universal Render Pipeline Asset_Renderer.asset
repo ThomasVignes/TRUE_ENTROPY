@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4335246147598368286
+--- !u!114 &-8653218344894489624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,16 +9,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b49db325366a51e408a57f6588940f70, type: 3}
-  m_Name: TemporalAAFeature
+  m_Script: {fileID: 11500000, guid: 0374737799eb4c34ab999cb143337793, type: 3}
+  m_Name: ADOFRenderFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  TemporalFade: 0.95
-  MovementBlending: 100
-  UseFlipUV: 0
-  TAAMaterial: {fileID: 2100000, guid: 2b9d611108abd0047abdd27d7ca47e21, type: 2}
-  JitterSpread: 1
-  HaltonLength: 8
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
+--- !u!114 &-6906245526507962758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8dbbf4186dbec4c9373e2037277eb4, type: 3}
+  m_Name: WaterColorRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
+  noiseTex: {fileID: 0}
+--- !u!114 &-5679095363847604106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0168dab0bdcf5b7459d8656d3717c837, type: 3}
+  m_Name: RadialBlurRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,8 +76,12 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: 5918054860233382009}
   - {fileID: 6956150505179363593}
-  - {fileID: -4335246147598368286}
-  m_RendererFeatureMap: 79187c498a27215209b95e7907368960e2c1840e991cd6c3
+  - {fileID: 1667113942480448963}
+  - {fileID: -6906245526507962758}
+  - {fileID: -8653218344894489624}
+  - {fileID: 2889820340504137281}
+  - {fileID: -5679095363847604106}
+  m_RendererFeatureMap: 79187c498a27215209b95e7907368960c3eda5454cc722177abedcd4481628a0e89bab14c397e987418e72ec49b41a2876b84b10dbcc2fb1
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -76,6 +119,44 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &1667113942480448963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec4d6db488a841419c3b001038004a4, type: 3}
+  m_Name: AdaptiveFogRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
+--- !u!114 &2889820340504137281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07de5c92906326143bef32ac099d600c, type: 3}
+  m_Name: OilPaintRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
 --- !u!114 &5918054860233382009
 MonoBehaviour:
   m_ObjectHideFlags: 0
