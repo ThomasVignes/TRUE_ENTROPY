@@ -39,25 +39,6 @@ MonoBehaviour:
     sourceTexture: _SourceTexture
     destinationTexture: _DestinationTexture
   noiseTex: {fileID: 0}
---- !u!114 &-5679095363847604106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0168dab0bdcf5b7459d8656d3717c837, type: 3}
-  m_Name: RadialBlurRenderFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    renderPassEvent: 500
-    sourceType: 0
-    destinationType: 0
-    sourceTexture: _SourceTexture
-    destinationTexture: _DestinationTexture
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,9 +60,7 @@ MonoBehaviour:
   - {fileID: 1667113942480448963}
   - {fileID: -6906245526507962758}
   - {fileID: -8653218344894489624}
-  - {fileID: 2889820340504137281}
-  - {fileID: -5679095363847604106}
-  m_RendererFeatureMap: 79187c498a27215209b95e7907368960c3eda5454cc722177abedcd4481628a0e89bab14c397e987418e72ec49b41a2876b84b10dbcc2fb1
+  m_RendererFeatureMap: 79187c498a27215209b95e7907368960c3eda5454cc722177abedcd4481628a0e89bab14c397e987
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -130,25 +109,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ec4d6db488a841419c3b001038004a4, type: 3}
   m_Name: AdaptiveFogRenderFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    renderPassEvent: 500
-    sourceType: 0
-    destinationType: 0
-    sourceTexture: _SourceTexture
-    destinationTexture: _DestinationTexture
---- !u!114 &2889820340504137281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07de5c92906326143bef32ac099d600c, type: 3}
-  m_Name: OilPaintRenderFeature
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
