@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8653218344894489624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0374737799eb4c34ab999cb143337793, type: 3}
-  m_Name: ADOFRenderFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    renderPassEvent: 500
-    sourceType: 0
-    destinationType: 0
-    sourceTexture: _SourceTexture
-    destinationTexture: _DestinationTexture
 --- !u!114 &-6906245526507962758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,6 +20,25 @@ MonoBehaviour:
     sourceTexture: _SourceTexture
     destinationTexture: _DestinationTexture
   noiseTex: {fileID: 0}
+--- !u!114 &-4236134390331036162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0168dab0bdcf5b7459d8656d3717c837, type: 3}
+  m_Name: RadialBlurRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +59,9 @@ MonoBehaviour:
   - {fileID: 6956150505179363593}
   - {fileID: 1667113942480448963}
   - {fileID: -6906245526507962758}
-  - {fileID: -8653218344894489624}
-  m_RendererFeatureMap: 79187c498a27215209b95e7907368960c3eda5454cc722177abedcd4481628a0e89bab14c397e987
+  - {fileID: 6875946834078445212}
+  - {fileID: -4236134390331036162}
+  m_RendererFeatureMap: 79187c498a27215209b95e7907368960c3eda5454cc722177abedcd4481628a09caeb71b37456c5ffead804b373a36c5
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -152,6 +153,25 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
   - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+--- !u!114 &6875946834078445212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d14a26ba5b1fd54d84860feec7eddcd, type: 3}
+  m_Name: CartoonRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 500
+    sourceType: 0
+    destinationType: 0
+    sourceTexture: _SourceTexture
+    destinationTexture: _DestinationTexture
 --- !u!114 &6956150505179363593
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7958,7 +7958,7 @@ Transform:
   - {fileID: 3228063729873902909}
   - {fileID: 3300413362058581405}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 94.259, z: 0}
 --- !u!114 &1313884278121897229
 MonoBehaviour:
@@ -11963,7 +11963,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 1
+    limit: 0.05
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -13989,6 +13989,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 120730619421479859}
     m_Modifications:
+    - target: {fileID: 34025608503022669, guid: a744765c7f899764393e5fea908c4b90, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34025608503022669, guid: a744765c7f899764393e5fea908c4b90, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6940568010354477028, guid: a744765c7f899764393e5fea908c4b90, type: 3}
       propertyPath: m_Name
       value: BlobDecal

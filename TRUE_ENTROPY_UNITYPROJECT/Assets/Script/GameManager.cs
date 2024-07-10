@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers;
     [SerializeField] private GameObject currentCam, vnCam;
     [SerializeField] private CameraZone firstCamZone;
-    [SerializeField] private Character character;
+    private Character character;
+    [SerializeField] CharacterData StartCharacter;
+    [SerializeField] private Transform characterStart;
     [SerializeField] private float clickdelay;
     [SerializeField] private TextMeshProUGUI endText;
     [SerializeField] private float introDelay;
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
+    public PlayerController Player { get { return player; } }
 
     bool vnMode, commentMode, end, overrideAmbiance, intro, gettingUp, ready;
     float introTimer;
@@ -72,9 +75,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
+        /*
         if (player == null)
             player = FindObjectOfType<PlayerController>();
+        */
+
+        GameObject chara = Instantiate(StartCharacter.ControllerPrefab, characterStart.position, characterStart.rotation);
+        character = chara.GetComponentInChildren<Character>();
+        player = chara.GetComponentInChildren<PlayerController>();
 
         player.Init();
 

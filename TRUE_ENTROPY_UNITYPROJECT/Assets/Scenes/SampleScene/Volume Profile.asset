@@ -80,7 +80,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: -0.33
+    m_Value: -0.24
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-2447309871138662025
 MonoBehaviour:

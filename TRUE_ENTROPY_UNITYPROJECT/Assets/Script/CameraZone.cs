@@ -55,7 +55,6 @@ public class CameraZone : MonoBehaviour
 
     private void Awake()
     {
-        target = FindObjectOfType<PlayerController>().gameObject;
         Vcam = GetComponentInChildren<CinemachineVirtualCamera>();
         baseCol = GetComponent<BoxCollider>();
         //direction = GetComponentInChildren<PlayerDir>().gameObject.transform;
@@ -86,6 +85,14 @@ public class CameraZone : MonoBehaviour
 
     void Update()
     {
+        if (target == null)
+        {
+            target = GameManager.Instance.Player.gameObject;
+
+            if (target != null)
+                InitializeBehaviour();
+        }
+
         if (active)
         {
             if (!Vcam.gameObject.activeInHierarchy)
@@ -99,14 +106,17 @@ public class CameraZone : MonoBehaviour
                     switchObject.gameObject.SetActive(true);
             }
 
-            if (Template == Template.PathAiming)
+            if (target != null)
             {
-                dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
-            }
+                if (Template == Template.PathAiming)
+                {
+                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
+                }
 
-            if (Behaviour == Behaviour.Path && Template == Template.None)
-            {
-                dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
+                if (Behaviour == Behaviour.Path && Template == Template.None)
+                {
+                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
+                }
             }
         }
         else
@@ -130,14 +140,17 @@ public class CameraZone : MonoBehaviour
         {
             if (Behaviour == Behaviour.Classic)
             {
-                if (Follow)
+                if (target != null)
                 {
-                    Vcam.m_Follow = target.transform;
-                }
+                    if (Follow)
+                    {
+                        Vcam.m_Follow = target.transform;
+                    }
 
-                if (LookAt)
-                {
-                    Vcam.m_LookAt = target.transform;
+                    if (LookAt)
+                    {
+                        Vcam.m_LookAt = target.transform;
+                    }
                 }
             }
 
@@ -160,15 +173,22 @@ public class CameraZone : MonoBehaviour
         if (Template == Template.FixedAiming)
         {
             Vcam.m_Follow = null;
-            Vcam.m_LookAt = target.transform;
+
+            if (target != null)
+                Vcam.m_LookAt = target.transform;
+
             Follow = false;
             LookAt = true;
         }
 
         if (Template == Template.Following)
         {
-            Vcam.m_Follow = target.transform;
-            Vcam.m_LookAt = target.transform;
+            if (target != null)
+            {
+                Vcam.m_Follow = target.transform;
+                Vcam.m_LookAt = target.transform;
+            }
+
             Follow = true;
             LookAt = true;
         }
@@ -178,7 +198,9 @@ public class CameraZone : MonoBehaviour
             dollyCart = GetComponentInChildren<CinemachineDollyCart>();
             path = GetComponentInChildren<CinemachineSmoothPath>();
             Vcam.m_Follow = dollyCart.transform;
-            Vcam.m_LookAt = target.transform;
+
+            if (target != null)
+                Vcam.m_LookAt = target.transform;
         }
     }
 }
