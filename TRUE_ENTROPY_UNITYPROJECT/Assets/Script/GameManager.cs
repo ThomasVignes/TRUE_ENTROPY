@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -27,22 +28,37 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Chapter Data")]
+    public ChapterData ChapterData;
+
+    [Header("Clicking")]
+    [SerializeField] private float clickdelay;
     [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers;
-    [SerializeField] private GameObject currentCam, vnCam;
+
+    [Header("Cameras")]
+    [SerializeField] private GameObject currentCam;
+    [SerializeField] private GameObject vnCam;
     [SerializeField] private CameraZone firstCamZone;
     private Character character;
-    [SerializeField] CharacterData StartCharacter;
+
+    [Header("References")]
+    [SerializeField] StartGameManagerGeneric startGameManager;
     [SerializeField] private Transform characterStart;
-    [SerializeField] private float clickdelay;
     [SerializeField] private TextMeshProUGUI endText;
-    [SerializeField] private float introDelay;
+    [SerializeField] AudioSource overrideAudio, startAudio;
+    [SerializeField] GameObject inventoryCanvas;
+    [SerializeField] GameObject ghostPrefab;
+
 
     public List<Conditions> conditions = new List<Conditions>();
     public List<Area> areas = new List<Area>();
 
-    [SerializeField] AudioSource overrideAudio, startAudio;
-    [SerializeField] GameObject inventoryCanvas;
-    [SerializeField] GameObject ghostPrefab;
+    PlayerController player;
+    Vector3 startPos;
+    Quaternion startRot;
+    private List<Character> characters = new List<Character>();
+    private int clicked;
+    private float clicktime;
 
 
     private string currentArea;
@@ -53,24 +69,21 @@ public class GameManager : MonoBehaviour
     private CursorManager cursorManager;
     private GhostManager ghostManager;
 
+
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
     [HideInInspector] public HitstopManager HitstopManager;
+    [HideInInspector] public InventoryManager InventoryManager;
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
+    public bool Ready { get { return ready; } set { ready = value; } }
     public PlayerController Player { get { return player; } }
-
-    bool vnMode, commentMode, end, overrideAmbiance, intro, gettingUp, ready;
-    float introTimer;
+    public CursorManager CursorManager { get { return cursorManager; } }
 
 
-    PlayerController player;
-    Vector3 startPos;
-    Quaternion startRot;
-    private List<Character> characters = new List<Character>();
-    private int clicked;
-    private float clicktime;
+    bool vnMode, commentMode, end, overrideAmbiance, ready;
+
 
     private void Awake()
     {
@@ -80,11 +93,12 @@ public class GameManager : MonoBehaviour
             player = FindObjectOfType<PlayerController>();
         */
 
-        GameObject chara = Instantiate(StartCharacter.ControllerPrefab, characterStart.position, characterStart.rotation);
+        GameObject chara = Instantiate(ChapterData.StartCharacter.ControllerPrefab, characterStart.position, characterStart.rotation);
         character = chara.GetComponentInChildren<Character>();
         player = chara.GetComponentInChildren<PlayerController>();
 
         player.Init();
+
 
         ScreenEffects = GetComponent<ScreenEffects>();
 
@@ -100,6 +114,8 @@ public class GameManager : MonoBehaviour
         ghostManager.UpdateManager();
 
         HitstopManager = FindObjectOfType<HitstopManager>();
+
+        InventoryManager = FindObjectOfType<InventoryManager>();
 
 
         Character[] chars = FindObjectsOfType<Character>();
@@ -117,40 +133,29 @@ public class GameManager : MonoBehaviour
 
         endText.text = "";
 
+
+
+        conditions = ChapterData.conditions;
+        //areas = ChapterData.areas;
+        InventoryManager.items = ChapterData.items;
+
+
         foreach (var area in areas)
         {
             area.OriginalVolume = area.Music.volume;
         }
 
+        startGameManager.Init(this);
+
         startPos = player.transform.position;
         startRot = player.transform.rotation;
 
-        StartCoroutine(C_Start());
+        startGameManager.StartGame();
     }
 
-    IEnumerator C_Start()
-    {
-        ScreenEffects.FadeTo(1, 0.01f);
-        AudioListener.volume = 0;
-
-        yield return new WaitForSeconds(2.3f);
-
-        EffectsManager.Instance.audioManager.Play("Gunshot");
-
-        AudioListener.volume = 1;
-
-        StartCoroutine(C_Restart());
-    }
-
-    IEnumerator C_Restart()
-    {
-        yield return new WaitForSeconds(3f);
-
-        DialogueManager.TryEndDialogue();
-        SetAmbianceVolume(1f);
-        ScreenEffects.StartFade();
-        intro = true;
-        ready = true;
+    public void PlayerReady()
+    { 
+        player.Ready();
     }
 
     private void Update()
@@ -161,27 +166,11 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (intro)
+        if (startGameManager.Intro)
         {
             cursorManager.SetCursorType(CursorType.Base);
 
-            if (Input.GetMouseButtonDown(0) && !gettingUp)
-            {
-                gettingUp = true;
-                introTimer = Time.time + introDelay;
-
-                player.WakeUp();
-                player.Injure(true);
-            }
-
-            if (introTimer < Time.time && gettingUp)
-            {
-                gettingUp = false;
-                intro = false;
-
-                player.Ready();
-                WriteComment("Ugh. My head.");
-            }
+            startGameManager.IntroStep();
 
             return;
         }
@@ -298,7 +287,7 @@ public class GameManager : MonoBehaviour
  
         end = false;
 
-        StartCoroutine(C_Restart());
+        startGameManager.RestartGame();
     }
 
     private bool HandleDoubleClick()
