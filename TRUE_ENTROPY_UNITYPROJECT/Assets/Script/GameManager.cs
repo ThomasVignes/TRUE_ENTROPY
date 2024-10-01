@@ -490,8 +490,44 @@ public class GameManager : MonoBehaviour
         overrideAudio.Play();
     }
 
+    public void CamZoneQuickUpdate(CameraZone zone)
+    {
+        currentCamZone = zone;
+    }
+
     public void SetCamZone(CameraZone zone)
     {
+        //Update zone specific objects
+        List<GameObject> previous = currentCamZone.ShotSpecificObjects;
+        List<GameObject> next = zone.ShotSpecificObjects;
+        foreach (var item in previous)
+        {
+            if (!next.Contains(item) && item.activeSelf)
+                item.SetActive(false);
+        }
+
+        foreach (var item in next)
+        {
+            if (!item.activeSelf)
+                item.SetActive(true);
+        }
+
+        //Update zone hidden objects
+        previous = currentCamZone.ShotSpecificHide;
+        next = zone.ShotSpecificHide;
+        foreach (var item in previous)
+        {
+            if (!next.Contains(item) && !item.activeSelf)
+                item.SetActive(true);
+        }
+
+        foreach(var item in next)
+        {
+            if (item.activeSelf)
+                item.SetActive(false);
+        }
+
+
         currentCamZone = zone;
     }
 

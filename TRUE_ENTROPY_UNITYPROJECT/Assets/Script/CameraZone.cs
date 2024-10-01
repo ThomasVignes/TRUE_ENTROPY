@@ -30,6 +30,11 @@ public class CameraZone : MonoBehaviour
     [SerializeField] bool LookAt;
     [Header("Custom Collider")]
     [SerializeField] List<Collider> CustomColliders = new List<Collider>();
+
+    [Header("Shot Specific Objects")]
+    public List<GameObject> ShotSpecificObjects = new List<GameObject>();
+    public List<GameObject> ShotSpecificHide = new List<GameObject>();
+
     [Header("Behaviour Specific Params")]
     [SerializeField] float PathDamping = 1f;
     public float Offset;
@@ -78,6 +83,18 @@ public class CameraZone : MonoBehaviour
                 var customCol = CustomCollider.gameObject.AddComponent<CustomCameraZone>();
                 customCol.CameraZone = this;
             }
+        }
+
+        foreach (var item in ShotSpecificObjects)
+        {
+            if (item.activeSelf)
+                item.SetActive(false);
+        }
+
+        foreach (var item in ShotSpecificHide)
+        {
+            if (!item.activeSelf)
+                item.SetActive(true);
         }
 
         InitializeBehaviour();

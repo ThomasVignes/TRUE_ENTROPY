@@ -882,6 +882,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -1578373571446707184, guid: 55309d109cd8596488702a452be35ee5, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1578373571446707184, guid: 55309d109cd8596488702a452be35ee5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7819f813f35c1ae40bcd62930eb561d6, type: 2}
@@ -2502,6 +2506,10 @@ PrefabInstance:
     - target: {fileID: -1717733878020217009, guid: 55309d109cd8596488702a452be35ee5, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1578373571446707184, guid: 55309d109cd8596488702a452be35ee5, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1578373571446707184, guid: 55309d109cd8596488702a452be35ee5, type: 3}
       propertyPath: m_Materials.Array.data[0]

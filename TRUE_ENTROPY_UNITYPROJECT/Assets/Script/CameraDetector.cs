@@ -68,25 +68,25 @@ public class CameraDetector : MonoBehaviour
         }
     }
 
-    private void LastCamCheck(CameraZone cameraZone)
+    private void LastCamCheck(CameraZone exitedCamerazone)
     {
         if (LastCam != null)
             CurrentCam = LastCam;
 
         CurrentCam.active = true;
 
-        if (cameraZone.ChangeVolume)
-            GameManager.Instance.NewArea(cameraZone.Ambiance, cameraZone.NewVolume);
+        if (exitedCamerazone.ChangeVolume)
+            GameManager.Instance.NewArea(exitedCamerazone.Ambiance, exitedCamerazone.NewVolume);
         else
-            GameManager.Instance.NewArea(cameraZone.Ambiance);
+            GameManager.Instance.NewArea(exitedCamerazone.Ambiance);
 
         if (LastCam != null)
         {
-            LastCam = cameraZone;
+            LastCam = exitedCamerazone;
             LastCam.active = false;
         }
 
-        GameManager.Instance.SetCamZone(LastCam);
+        GameManager.Instance.SetCamZone(CurrentCam);
 
         ChangedCam?.Invoke();
     }
