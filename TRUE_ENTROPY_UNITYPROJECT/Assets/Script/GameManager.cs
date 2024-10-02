@@ -42,12 +42,10 @@ public class GameManager : MonoBehaviour
     private Character character;
 
     [Header("References")]
-    [SerializeField] StartGameManagerGeneric startGameManager;
+    [SerializeField] ChapterManagerGeneric startGameManager;
     [SerializeField] private Transform characterStart;
-    [SerializeField] private TextMeshProUGUI endText;
     [SerializeField] AudioSource overrideAudio, startAudio;
     [SerializeField] GameObject inventoryCanvas;
-    [SerializeField] GameObject ghostPrefab;
 
 
     public List<Conditions> conditions = new List<Conditions>();
@@ -78,8 +76,10 @@ public class GameManager : MonoBehaviour
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
     public bool Ready { get { return ready; } set { ready = value; } }
+    public bool End { get { return end; } set { end = value; } }
     public PlayerController Player { get { return player; } }
     public CursorManager CursorManager { get { return cursorManager; } }
+    public AudioSource OverrideAudio { get { return overrideAudio; } }
 
 
     bool vnMode, commentMode, end, overrideAmbiance, ready;
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
         ghostManager = FindObjectOfType<GhostManager>();
 
-        ghostManager.UpdateManager();
+        ghostManager.UpdateGhosts();
 
         HitstopManager = FindObjectOfType<HitstopManager>();
 
@@ -130,9 +130,6 @@ public class GameManager : MonoBehaviour
         }
 
         currentCamZone = firstCamZone;
-
-        endText.text = "";
-
 
 
         conditions = ChapterData.conditions;
@@ -221,74 +218,21 @@ public class GameManager : MonoBehaviour
         player.Injure(injure);
     }
 
-    public void EndDemo()
+
+    public void EndChapter()
     {
         end = true;
 
-        StartCoroutine(C_EndTimer());
+        startGameManager.EndChapter();
     }
 
-    IEnumerator C_EndTimer()
-    {
-        ScreenEffects.FadeTo(1, 2.9f);
-
-        yield return new WaitForSeconds(5);
-
-        ScreenEffects.OumuamuaFade();
-
-        yield return new WaitForSeconds(5);
-
-        overrideAudio.Stop();
-
-        WriteComment("THERE IS NO ESCAPE.");
-
-        yield return new WaitForSeconds(4);
-
-        Application.Quit();
-    }
 
 
     public void EndGame(string message)
     {
-        end = true;
-
-        StartCoroutine(C_RestartTimer(message));
+        startGameManager.Death(message);
     }
 
-    IEnumerator C_RestartTimer(string message)
-    {
-        SetAmbianceVolume(0f);
-        ScreenEffects.FadeTo(1, 0.3f);
-
-        yield return new WaitForSeconds(1.4f);
-
-        endText.text = "";
-
-        foreach (char c in message)
-        {
-            yield return new WaitForSeconds(0.06f);
-            EffectsManager.Instance.audioManager.Play("Click");
-
-            endText.text += c;
-        }
-
-        yield return new WaitForSeconds(2.3f);
-
-        endText.text = "";
-        EffectsManager.Instance.audioManager.Play("Gunshot");
-
-        GameObject go = Instantiate(ghostPrefab);
-        go.transform.position = player.transform.position;
-        go.transform.rotation = player.transform.rotation;
-
-        player.transform.position = startPos;
-        player.transform.rotation = startRot;
-        player.ResetState();
- 
-        end = false;
-
-        startGameManager.RestartGame();
-    }
 
     private bool HandleDoubleClick()
     {
@@ -401,7 +345,7 @@ public class GameManager : MonoBehaviour
         inventoryCanvas.SetActive(!yes);
 
         if (!yes)
-            ghostManager.UpdateManager();
+            ghostManager.UpdateGhosts();
     }
 
     public void WriteComment(string text)
@@ -434,7 +378,7 @@ public class GameManager : MonoBehaviour
 
                 if (item.Name != currentArea)
                 {
-                    ghostManager.UpdateManager();
+                    ghostManager.UpdateGhosts();
 
                     item.Music.Play();
 
@@ -461,7 +405,7 @@ public class GameManager : MonoBehaviour
 
                 if (item.Name != currentArea)
                 {
-                    ghostManager.UpdateManager();
+                    ghostManager.UpdateGhosts();
 
                     item.Music.Play();
 
@@ -564,5 +508,12 @@ public class GameManager : MonoBehaviour
     {
         if (currentAudioSource != null)
             currentAudioSource.volume = currentVolume * sound;
+    }
+
+    public void ResetPlayer()
+    {
+        player.transform.position = startPos;
+        player.transform.rotation = startRot;
+        player.ResetState();
     }
 }

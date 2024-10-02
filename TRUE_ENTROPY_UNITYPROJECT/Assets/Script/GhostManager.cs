@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GhostManager : MonoBehaviour
+public class GhostManager : Manager
 {
     [SerializeField] List<GameObject> ghosts = new List<GameObject>();
     
-    public void UpdateManager()
+    public void UpdateGhosts()
     {
         int[] rand = new int[] { Random.Range(0, ghosts.Count), Random.Range(0, ghosts.Count) };
 
