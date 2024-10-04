@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: CEREMONY
   Number: 1
-  StartCharacter: {fileID: 11400000, guid: c1c177c8dd114094a9ebff2ecad45f52, type: 2}
+  StartCharacter: {fileID: 11400000, guid: 2d7c6aa6af5309b459beca857500212d, type: 2}
   conditions:
   - Name: HangmanFound
     Met: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
   - ID: Key_StaffRoom
     Name: Staff Room Key
     Sprite: {fileID: 21300000, guid: 3cdabd6dea22333469a8294f465b9471, type: 3}
-    Equipped: 0
+    Equipped: 1
     Icon: {fileID: 0}
   - ID: Key_BackStage
     Name: Backstage Key
