@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: CEREMONY
   Number: 1
-  StartCharacter: {fileID: 11400000, guid: 2d7c6aa6af5309b459beca857500212d, type: 2}
+  StartCharacter: {fileID: 11400000, guid: db5aef2ea38123e49ae009e7447d4eac, type: 2}
   conditions:
   - Name: HangmanFound
     Met: 0

@@ -194,7 +194,8 @@ public class GameManager : MonoBehaviour
         {
             TryClick();
 
-            player.ToggleRun(HandleDoubleClick());
+            if (!player.SpecialMode)
+                player.ToggleRun(HandleDoubleClick());
         }
 
         if (Input.GetMouseButtonDown(1))

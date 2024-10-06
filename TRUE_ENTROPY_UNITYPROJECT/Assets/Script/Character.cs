@@ -53,6 +53,9 @@ public class Character : MonoBehaviour
 
     public void ToggleRun(bool run)
     {
+        if (SpecialMode)
+            return;
+
         if (injured)
         {
             running = false;

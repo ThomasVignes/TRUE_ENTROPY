@@ -27,6 +27,7 @@ public enum CharacterSpecial
 {
     None,
     Shooting,
+    Authority,
     Clairvoyance
 }
 
