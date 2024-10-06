@@ -71,21 +71,15 @@ public class EventArea : MonoBehaviour
         if (!OnExit)
             return;
 
-        if (other.gameObject.layer == WhumpusUtilities.ToLayer(Layer))
+        if (other.gameObject.layer == WhumpusUtilities.ToLayer(Layer) && !eventStarted)
         {
-            OnTrigger.Invoke();
-            if (!Repeatable)
-            {
-                Destroy(gameObject);
-            }
+            eventStarted = true;
+            delayTimer = Delay;
         }
         else if (other.gameObject == Specific)
         {
-            OnTrigger.Invoke();
-            if (!Repeatable)
-            {
-                Destroy(gameObject);
-            }
+            eventStarted = true;
+            delayTimer = Delay;
         }
     }
 }

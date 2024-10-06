@@ -14,7 +14,9 @@ public class Line
 {
     public string Text;
     public string Action;
+    public CameraEffect cameraEffect;
     public List<Answer> Answers = new List<Answer>();
+
 }
 
 [System.Serializable]

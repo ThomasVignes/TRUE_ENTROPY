@@ -33,8 +33,12 @@ public class DialogueManager : MonoBehaviour
     private bool selecting;
     private bool specific, endSpecific;
 
-    public void Init()
+    GameManager gm;
+
+    public void Init(GameManager man)
     {
+        gm = man;
+
         foreach (var item in puppets)
         {
             item.OriginalPos = item.VNPuppet.transform.position;
@@ -155,6 +159,11 @@ public class DialogueManager : MonoBehaviour
             WhumpusUtilities.ResetAllAnimatorTriggers(currentAnimator);
 
             currentAnimator.SetTrigger(line.Action);
+        }
+
+        if (line.cameraEffect != CameraEffect.None)
+        {
+            gm.CameraEffectManager.PlayEffect(line.cameraEffect);
         }
 
         yield return new WaitForSeconds(delayBeforeDialogue);

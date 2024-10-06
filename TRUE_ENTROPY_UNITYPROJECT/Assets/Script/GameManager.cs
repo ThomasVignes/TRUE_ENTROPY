@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public ScreenEffects ScreenEffects;
     [HideInInspector] public HitstopManager HitstopManager;
     [HideInInspector] public InventoryManager InventoryManager;
+    [HideInInspector] public CameraEffectManager CameraEffectManager;
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool VNMode { get { return vnMode; } }
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
 
         DialogueManager = FindObjectOfType<DialogueManager>();
 
-        DialogueManager.Init();
+        DialogueManager.Init(this);
 
         ghostManager = FindObjectOfType<GhostManager>();
 
@@ -117,6 +118,9 @@ public class GameManager : MonoBehaviour
 
         InventoryManager = FindObjectOfType<InventoryManager>();
 
+        CameraEffectManager = GetComponent<CameraEffectManager>();
+
+        CameraEffectManager.Init(this);
 
         Character[] chars = FindObjectsOfType<Character>();
 
