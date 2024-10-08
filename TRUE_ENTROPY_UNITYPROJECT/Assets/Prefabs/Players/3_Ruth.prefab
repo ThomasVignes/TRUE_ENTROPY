@@ -1662,13 +1662,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 5000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 5000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -10006,13 +10006,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 5000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_AngularYZDrive:
     serializedVersion: 4
-    positionSpring: 3000
+    positionSpring: 5000
     positionDamper: 1
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -11494,6 +11494,7 @@ MonoBehaviour:
   resetPos: {x: 0, y: 0, z: 0}
   drawDelay: 0
   castTime: 0
+  canMoveDuringCast: 0
 --- !u!54 &5030443471988108844
 Rigidbody:
   m_ObjectHideFlags: 0

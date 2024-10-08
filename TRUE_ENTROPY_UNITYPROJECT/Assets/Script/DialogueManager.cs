@@ -87,6 +87,9 @@ public class DialogueManager : MonoBehaviour
                 currentPuppet.transform.position = puppetPivots[item.PivotIndex].position;
                 currentPuppet.transform.rotation = puppetPivots[item.PivotIndex].rotation;
 
+
+                Camera.transform.SetParent(cameraPivots[item.CameraIndex], true);
+
                 Camera.transform.position = cameraPivots[item.CameraIndex].position;
                 Camera.transform.rotation = cameraPivots[item.CameraIndex].rotation;
 

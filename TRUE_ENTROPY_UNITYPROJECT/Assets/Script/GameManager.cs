@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Chapter Data")]
     public ChapterData ChapterData;
+    public string StartCinematic;
 
     [Header("Clicking")]
     [SerializeField] private float clickdelay;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     private CursorManager cursorManager;
     private GhostManager ghostManager;
 
-
+    [HideInInspector] public CinematicManager CinematicManager;
     [HideInInspector] public DialogueManager DialogueManager;
     [HideInInspector] public ScreenEffects ScreenEffects;
     [HideInInspector] public HitstopManager HitstopManager;
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public CameraEffectManager CameraEffectManager;
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
+    public bool CinematicMode { get { return cinematicMode; } }
     public bool VNMode { get { return vnMode; } }
     public bool Ready { get { return ready; } set { ready = value; } }
     public bool End { get { return end; } set { end = value; } }
@@ -83,7 +85,8 @@ public class GameManager : MonoBehaviour
     public AudioSource OverrideAudio { get { return overrideAudio; } }
 
 
-    bool vnMode, commentMode, end, overrideAmbiance, ready;
+    bool cinematicMode, vnMode, commentMode, end, overrideAmbiance, ready;
+    bool cinematicStart;
 
 
     private void Awake()
@@ -107,8 +110,10 @@ public class GameManager : MonoBehaviour
         cursorManager.Init();
 
         DialogueManager = FindObjectOfType<DialogueManager>();
-
         DialogueManager.Init(this);
+
+        CinematicManager = FindObjectOfType<CinematicManager>();
+        CinematicManager.Init(this);
 
         ghostManager = FindObjectOfType<GhostManager>();
 
@@ -146,12 +151,21 @@ public class GameManager : MonoBehaviour
             area.OriginalVolume = area.Music.volume;
         }
 
-        startGameManager.Init(this);
+        if (StartCinematic != "")
+        {
+            CinematicManager.PlayCinematic(StartCinematic);
 
-        startPos = player.transform.position;
-        startRot = player.transform.rotation;
+            cinematicStart = true;
+        }
+        else
+        {
+            startGameManager.Init(this);
 
-        startGameManager.StartGame();
+            startPos = player.transform.position;
+            startRot = player.transform.rotation;
+
+            startGameManager.StartGame();
+        }
     }
 
     public void PlayerReady()
@@ -161,6 +175,25 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (cinematicMode)
+        {
+            CinematicManager.Step();
+            cursorManager.SetCursorType(CursorType.Base);
+            return;
+        }
+
+        if (cinematicStart)
+        {
+            startGameManager.Init(this);
+
+            startPos = player.transform.position;
+            startRot = player.transform.rotation;
+
+            startGameManager.StartGame();
+
+            cinematicStart = false;
+        }
+
         if (!ready || end)
         {
             cursorManager.SetCursorType(CursorType.Base);
@@ -343,6 +376,18 @@ public class GameManager : MonoBehaviour
 
         //currentCam.SetActive(!yes);
         vnCam.SetActive(yes);
+
+        currentCamZone.active = !yes;
+
+        inventoryCanvas.SetActive(!yes);
+
+        if (!yes)
+            ghostManager.UpdateGhosts();
+    }
+
+    public void SetCinematicMode(bool yes)
+    {
+        cinematicMode = yes;
 
         currentCamZone.active = !yes;
 

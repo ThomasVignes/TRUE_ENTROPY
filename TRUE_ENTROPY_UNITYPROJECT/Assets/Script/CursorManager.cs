@@ -20,6 +20,10 @@ public class CursorManager : MonoBehaviour
 
         current = type;
 
+        if (type != CursorType.Invisible)
+            Cursor.visible = true;
+
+
         switch (type) 
         {
             case CursorType.Base :
@@ -37,6 +41,10 @@ public class CursorManager : MonoBehaviour
             case CursorType.Aim:
                 Cursor.SetCursor(AimCursor, new Vector2(25, 25), CursorMode.Auto);
                 break;
+
+            case CursorType.Invisible:
+                Cursor.visible = false;
+                break;
         }
     }
 }
@@ -46,5 +54,6 @@ public enum CursorType
     Base,
     Move,
     Look,
-    Aim
+    Aim,
+    Invisible
 }
