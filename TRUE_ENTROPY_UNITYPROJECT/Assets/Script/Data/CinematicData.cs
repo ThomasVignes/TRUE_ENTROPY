@@ -6,7 +6,9 @@ using UnityEngine;
 public class CinematicData : ScriptableObject
 {
     public string ID;
+    public float BlackScreenDuration;
     public CinematicLine[] lines;
+    public float EndBlackScreenDuration;
 }
 
 [System.Serializable]

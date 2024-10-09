@@ -898,6 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChapterData: {fileID: 11400000, guid: d044afd94e5423e4a971be46c147cd2f, type: 2}
+  StartCinematic: 
   clickdelay: 0.5
   moveLayer:
     serializedVersion: 2
@@ -927,6 +928,7 @@ MonoBehaviour:
   - Name: Ballroom
     Music: {fileID: 0}
     OriginalVolume: 0
+  CinematicManager: {fileID: 0}
   DialogueManager: {fileID: 0}
   ScreenEffects: {fileID: 0}
   HitstopManager: {fileID: 0}

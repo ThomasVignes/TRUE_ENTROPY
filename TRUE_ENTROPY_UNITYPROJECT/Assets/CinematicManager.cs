@@ -76,15 +76,23 @@ public class CinematicManager : MonoBehaviour
         playing = true;
         gameManager.SetCinematicMode(true);
 
-        Camera.SetActive(true);
-        Interface.SetActive(true);
-
         StartCoroutine(C_PlayCinematic());
     }
 
     IEnumerator C_PlayCinematic()
     {
         Cinematic current = cinematics[currentCinematic];
+
+        gameManager.ScreenEffects.FadeTo(1, 0.2f);
+
+        yield return new WaitForSeconds(0.2f);
+
+        Camera.SetActive(true);
+        Interface.SetActive(true);
+
+        yield return new WaitForSeconds(current.Data.BlackScreenDuration);
+
+        gameManager.ScreenEffects.FadeTo(0, 1f);
 
         foreach (var line in current.Data.lines)
         {
@@ -138,6 +146,18 @@ public class CinematicManager : MonoBehaviour
         }
 
         cinematicDone = true;
+
+        gameManager.ScreenEffects.FadeTo(1, 0.2f);
+
+        yield return new WaitForSeconds(0.2f);
+
+        Camera.SetActive(false);
+        Interface.SetActive(false);
+
+        yield return new WaitForSeconds(current.Data.BlackScreenDuration);
+        
+        gameManager.ScreenEffects.FadeTo(0, 1f);
+
         CloseCinematic();
     }
 
@@ -147,8 +167,7 @@ public class CinematicManager : MonoBehaviour
 
         playing = false;
         gameManager.SetCinematicMode(false);
-        Camera.SetActive(false);
-        Interface.SetActive(false);
+
     }
 
     public void PlayPuppetAction(string puppet, string action)

@@ -21,6 +21,9 @@ public class DialogueBox : Interactable
 
     public void End()
     {
+        if (!gameObject.activeSelf)
+            return;
+
         StartCoroutine(C_End());
     }
 

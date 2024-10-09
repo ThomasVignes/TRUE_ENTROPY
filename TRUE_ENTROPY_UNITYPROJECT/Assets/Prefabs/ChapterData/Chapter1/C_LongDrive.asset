@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: C_LongDrive
   m_EditorClassIdentifier: 
   ID: LongDrive
+  BlackScreenDuration: 1
   lines:
   - Text: 
     Duration: 15
@@ -150,12 +151,13 @@ MonoBehaviour:
     cameraIndex: 0
     cameraEffect: 0
   - Text: Idiot.
-    Duration: 7
+    Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
   - Text: 
-    Duration: 10
+    Duration: 2
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+  EndBlackScreenDuration: 1
