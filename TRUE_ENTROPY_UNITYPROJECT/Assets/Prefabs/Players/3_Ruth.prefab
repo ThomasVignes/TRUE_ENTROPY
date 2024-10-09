@@ -11531,7 +11531,7 @@ MonoBehaviour:
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2
-  runMultiplier: 2
+  runMultiplier: 2.2
   injuredMultiplier: 0.8
   minDistanceToMove: 0.1
   animator: {fileID: 1735109562235365949}
@@ -11541,6 +11541,7 @@ MonoBehaviour:
   drawDelay: 0
   castTime: 0
   canMoveDuringCast: 0
+  delayBeforeArmCross: 0.9
 --- !u!54 &5030443471988108844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11578,7 +11579,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 1.1
+  m_Speed: 1
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 290

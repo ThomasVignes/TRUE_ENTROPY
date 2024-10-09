@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RuthController : PlayerController
 {
@@ -8,9 +9,13 @@ public class RuthController : PlayerController
     [SerializeField] float drawDelay;
     [SerializeField] float castTime;
     [SerializeField] bool canMoveDuringCast;
+    [SerializeField] float delayBeforeArmCross;
+
 
     bool casting, recovery;
     float castTimer;
+    float crossTimer;
+    bool crossed;
 
     public override void Init()
     {
@@ -20,6 +25,14 @@ public class RuthController : PlayerController
     public override void Step()
     {
         base.Step();
+
+        if (Mathf.Abs(agent.velocity.magnitude) <= 0)
+            crossTimer += Time.deltaTime;
+        else
+            crossTimer = 0;
+
+        animator.SetBool("ArmsCrossed", crossTimer > delayBeforeArmCross);
+
 
         if (recovery)
         {

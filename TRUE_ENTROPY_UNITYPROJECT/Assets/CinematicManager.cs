@@ -165,6 +165,8 @@ public class CinematicManager : MonoBehaviour
     {
         dialogue.text = "";
 
+        cinematics[currentCinematic].OnEnd?.Invoke();
+
         playing = false;
         gameManager.SetCinematicMode(false);
 
