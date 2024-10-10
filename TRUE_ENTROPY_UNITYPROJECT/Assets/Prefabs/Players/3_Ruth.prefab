@@ -11541,7 +11541,7 @@ MonoBehaviour:
   drawDelay: 0
   castTime: 0
   canMoveDuringCast: 0
-  delayBeforeArmCross: 0.9
+  delayBeforeArmCross: 1.2
 --- !u!54 &5030443471988108844
 Rigidbody:
   m_ObjectHideFlags: 0
