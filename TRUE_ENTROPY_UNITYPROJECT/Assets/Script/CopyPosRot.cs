@@ -5,10 +5,19 @@ using UnityEngine;
 public class CopyPosRot : MonoBehaviour
 {
     [SerializeField] private Transform original;
+    [SerializeField] bool global;
 
     private void Update()
     {
-        transform.localPosition = original.localPosition;
-        transform.localRotation = original.localRotation;
+        if (global)
+        {
+            transform.position = original.position;
+            transform.rotation = original.rotation;
+        }
+        else
+        {
+            transform.localPosition = original.localPosition;
+            transform.localRotation = original.localRotation;
+        }
     }
 }

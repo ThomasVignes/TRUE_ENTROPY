@@ -68,7 +68,7 @@ MonoBehaviour:
       Action: LookRight
     cameraIndex: 0
     cameraEffect: 0
-  - Text: What do you think is out there ?
+  - Text: What do you think that void is made of ?
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
