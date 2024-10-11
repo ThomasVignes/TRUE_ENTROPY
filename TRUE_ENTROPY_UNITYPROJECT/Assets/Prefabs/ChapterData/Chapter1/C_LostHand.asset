@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b0cdbcdd5ad6d488c68dcef45efeeb, type: 3}
+  m_Name: C_LostHand
+  m_EditorClassIdentifier: 
+  ID: LostHand
+  BlackScreenDuration: 5
+  lines:
+  - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Finally back with us, huh ?
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookRuth
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...What ?
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: MoveHips
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: You need to stop sticking your arms in unidentified holes. Unless you want
+      to lose your other hand too.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: My...
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookArm
+    - PuppetName: Eric
+      Action: LookArm
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...Oh god.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookRuth
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: Angry
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Gnarly, huh ?
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Eric
+      Action: RestArm
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...Shit.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: CrossAgain
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: I couldn't do better in the time we had, sadly. I'll send someone to fetch
+      a prosthesis for you.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 2
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...Thanks.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  EndBlackScreenDuration: 1

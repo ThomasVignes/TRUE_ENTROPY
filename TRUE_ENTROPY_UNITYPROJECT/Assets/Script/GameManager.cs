@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Whumpus;
+using static UnityEditor.PlayerSettings;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 [System.Serializable]
 public class Conditions
@@ -564,5 +566,18 @@ public class GameManager : MonoBehaviour
         player.transform.position = startPos;
         player.transform.rotation = startRot;
         player.ResetState();
+    }
+
+    public void TeleportPlayer(Vector3 pos, Quaternion rot)
+    {
+        player.Agent.enabled = false;
+        player.transform.position = pos;
+        player.transform.rotation = rot;
+        player.Agent.enabled = true;
+    }
+
+    public void TeleportPlayer(Transform transform)
+    {
+        TeleportPlayer(transform.position, transform.rotation);
     }
 }

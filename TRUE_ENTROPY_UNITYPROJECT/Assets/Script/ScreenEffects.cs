@@ -10,6 +10,7 @@ public class ScreenEffects : MonoBehaviour
 
     public void StartFade()
     {
+        blackScreen.DOKill();
         oumuamua.DOFade(0, 0.01f);
         FadeTo(1, 0.01f);
         FadeTo(0, 3.3f);
@@ -25,6 +26,7 @@ public class ScreenEffects : MonoBehaviour
 
     public void FadeTo(float amount, float duration)
     {
+        blackScreen.DOKill();
         blackScreen.DOFade(amount, duration);
     }
 

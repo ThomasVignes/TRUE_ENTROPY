@@ -501,14 +501,14 @@ MonoBehaviour:
     Answers:
     - Text: What the hell was that ?
       ConditionNeeded: 
-      DialogueEnd: 0
+      DialogueEnd: 1
       HideLeavePrompt: 0
       BranchToCurrent: 0
       BranchIndex: 1
       Delegate:
         m_PersistentCalls:
           m_Calls: []
-      JumpDialogue: 1
+      JumpDialogue: 0
       DialogueIndex: 17
 --- !u!1 &1525239104522944601
 GameObject:
@@ -929,15 +929,170 @@ MonoBehaviour:
   PuppetName: ButlerMasks
   Lines:
   - Text: ...
-    Action: Idle
+    Action: 
     cameraEffect: 0
     Answers:
-    - Text: ...
+    - Text: Hey.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Oh, sorry sir. I was absorbed in thought. Are you in need of assitance
+      ?
+    Action: Look
+    cameraEffect: 0
+    Answers:
+    - Text: I was simply wondering what all those masks were for.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 2
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: 'Nope, not really. '
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 1
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: These ? They are for our guests. They're expressive, and anonymous.
+    Action: Unlook
+    cameraEffect: 0
+    Answers:
+    - Text: Expressive ? How so ?
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 3
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: Anonymous ?
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 7
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Check this out.
+    Action: MaskOn
+    cameraEffect: 0
+    Answers:
+    - Text: ...
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 4
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: I could give you one early, if you so wish.
+    Action: Speak
+    cameraEffect: 0
+    Answers:
+    - Text: 'Honestly. Fuck this. I''ll take one. '
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 5
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: No way !  Stop that !
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 6
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: There you go, sir.
+    Action: Speak
+    cameraEffect: 0
+    Answers:
+    - Text: '....Thanks. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Pretty nice, huh ?
+    Action: Speak
+    cameraEffect: 0
+    Answers:
+    - Text: '...You''re genuinely creeping my out. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Anonymity is of a staple for our performances. It helps the public take
+      part without apprehension. Masks are obligatory.
+    Action: Look
+    cameraEffect: 0
+    Answers:
+    - Text: That must make for some pretty sick pictures.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 8
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Definetly.
+    Action: Unlook
+    cameraEffect: 0
+    Answers:
+    - Text: '... '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
       Delegate:
         m_PersistentCalls:
           m_Calls: []
@@ -1266,6 +1421,37 @@ Transform:
   - {fileID: 1861579159794102085}
   - {fileID: 3496689164851659815}
   - {fileID: 747585535768997078}
+  m_Father: {fileID: 2106143515207972000}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2286041192692116275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2999873060623436000}
+  m_Layer: 0
+  m_Name: Cinematic2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2999873060623436000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286041192692116275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 2106143515207972000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2248,6 +2434,7 @@ Transform:
   m_Children:
   - {fileID: 2324721181430556198}
   - {fileID: 1928309631105692044}
+  - {fileID: 2999873060623436000}
   m_Father: {fileID: 4602392021658250928}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2349,30 +2536,91 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-    - Text: (Leave)
+  - Text: Feels damp.
+    Action: PutHand
+    cameraEffect: 0
+    Answers:
+    - Text: Remove your hand.
       ConditionNeeded: 
-      DialogueEnd: 1
+      DialogueEnd: 0
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 1
+      BranchIndex: 2
       Delegate:
         m_PersistentCalls:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: Feels damp.
+  - Text: ...
+    Action: 
+    cameraEffect: 2
+    Answers:
+    - Text: Remove your hand.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 3
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...
+    Action: HandChopped
+    cameraEffect: 0
+    Answers:
+    - Text: Remove your hand.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 4
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...
     Action: 
     cameraEffect: 0
     Answers:
-    - Text: (Leave)
+    - Text: Remove your hand.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 5
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...
+    Action: Unconscious
+    cameraEffect: 0
+    Answers:
+    - Text: Remove your hand.
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 1
+      BranchIndex: 5
       Delegate:
         m_PersistentCalls:
           m_Calls:
+          - m_Target: {fileID: 5102825383125975285}
+            m_TargetAssemblyTypeName: CinematicManager, Assembly-CSharp
+            m_MethodName: PlayCinematic
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: LostHand
+              m_BoolArgument: 0
+            m_CallState: 2
           - m_Target: {fileID: 0}
             m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_MethodName: SetActive
@@ -2670,25 +2918,13 @@ MonoBehaviour:
     Answers:
     - Text: Touch it.
       ConditionNeeded: 
-      DialogueEnd: 1
-      HideLeavePrompt: 1
+      DialogueEnd: 0
+      HideLeavePrompt: 0
       BranchToCurrent: 0
       BranchIndex: 1
       Delegate:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 5102825383125975285}
-            m_TargetAssemblyTypeName: CinematicManager, Assembly-CSharp
-            m_MethodName: PlayCinematic
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: LongDrive
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
     - Text: '...Better leave it alone. '
@@ -2721,53 +2957,17 @@ MonoBehaviour:
     Action: Retract
     cameraEffect: 0
     Answers:
-    - Text: (Leave)
+    - Text: Touch it again.
       ConditionNeeded: 
-      DialogueEnd: 1
+      DialogueEnd: 0
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 2
+      BranchIndex: 0
       Delegate:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-      JumpDialogue: 0
-      DialogueIndex: 0
+          m_Calls: []
+      JumpDialogue: 1
+      DialogueIndex: 17
 --- !u!1 &5789269368886168945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,19 +4706,8 @@ MonoBehaviour:
   - Data: {fileID: 11400000, guid: 2a0c0e6ab3743734183ca132e9b39ba4, type: 2}
     OnEnd:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-          m_MethodName: Interact
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+    ChainCinematic: LostHand
     CinematicPuppets:
     - Name: Ruth
       Puppet: {fileID: 0}
@@ -4529,13 +4718,42 @@ MonoBehaviour:
     - Name: Lamps
       Puppet: {fileID: 0}
       Animator: {fileID: 0}
+    CinematicCameraPivots:
+    - {fileID: 1763478653673361454}
+    - {fileID: 1489411515945308168}
+  - Data: {fileID: 11400000, guid: d2b5a1cf918d2514aae1d444985258d2, type: 2}
+    OnEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: TeleportPlayer
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    ChainCinematic: 
+    CinematicPuppets:
+    - Name: Camera
+      Puppet: {fileID: 0}
+      Animator: {fileID: 0}
+    - Name: Ruth
+      Puppet: {fileID: 0}
+      Animator: {fileID: 0}
+    - Name: Eric
+      Puppet: {fileID: 0}
+      Animator: {fileID: 0}
+    CinematicCameraPivots:
+    - {fileID: 0}
   delayBeforeDialogue: 0.3
   delayBetweenLetters: 0.02
   Camera: {fileID: 0}
   Interface: {fileID: 3833441143396747807}
-  cameraPivots:
-  - {fileID: 1763478653673361454}
-  - {fileID: 1489411515945308168}
   dialogue: {fileID: 3861409010190760615}
 --- !u!1 &8580737100509652258
 GameObject:

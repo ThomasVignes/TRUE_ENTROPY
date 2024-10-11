@@ -16,7 +16,6 @@ public class CinematicManager : MonoBehaviour
     [Header("References")]
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject Interface;
-    [SerializeField] Transform[] cameraPivots;
     [SerializeField] TextMeshProUGUI dialogue;
 
     GameManager gameManager;
@@ -134,9 +133,11 @@ public class CinematicManager : MonoBehaviour
             }
 
             //Position camera
-            Camera.transform.SetParent(cameraPivots[line.cameraIndex], true);
-            Camera.transform.position = cameraPivots[line.cameraIndex].position;
-            Camera.transform.rotation = cameraPivots[line.cameraIndex].rotation;
+            Transform pivot = current.CinematicCameraPivots[line.cameraIndex];
+
+            Camera.transform.SetParent(pivot, true);
+            Camera.transform.position = pivot.position;
+            Camera.transform.rotation = pivot.rotation;
 
             //Play effects
             gameManager.CameraEffectManager.PlayEffect(line.cameraEffect);
@@ -153,6 +154,7 @@ public class CinematicManager : MonoBehaviour
 
         Camera.SetActive(false);
         Interface.SetActive(false);
+        cinematics[currentCinematic].OnEndBeforeBlackScreen?.Invoke();
 
         yield return new WaitForSeconds(current.Data.BlackScreenDuration);
         
@@ -170,6 +172,8 @@ public class CinematicManager : MonoBehaviour
         playing = false;
         gameManager.SetCinematicMode(false);
 
+        if (cinematics[currentCinematic].ChainCinematic != "")
+            PlayCinematic(cinematics[currentCinematic].ChainCinematic);
     }
 
     public void PlayPuppetAction(string puppet, string action)
@@ -190,11 +194,14 @@ public class Cinematic
 {
     [Header("Settings")]
     public CinematicData Data;
+    public UnityEvent OnEndBeforeBlackScreen;
     public UnityEvent OnEnd;
+    public string ChainCinematic;
 
     [Header("Scene References")]
     public CinematicPuppet[] CinematicPuppets;
-    
+    public Transform[] CinematicCameraPivots;
+
     public void Init()
     {
         foreach (var item in CinematicPuppets)
