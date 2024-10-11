@@ -9,6 +9,7 @@ public class PlayerController : Character
     [SerializeField] protected CopyPosRot copyPosRot;
     [SerializeField] protected Rigidbody rb;
     [SerializeField] protected Vector3 resetPos;
+    public LimbChopper[] Choppers;
 
 
     public override void Init()

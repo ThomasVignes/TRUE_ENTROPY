@@ -2603,7 +2603,7 @@ MonoBehaviour:
     - Text: Remove your hand.
       ConditionNeeded: 
       DialogueEnd: 1
-      HideLeavePrompt: 0
+      HideLeavePrompt: 1
       BranchToCurrent: 0
       BranchIndex: 5
       Delegate:
@@ -2618,7 +2618,7 @@ MonoBehaviour:
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: LostHand
+              m_StringArgument: LongDrive
               m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 0}
@@ -2957,7 +2957,7 @@ MonoBehaviour:
     Action: Retract
     cameraEffect: 0
     Answers:
-    - Text: Touch it again.
+    - Text: Reach for it
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
@@ -4704,6 +4704,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinematics:
   - Data: {fileID: 11400000, guid: 2a0c0e6ab3743734183ca132e9b39ba4, type: 2}
+    OnEndBeforeBlackScreen:
+      m_PersistentCalls:
+        m_Calls: []
     OnEnd:
       m_PersistentCalls:
         m_Calls: []
@@ -4722,9 +4725,33 @@ MonoBehaviour:
     - {fileID: 1763478653673361454}
     - {fileID: 1489411515945308168}
   - Data: {fileID: 11400000, guid: d2b5a1cf918d2514aae1d444985258d2, type: 2}
-    OnEnd:
+    OnEndBeforeBlackScreen:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChopLimb
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: LHand
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: TeleportPlayer
@@ -4737,6 +4764,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: UpdateCondition
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 1
+          m_CallState: 2
+    OnEnd:
+      m_PersistentCalls:
+        m_Calls: []
     ChainCinematic: 
     CinematicPuppets:
     - Name: Camera

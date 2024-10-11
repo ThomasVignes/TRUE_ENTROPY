@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: CEREMONY
   Number: 1
-  StartCharacter: {fileID: 11400000, guid: db5aef2ea38123e49ae009e7447d4eac, type: 2}
+  StartCharacter: {fileID: 11400000, guid: c1c177c8dd114094a9ebff2ecad45f52, type: 2}
   conditions:
   - Name: HangmanFound
     Met: 0
@@ -24,6 +24,8 @@ MonoBehaviour:
     Met: 0
   - Name: StageClosed
     Met: 1
+  - Name: HandChopped
+    Met: 0
   areas:
   - Name: Corridors
     Music: {fileID: 0}

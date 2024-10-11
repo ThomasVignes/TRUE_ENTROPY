@@ -580,4 +580,13 @@ public class GameManager : MonoBehaviour
     {
         TeleportPlayer(transform.position, transform.rotation);
     }
+
+    public void ChopLimb(string ID)
+    {
+        foreach (var item in player.Choppers)
+        {
+            if (item.ID == ID)
+                item.Chop();
+        }
+    }
 }
