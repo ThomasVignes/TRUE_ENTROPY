@@ -11,7 +11,6 @@ public class PlayerController : Character
     [SerializeField] protected Vector3 resetPos;
     public LimbChopper[] Choppers;
 
-
     public override void Init()
     {
         base.Init();
@@ -27,8 +26,12 @@ public class PlayerController : Character
     public virtual void Ready()
     {
         rb.transform.localPosition = new Vector3(resetPos.x, rb.transform.localPosition.y, resetPos.z);
-        rb.isKinematic = false;
+
+        //copyPosRot.Step();
         copyPosRot.enabled = false;
+
+        rb.isKinematic = false;
+       
         agent.enabled = true;
     }
 

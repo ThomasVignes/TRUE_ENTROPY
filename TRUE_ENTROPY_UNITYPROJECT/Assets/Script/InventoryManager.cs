@@ -11,6 +11,16 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Transform iconParent;
     [SerializeField] private GameObject iconPrefab;
 
+    public void Init(Item[] items)
+    {
+        this.items = items;
+
+        foreach (var item in items)
+        {
+            item.Equipped = false;
+        }
+    }
+
     public void EquipItem(string name)
     {
         Item item = Array.Find(items, e => e.ID == name);

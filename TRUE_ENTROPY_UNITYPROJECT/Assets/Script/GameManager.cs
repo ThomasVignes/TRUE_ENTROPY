@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
 
         conditions = ChapterData.conditions;
         //areas = ChapterData.areas;
-        InventoryManager.items = ChapterData.items;
+        InventoryManager.Init(ChapterData.items);
 
 
         foreach (var area in areas)
@@ -588,5 +588,16 @@ public class GameManager : MonoBehaviour
             if (item.ID == ID)
                 item.Chop();
         }
+    }
+
+    public void PutMask(bool on)
+    {
+        MaskManager maskManager = player.transform.GetComponent<MaskManager>();
+
+        if (maskManager == null)
+            player.transform.GetComponentInChildren<MaskManager>();
+
+        if (maskManager != null)
+            maskManager.PutMask(on);
     }
 }

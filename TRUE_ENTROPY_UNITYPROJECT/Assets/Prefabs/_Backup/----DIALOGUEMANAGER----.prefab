@@ -292,22 +292,6 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: '"The artefact shall be presented at the Falls Opera this Sunday, at the
-      end of an exclusive play led by both artists" '
-    Action: 
-    cameraEffect: 0
-    Answers:
-    - Text: ...
-      ConditionNeeded: 
-      DialogueEnd: 0
-      HideLeavePrompt: 0
-      BranchToCurrent: 1
-      BranchIndex: 0
-      Delegate:
-        m_PersistentCalls:
-          m_Calls: []
-      JumpDialogue: 0
-      DialogueIndex: 0
   - Text: '"Let''s welcome this new age, together."'
     Action: 
     cameraEffect: 0
@@ -449,6 +433,108 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+--- !u!1 &1089045160015535832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370405305566707493}
+  - component: {fileID: 4278937528943078889}
+  m_Layer: 0
+  m_Name: FleshArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370405305566707493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089045160015535832}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4602392021658250928}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4278937528943078889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089045160015535832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: FleshArm
+  Lines:
+  - Text: ...
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: Take the keys.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 1
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: (Leave)
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...
+    Action: TakeKeys
+    cameraEffect: 0
+    Answers:
+    - Text: Don't try anything.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 1
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...
+    Action: ArmGone
+    cameraEffect: 0
+    Answers:
+    - Text: 'That''s right. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &1245021940068145580
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,12 +581,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PuppetName: RuthDoor
   Lines:
-  - Text: Oh, sorry sir. I was absorbed in thought. Are you in need of assitance
-      ?
-    Action: Look
+  - Text: 'Well, someone has anger issues. '
+    Action: 
     cameraEffect: 0
     Answers:
-    - Text: Well, someone has anger issues.
+    - Text: (Leave)
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
@@ -522,7 +607,7 @@ GameObject:
   - component: {fileID: 7395375908354470918}
   - component: {fileID: 7109148944124221455}
   m_Layer: 0
-  m_Name: FleshMemory
+  m_Name: FleshNo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,11 +642,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PuppetName: Flesh
   Lines:
-  - Text: ...
-    Action: Retract
+  - Text: I'm not touching this again.
+    Action: Gone
     cameraEffect: 0
     Answers:
-    - Text: What the hell was that ?
+    - Text: (Leave)
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
@@ -1112,7 +1197,19 @@ MonoBehaviour:
       BranchIndex: 0
       Delegate:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: PutMask
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
   - Text: Pretty nice, huh ?
@@ -4750,6 +4847,7 @@ Transform:
   - {fileID: 7395375908354470918}
   - {fileID: 7389548187979055186}
   - {fileID: 6879338499673720699}
+  - {fileID: 1370405305566707493}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4818,6 +4916,11 @@ MonoBehaviour:
     PivotIndex: 0
     CameraIndex: 0
     OriginalPos: {x: 0, y: 0, z: 0}
+  - Name: FleshArm
+    VNPuppet: {fileID: 0}
+    PivotIndex: 5
+    CameraIndex: 4
+    OriginalPos: {x: 0, y: 0, z: 0}
   dialogues:
   - {fileID: 6289857817850979269}
   - {fileID: 6596282208277243256}
@@ -4841,6 +4944,7 @@ MonoBehaviour:
   - {fileID: 1228572330651306810}
   - {fileID: 7796590127292491878}
   - {fileID: 7129641431079141328}
+  - {fileID: 4278937528943078889}
   VNInterface: {fileID: 2309589860702690699}
   VNScene: {fileID: 0}
   Specific: {fileID: 8761724724527855969}
@@ -5009,6 +5113,42 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: HandChopped
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: DelegateBlock, Assembly-CSharp
+          m_MethodName: Trigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 1
           m_CallState: 2
     OnEnd:
       m_PersistentCalls:
@@ -5796,12 +5936,11 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: 'Look.  We found something. An artefact of sorts, said to be able to cause
-      entropy. '
+  - Text: 'Look.  We caused something. I''ve been trying do undo it ever since. '
     Action: ArmsCrossed3
     cameraEffect: 0
     Answers:
-    - Text: Oumuamua.
+    - Text: ...
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
@@ -5812,9 +5951,8 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: Exactly. Upon using it on stage... reality... shattered. I can't really
-      explain it. You dissapeared, kept coming back and dying again, losing parts
-      of your memory as you did.
+  - Text: On stage... reality... shattered. I can't really explain it. You dissapeared,
+      kept coming back and dying again, losing parts of your memory as you did.
     Action: ArmsCrossed
     cameraEffect: 0
     Answers:
