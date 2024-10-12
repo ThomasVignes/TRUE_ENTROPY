@@ -570,10 +570,10 @@ public class GameManager : MonoBehaviour
 
     public void TeleportPlayer(Vector3 pos, Quaternion rot)
     {
-        player.Agent.enabled = false;
+        player.Freeze(true);
         player.transform.position = pos;
         player.transform.rotation = rot;
-        player.Agent.enabled = true;
+        player.Freeze(false);
     }
 
     public void TeleportPlayer(Transform transform)

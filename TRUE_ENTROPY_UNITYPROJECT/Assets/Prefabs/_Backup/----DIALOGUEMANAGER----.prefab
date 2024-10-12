@@ -449,6 +449,68 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+--- !u!1 &1245021940068145580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6879338499673720699}
+  - component: {fileID: 7129641431079141328}
+  m_Layer: 0
+  m_Name: RuthDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6879338499673720699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245021940068145580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4602392021658250928}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7129641431079141328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245021940068145580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: RuthDoor
+  Lines:
+  - Text: Oh, sorry sir. I was absorbed in thought. Are you in need of assitance
+      ?
+    Action: Look
+    cameraEffect: 0
+    Answers:
+    - Text: Well, someone has anger issues.
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &1267724163006126142
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +606,7 @@ Transform:
   - {fileID: 3186582114338145107}
   - {fileID: 6805145825395170400}
   - {fileID: 4341945391040597040}
+  - {fileID: 2468804668182568457}
   m_Father: {fileID: 4602392021658250928}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2968,6 +3031,109 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 1
       DialogueIndex: 17
+--- !u!1 &5312815731770340700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2468804668182568457}
+  - component: {fileID: 7796590127292491878}
+  m_Layer: 0
+  m_Name: RuthHandChop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2468804668182568457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312815731770340700}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2354683043381508954}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7796590127292491878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312815731770340700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: Ruth
+  Lines:
+  - Text: Feeling any better ?
+    Action: Idle
+    cameraEffect: 0
+    Answers:
+    - Text: What the hell was that hole ?
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: You really saw, a extremely suspicious hole, and decided to stick your
+      hand in it ?
+    Action: Angry
+    cameraEffect: 0
+    Answers:
+    - Text: You're not answering my question.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 2
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: I felt drawn to it.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 2
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: ...These walls are not normal. Steer clear from them from now on.
+    Action: IdleAlt
+    cameraEffect: 0
+    Answers:
+    - Text: '...Fine. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &5789269368886168945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,6 +4749,7 @@ Transform:
   - {fileID: 6045037313392363909}
   - {fileID: 7395375908354470918}
   - {fileID: 7389548187979055186}
+  - {fileID: 6879338499673720699}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4646,6 +4813,11 @@ MonoBehaviour:
     PivotIndex: 0
     CameraIndex: 0
     OriginalPos: {x: 0, y: 0, z: 0}
+  - Name: RuthDoor
+    VNPuppet: {fileID: 0}
+    PivotIndex: 0
+    CameraIndex: 0
+    OriginalPos: {x: 0, y: 0, z: 0}
   dialogues:
   - {fileID: 6289857817850979269}
   - {fileID: 6596282208277243256}
@@ -4667,6 +4839,8 @@ MonoBehaviour:
   - {fileID: 3918478010713994768}
   - {fileID: 7109148944124221455}
   - {fileID: 1228572330651306810}
+  - {fileID: 7796590127292491878}
+  - {fileID: 7129641431079141328}
   VNInterface: {fileID: 2309589860702690699}
   VNScene: {fileID: 0}
   Specific: {fileID: 8761724724527855969}
@@ -4799,6 +4973,42 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: HandChopped
             m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Door, Assembly-CSharp
+          m_MethodName: ToggleDoorNoEvent
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: RagdollHider, Assembly-CSharp
+          m_MethodName: Show
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HandChopped
+            m_BoolArgument: 0
           m_CallState: 2
     OnEnd:
       m_PersistentCalls:

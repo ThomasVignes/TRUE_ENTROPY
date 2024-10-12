@@ -32,6 +32,22 @@ public class PlayerController : Character
         agent.enabled = true;
     }
 
+    public void Freeze(bool frozen)
+    {
+        if (rb != null) 
+            rb.isKinematic = frozen;
+
+        if (agent != null)
+            agent.enabled = !frozen;
+
+        if (frozen)
+        {
+            copyPosRot.enabled = true;
+            copyPosRot.Step();
+            copyPosRot.enabled = false;
+        }
+    }
+
     public void ResetState()
     {
         agent.enabled = false;

@@ -9,6 +9,11 @@ public class CopyPosRot : MonoBehaviour
 
     private void Update()
     {
+        Step();
+    }
+
+    public void Step()
+    {
         if (global)
         {
             transform.position = original.position;
