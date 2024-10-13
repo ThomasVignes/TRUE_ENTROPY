@@ -175,6 +175,11 @@ public class GameManager : MonoBehaviour
         player.Ready();
     }
 
+    public void PausePlayerPath()
+    {
+        player.Pause();
+    }
+
     private void Update()
     {
         if (cinematicMode)
@@ -200,6 +205,13 @@ public class GameManager : MonoBehaviour
         {
             cursorManager.SetCursorType(CursorType.Base);
             return;
+        }
+
+        player.ConstantStep();
+
+        foreach (Character c in characters)
+        {
+            c.ConstantStep();
         }
 
         if (startGameManager.Intro)

@@ -105,8 +105,6 @@ public class Character : MonoBehaviour
             }
         }
 
-        animator.SetBool("Walking", Moving && !rotating);
-
         if (computing)
         {
             if (!agent.pathPending)
@@ -147,6 +145,11 @@ public class Character : MonoBehaviour
                 ResumePath();
             }
         }
+    }
+
+    public virtual void ConstantStep()
+    {
+        animator.SetBool("Walking", Moving && !rotating);
     }
 
     public virtual void ToggleSpecial(bool active)
@@ -231,6 +234,11 @@ public class Character : MonoBehaviour
         {
             movingToInteractable = true;
         }
+    }
+
+    public void Pause()
+    {
+        PausePath();
     }
 
     public void PickUpAnim()
