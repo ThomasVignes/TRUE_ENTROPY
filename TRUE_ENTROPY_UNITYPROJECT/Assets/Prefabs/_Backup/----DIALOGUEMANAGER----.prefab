@@ -3459,7 +3459,7 @@ MonoBehaviour:
       DialogueIndex: 0
     - Text: Most doors around here are completely locked, I guess they are guest
         rooms like mine ?
-      ConditionNeeded: StageClosed
+      ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
       BranchToCurrent: 0
@@ -4849,7 +4849,7 @@ Transform:
   - {fileID: 6879338499673720699}
   - {fileID: 1370405305566707493}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6550506773295807635
 MonoBehaviour:

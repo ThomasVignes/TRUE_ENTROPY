@@ -393,7 +393,8 @@ public class GameManager : MonoBehaviour
 
         currentCamZone.active = !yes;
 
-        inventoryCanvas.SetActive(!yes);
+        if (!cinematicMode)
+            inventoryCanvas.SetActive(!yes);
 
         if (!yes)
             ghostManager.UpdateGhosts();
@@ -405,6 +406,7 @@ public class GameManager : MonoBehaviour
 
         currentCamZone.active = !yes;
 
+        if (!vnMode)
         inventoryCanvas.SetActive(!yes);
 
         if (!yes)

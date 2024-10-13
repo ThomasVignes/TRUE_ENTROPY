@@ -172,7 +172,16 @@ public class Character : MonoBehaviour
 
     protected void SetDirection()
     {
-        targetDir = Vector3.Normalize(agent.path.corners[1] - transform.position);
+        Vector3 dirPos = transform.position + transform.forward.normalized;
+
+        if (agent.path.corners.Length > 1)
+        {
+            dirPos = agent.path.corners[1];
+        }
+        else if (agent.path.corners.Length == 1)
+            dirPos = agent.path.corners[0]; 
+
+        targetDir = Vector3.Normalize(dirPos - transform.position);
 
         rotating = true;
 
