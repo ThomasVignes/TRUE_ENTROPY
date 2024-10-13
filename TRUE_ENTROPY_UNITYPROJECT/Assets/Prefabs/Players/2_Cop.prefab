@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 134341534167856004}
+  global: 0
 --- !u!1 &1311281797934755240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,6 +3931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 120730619421479859}
+  global: 0
 --- !u!114 &5833863967240836090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4302,6 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 8650072976248423501}
+  global: 0
 --- !u!1 &2551527392384760555
 GameObject:
   m_ObjectHideFlags: 0
@@ -8239,6 +8242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 2906040128275254369}
+  global: 0
 --- !u!1 &5393834990977228948
 GameObject:
   m_ObjectHideFlags: 0
@@ -12684,11 +12688,11 @@ MonoBehaviour:
   minDistanceToInteract: 1.2
   runMultiplier: 2
   injuredMultiplier: 1
+  moveStateLerp: 4
   minDistanceToMove: 0.1
   animator: {fileID: 1681250086735525950}
-  copyPosRot: {fileID: 1444328346101022563}
-  rb: {fileID: 8388845832119114756}
   resetPos: {x: -0.00009011149, y: 0.9111375, z: 0.04616464}
+  Choppers: []
   shootCD: 0.67
   drawDelay: 0.3
   legIK: {fileID: 7377324655593113487}

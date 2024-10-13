@@ -2396,6 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 5246700908431535576}
+  global: 0
 --- !u!1 &2064559155641767923
 GameObject:
   m_ObjectHideFlags: 0
@@ -6047,6 +6048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 8152001701432785329}
+  global: 0
 --- !u!1 &4209166190264308153
 GameObject:
   m_ObjectHideFlags: 0
@@ -10506,6 +10508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   original: {fileID: 8678456961826673868}
+  global: 0
 --- !u!54 &3995367545097028672
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11533,11 +11536,11 @@ MonoBehaviour:
   minDistanceToInteract: 1.2
   runMultiplier: 2.2
   injuredMultiplier: 0.8
+  moveStateLerp: 4
   minDistanceToMove: 0.1
   animator: {fileID: 1735109562235365949}
-  copyPosRot: {fileID: 560343133750860655}
-  rb: {fileID: 5047807255165880117}
   resetPos: {x: 0, y: 0, z: 0}
+  Choppers: []
   drawDelay: 0
   castTime: 0
   canMoveDuringCast: 0

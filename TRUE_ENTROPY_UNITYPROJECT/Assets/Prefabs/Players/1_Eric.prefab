@@ -10007,6 +10007,7 @@ MonoBehaviour:
   minDistanceToInteract: 1.2
   runMultiplier: 1.6
   injuredMultiplier: 0.8
+  moveStateLerp: 4
   minDistanceToMove: 0.1
   animator: {fileID: 5744386048276620940}
   resetPos: {x: -0.00009011149, y: 0.9111375, z: 0.04616464}

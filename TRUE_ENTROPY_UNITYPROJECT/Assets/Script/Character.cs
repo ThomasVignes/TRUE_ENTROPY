@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected float runMultiplier, injuredMultiplier;
 
     [Header("Animation (Common)")]
+    [SerializeField] protected float moveStateLerp;
     [SerializeField] protected float minDistanceToMove;
     [SerializeField] protected Animator animator;
     protected NavMeshAgent agent;
@@ -28,6 +29,9 @@ public class Character : MonoBehaviour
 
     protected bool computing, movingToInteractable, canInteract;
     protected bool specialMode;
+
+    protected int targetMoveState;
+    protected float currentMoveState;
 
     public NavMeshAgent Agent { get { return agent; } } 
     public bool SpecialMode { get { return specialMode; } }
@@ -49,7 +53,7 @@ public class Character : MonoBehaviour
 
         injured = injure;
 
-        animator.SetFloat("MoveState", 2);
+        targetMoveState = 2;
     }
 
     public void ToggleRun(bool run)
@@ -60,17 +64,17 @@ public class Character : MonoBehaviour
         if (injured)
         {
             running = false;
-            animator.SetFloat("MoveState", 2);
+            targetMoveState = 2;
             return;
         }
 
         if (run)
         {
-            animator.SetFloat("MoveState", 1);
+            targetMoveState = 1;
         }
         else
         {
-            animator.SetFloat("MoveState", 0);
+            targetMoveState = 0;
         }
 
         running = run;
@@ -149,6 +153,9 @@ public class Character : MonoBehaviour
 
     public virtual void ConstantStep()
     {
+        currentMoveState = Mathf.Lerp(currentMoveState, targetMoveState, moveStateLerp * Time.deltaTime);
+
+        animator.SetFloat("MoveState", currentMoveState);
         animator.SetBool("Walking", Moving && !rotating);
     }
 
