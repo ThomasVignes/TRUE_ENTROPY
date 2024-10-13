@@ -407,7 +407,7 @@ public class GameManager : MonoBehaviour
         currentCamZone.active = !yes;
 
         if (!vnMode)
-        inventoryCanvas.SetActive(!yes);
+            inventoryCanvas.SetActive(!yes);
 
         if (!yes)
             ghostManager.UpdateGhosts();
