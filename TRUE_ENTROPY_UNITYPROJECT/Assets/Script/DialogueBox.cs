@@ -39,9 +39,12 @@ public class DialogueBox : Interactable
 
     IEnumerator C_SwitchDialogue()
     {
+        GameManager.Instance.PausePlayerPath();
+
         yield return new WaitForSeconds(delayBeforeSwitch);
 
         GameManager.Instance.SetVNMode(true);
+        GameManager.Instance.PausePlayerPath();
         GameManager.Instance.DialogueManager.StartDialogue(puppet, dialogueReference, this);
 
     }
