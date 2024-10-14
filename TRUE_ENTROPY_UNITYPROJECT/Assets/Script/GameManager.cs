@@ -413,6 +413,8 @@ public class GameManager : MonoBehaviour
             ghostManager.UpdateGhosts();
     }
 
+    CommentInteractable currentComment;
+
     public void WriteComment(string text)
     {
         if (commentMode)
@@ -422,10 +424,26 @@ public class GameManager : MonoBehaviour
         DialogueManager.WriteSpecific(text);
     }
 
+    public void WriteComment(string text, CommentInteractable comment)
+    {
+        if (commentMode)
+            return;
+
+        currentComment = comment;
+
+        WriteComment(text);
+    }
+
     public void EndComment()
     {
         if (!commentMode)
             return;
+
+        if (currentComment != null)
+        {
+            currentComment.OnCommentEnd?.Invoke();
+            currentComment = null;
+        }
 
         commentMode = false;
     }
