@@ -54,13 +54,18 @@ public class CinematicManager : MonoBehaviour
 
     public void PlayCinematic(string ID)
     {
+        PlayCinematic(ID, false);
+    }
+
+    public void PlayCinematic(string ID, bool instaFade)
+    {
         if (playing)
             return;
 
         bool found = true;
 
-        foreach (var c in cinematics) 
-        { 
+        foreach (var c in cinematics)
+        {
             if (c.Data.ID == ID)
             {
                 currentCinematic = Array.IndexOf(cinematics, c);
@@ -75,18 +80,29 @@ public class CinematicManager : MonoBehaviour
         playing = true;
         gameManager.SetCinematicMode(true);
 
-        StartCoroutine(C_PlayCinematic());
+        StartCoroutine(C_PlayCinematic(instaFade));
     }
 
-    IEnumerator C_PlayCinematic()
+    IEnumerator C_PlayCinematic(bool instaFade)
     {
         Cinematic current = cinematics[currentCinematic];
 
-        gameManager.ScreenEffects.FadeTo(1, 0.2f);
+        if (instaFade)
+            gameManager.ScreenEffects.FadeTo(1, 0.001f);
+        else
+            gameManager.ScreenEffects.FadeTo(1, 0.2f);
 
         yield return new WaitForSeconds(0.2f);
 
         Camera.SetActive(true);
+
+        //Position camera
+        Transform pivot = current.CinematicCameraPivots[current.Data.lines[0].cameraIndex];
+
+        Camera.transform.SetParent(pivot, true);
+        Camera.transform.position = pivot.position;
+        Camera.transform.rotation = pivot.rotation;
+
         Interface.SetActive(true);
 
         yield return new WaitForSeconds(current.Data.BlackScreenDuration);
@@ -132,13 +148,6 @@ public class CinematicManager : MonoBehaviour
                 PlayPuppetAction(item.PuppetName, item.Action);
             }
 
-            //Position camera
-            Transform pivot = current.CinematicCameraPivots[line.cameraIndex];
-
-            Camera.transform.SetParent(pivot, true);
-            Camera.transform.position = pivot.position;
-            Camera.transform.rotation = pivot.rotation;
-
             //Play effects
             gameManager.CameraEffectManager.PlayEffect(line.cameraEffect);
 
@@ -154,6 +163,7 @@ public class CinematicManager : MonoBehaviour
 
         Camera.SetActive(false);
         Interface.SetActive(false);
+
         cinematics[currentCinematic].OnEndBeforeBlackScreen?.Invoke();
 
         yield return new WaitForSeconds(current.Data.BlackScreenDuration);

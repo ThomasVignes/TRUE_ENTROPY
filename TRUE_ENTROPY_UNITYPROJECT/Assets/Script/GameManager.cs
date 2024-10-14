@@ -16,6 +16,12 @@ public class Conditions
 {
     public string Name;
     public bool Met;
+
+    public Conditions(string Name,  bool Met)
+    {
+        this.Name = Name;
+        this.Met = Met;
+    }
 }
 
 [System.Serializable]
@@ -143,7 +149,11 @@ public class GameManager : MonoBehaviour
         currentCamZone = firstCamZone;
 
 
-        conditions = ChapterData.conditions;
+        foreach(var c in ChapterData.conditions)
+        {
+            conditions.Add(new Conditions(c.Name, c.Met));
+        }
+
         //areas = ChapterData.areas;
         InventoryManager.Init(ChapterData.items);
 

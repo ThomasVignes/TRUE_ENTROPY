@@ -532,7 +532,103 @@ MonoBehaviour:
       BranchIndex: 1
       Delegate:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+            m_MethodName: EquipItem
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Key_Keyring
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: WriteComment
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: Unlock
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: Unlock
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: Unlock
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
 --- !u!1 &1245021940068145580
@@ -769,7 +865,7 @@ MonoBehaviour:
             m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: ...Need a refresher ?
+  - Text: ...Need a reminder ?
     Action: Idle
     cameraEffect: 0
     Answers:
@@ -1515,6 +1611,17 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+    - Text: You literally left the door open.
+      ConditionNeeded: MainDoorOpen
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 5
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
   - Text: 'Are you ready, at least ? We have less than an hour left ! '
     Action: Angry
     cameraEffect: 0
@@ -1597,6 +1704,21 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 1
       DialogueIndex: 4
+  - Text: Shit.
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: Yeah, shit.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &2199486479085494902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,8 +3628,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-    - Text: Most doors around here are completely locked, I guess they are guest
-        rooms like mine ?
+    - Text: Half of the doors around here are completely locked.
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
@@ -3522,8 +3643,8 @@ MonoBehaviour:
       ConditionNeeded: HangmanFound
       DialogueEnd: 0
       HideLeavePrompt: 0
-      BranchToCurrent: 1
-      BranchIndex: 1
+      BranchToCurrent: 0
+      BranchIndex: 2
       Delegate:
         m_PersistentCalls:
           m_Calls: []
@@ -3554,14 +3675,14 @@ MonoBehaviour:
       DialogueEnd: 0
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 4
+      BranchIndex: 5
       Delegate:
         m_PersistentCalls:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 1
-  - Text: Absolutely. All of them are empty however, you are the only visitor for
-      now.
+  - Text: Absolutely. None of them are being used by anyone other than the staff,
+      for now.
     Action: FingerSnap
     cameraEffect: 0
     Answers:

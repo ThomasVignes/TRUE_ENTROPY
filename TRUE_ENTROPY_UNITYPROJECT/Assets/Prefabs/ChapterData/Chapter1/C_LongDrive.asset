@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_LongDrive
   m_EditorClassIdentifier: 
   ID: LongDrive
-  BlackScreenDuration: 1
+  BlackScreenDuration: 4
   lines:
   - Text: 
     Duration: 15
