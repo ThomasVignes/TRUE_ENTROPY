@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public ChapterData ChapterData;
     public string StartCinematic;
 
+    [Header("Scene Settings")]
+    public bool SpecialActive;
+
     [Header("Clicking")]
     [SerializeField] private float clickdelay;
     [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers;
@@ -254,14 +257,17 @@ public class GameManager : MonoBehaviour
             player.ToggleRun(HandleDoubleClick());
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (SpecialActive)
         {
-            player.ToggleSpecial(true);
-        }
+            if (Input.GetMouseButtonDown(1))
+            {
+                player.ToggleSpecial(true);
+            }
 
-        if (Input.GetMouseButtonUp(1))
-        {
-            player.ToggleSpecial(false);
+            if (Input.GetMouseButtonUp(1))
+            {
+                player.ToggleSpecial(false);
+            }
         }
 
         player.Step();

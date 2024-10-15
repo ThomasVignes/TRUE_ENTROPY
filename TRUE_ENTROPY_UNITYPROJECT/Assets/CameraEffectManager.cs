@@ -15,7 +15,6 @@ public class CameraEffectManager : MonoBehaviour
 {
     [SerializeField] CinemachineImpulseSource shake, bump, rumble;
     GameManager gm;
-
     public void Init(GameManager man)
     {
         gm = man;

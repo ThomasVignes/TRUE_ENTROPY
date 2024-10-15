@@ -633,7 +633,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -0.1, z: 0}
+  m_DefaultVelocity: {x: 0, y: -0.07, z: 0}
 --- !u!1 &4091023351891599364
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChapterData: {fileID: 11400000, guid: d044afd94e5423e4a971be46c147cd2f, type: 2}
   StartCinematic: 
+  SpecialActive: 0
   clickdelay: 0.5
   moveLayer:
     serializedVersion: 2
