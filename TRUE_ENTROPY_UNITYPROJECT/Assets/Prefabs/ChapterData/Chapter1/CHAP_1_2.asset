@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad5d3a1faa09c5498f894a0ce8a63b9, type: 3}
+  m_Name: CHAP_1_2
+  m_EditorClassIdentifier: 
+  Name: CEREMONY
+  Number: 2
+  StartCharacter: {fileID: 11400000, guid: 2d7c6aa6af5309b459beca857500212d, type: 2}
+  conditions:
+  - Name: HasMask
+    Met: 0
+  areas:
+  - Name: Corridors
+    Music: {fileID: 0}
+    OriginalVolume: 0
+  - Name: Ballroom
+    Music: {fileID: 0}
+    OriginalVolume: 0
+  items: []

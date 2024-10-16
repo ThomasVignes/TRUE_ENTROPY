@@ -173,12 +173,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            startGameManager.Init(this);
+            if (startGameManager != null)
+            {
+                startGameManager.Init(this);
 
-            startPos = player.transform.position;
-            startRot = player.transform.rotation;
+                startPos = player.transform.position;
+                startRot = player.transform.rotation;
 
-            startGameManager.StartGame();
+                startGameManager.StartGame();
+            }
+            else
+                ready = true;
         }
     }
 
@@ -203,14 +208,19 @@ public class GameManager : MonoBehaviour
 
         if (cinematicStart)
         {
-            startGameManager.Init(this);
+            if (startGameManager != null)
+            {
+                startGameManager.Init(this);
 
-            startPos = player.transform.position;
-            startRot = player.transform.rotation;
+                startPos = player.transform.position;
+                startRot = player.transform.rotation;
 
-            startGameManager.StartGame();
+                startGameManager.StartGame();
 
-            cinematicStart = false;
+                cinematicStart = false;
+            }
+            else
+                ready = true;
         }
 
         if (!ready || end)
@@ -227,7 +237,7 @@ public class GameManager : MonoBehaviour
             c.ConstantStep();
         }
 
-        if (startGameManager.Intro)
+        if (startGameManager != null && startGameManager.Intro)
         {
             cursorManager.SetCursorType(CursorType.Base);
 
