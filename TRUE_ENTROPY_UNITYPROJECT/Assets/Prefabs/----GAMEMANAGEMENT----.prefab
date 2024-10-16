@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 5833284464385176384}
   - component: {fileID: 3126446820343299669}
   - component: {fileID: 605452477905568910}
+  - component: {fileID: 480879812855692366}
   m_Layer: 0
   m_Name: ----GAMEMANAGEMENT----
   m_TagString: Untagged
@@ -935,6 +936,7 @@ MonoBehaviour:
   HitstopManager: {fileID: 0}
   InventoryManager: {fileID: 0}
   CameraEffectManager: {fileID: 0}
+  PartnerManager: {fileID: 0}
 --- !u!114 &7776651148662661640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,25 @@ MonoBehaviour:
   shake: {fileID: 371096901316689129}
   bump: {fileID: 1856550523867116669}
   rumble: {fileID: 371096901316689129}
+--- !u!114 &480879812855692366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582504520874939383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910d21005d6f41641a4875dc753785d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTime: 0.4
+  partnerStopDistance: 1
+  partnerResumeDistance: 3
+  partnerRunDistance: 6
+  partnerStopRunDistance: 2
+  startPartnerPrefab: {fileID: 8300552358023654478, guid: 6225f4fc4d14e4b4b8068c876cb3155d, type: 3}
+  partnerStart: {fileID: 0}
 --- !u!1 &9014151272131184137
 GameObject:
   m_ObjectHideFlags: 0

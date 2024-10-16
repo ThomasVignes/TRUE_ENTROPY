@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public HitstopManager HitstopManager;
     [HideInInspector] public InventoryManager InventoryManager;
     [HideInInspector] public CameraEffectManager CameraEffectManager;
+    [HideInInspector] public PartnerManager PartnerManager;
 
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool CinematicMode { get { return cinematicMode; } }
@@ -99,14 +100,9 @@ public class GameManager : MonoBehaviour
     bool cinematicMode, vnMode, commentMode, end, overrideAmbiance, ready;
     bool cinematicStart;
 
-
     private void Awake()
     {
         Instance = this;
-        /*
-        if (player == null)
-            player = FindObjectOfType<PlayerController>();
-        */
 
         GameObject chara = Instantiate(ChapterData.StartCharacter.ControllerPrefab, characterStart.position, characterStart.rotation);
         character = chara.GetComponentInChildren<Character>();
@@ -114,6 +110,9 @@ public class GameManager : MonoBehaviour
 
         player.Init();
 
+
+        PartnerManager = GetComponent<PartnerManager>();
+        PartnerManager.Init(this);
 
         ScreenEffects = GetComponent<ScreenEffects>();
 
@@ -221,6 +220,7 @@ public class GameManager : MonoBehaviour
         }
 
         player.ConstantStep();
+        PartnerManager.ConstantStep();
 
         foreach (Character c in characters)
         {
@@ -271,6 +271,7 @@ public class GameManager : MonoBehaviour
         }
 
         player.Step();
+        PartnerManager.Step();
 
         foreach (Character c in characters)
         {
@@ -278,6 +279,11 @@ public class GameManager : MonoBehaviour
         }
 
         CursorHover();
+    }
+
+    public void SetPartner(Character character)
+    {
+        PartnerManager.SetPartner(character);
     }
 
     public void InjurePlayer(bool injure)
@@ -292,8 +298,6 @@ public class GameManager : MonoBehaviour
 
         startGameManager.EndChapter();
     }
-
-
 
     public void EndGame(string message)
     {
