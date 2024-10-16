@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b0cdbcdd5ad6d488c68dcef45efeeb, type: 3}
+  m_Name: C_Elevator
+  m_EditorClassIdentifier: 
+  ID: Elevator
+  BlackScreenDuration: 3
+  lines:
+  - Text: ...Are you sure about this ?
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: We've talked about this, Ray. We don't have much of a choice.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: I'm just apprehensive, that's all.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Not like this long-ass elevator is helping.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: No shit.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...Thank you for being here with me. For this, I mean.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Wouldn't have it any other way. You know that.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Still, thanks a lot.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  EndBlackScreenDuration: 2
