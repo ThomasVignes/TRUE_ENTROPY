@@ -661,5 +661,16 @@ public class GameManager : MonoBehaviour
 
         if (maskManager != null)
             maskManager.PutMask(on);
+
+        if (PartnerManager.Partner != null)
+        {
+            maskManager = PartnerManager.Partner.transform.GetComponent<MaskManager>();
+
+            if (maskManager == null)
+                PartnerManager.Partner.transform.GetComponentInChildren<MaskManager>();
+
+            if (maskManager != null)
+                maskManager.PutMask(on);
+        }
     }
 }

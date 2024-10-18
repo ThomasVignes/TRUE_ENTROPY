@@ -15,6 +15,11 @@ MonoBehaviour:
   ID: Elevator
   BlackScreenDuration: 3
   lines:
+  - Text: 
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
   - Text: ...Are you sure about this ?
     Duration: 8
     PuppetActions: []

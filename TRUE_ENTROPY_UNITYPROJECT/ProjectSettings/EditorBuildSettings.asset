@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1_CEREMONY/CEREMONY_1.unity
     guid: a198e6cc196bc7f40a3b55b7e46124b1
+  - enabled: 1
+    path: Assets/Scenes/1_CEREMONY/CEREMONY_2.unity
+    guid: afd414302371a8f49b9e8fb15222cf8b
   m_configObjects: {}

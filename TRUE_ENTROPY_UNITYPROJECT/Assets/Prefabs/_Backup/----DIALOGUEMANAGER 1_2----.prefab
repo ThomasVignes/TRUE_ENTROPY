@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: textextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttext
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
-  m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 688.26447, z: 0, w: -36.86377}
+  m_margin: {x: 0, y: 692.1792, z: 0, w: -36.86377}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &802552336783416504
@@ -203,6 +203,37 @@ Transform:
   m_Father: {fileID: 1220272522387658100}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1290213764021032966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6600663947811188851}
+  m_Layer: 6
+  m_Name: Spot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6600663947811188851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290213764021032966}
+  m_LocalRotation: {x: -0.06911453, y: -0.7163262, z: 0.053753316, w: -0.69225043}
+  m_LocalPosition: {x: 17.593441, y: -20.774363, z: -25.955736}
+  m_LocalScale: {x: 0.9646401, y: 0.9646398, z: 0.96464}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2262786096897713916}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 12.057, y: 92.098, z: 1.509}
 --- !u!1 &1491454649871376961
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +847,17 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+    - Text: We got your damn masks.
+      ConditionNeeded: HasMask
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 3
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
   - Text: 'I''m afraid I can''t let you through. '
     Action: Etiquette
     cameraEffect: 0
@@ -832,7 +874,7 @@ MonoBehaviour:
       JumpDialogue: 0
       DialogueIndex: 0
   - Text: C-calm down ! I just need you to get a mask. It's necessary for the play.
-    Action: Idle
+    Action: A
     cameraEffect: 0
     Answers:
     - Text: 'Fine. I''ll be right back. '
@@ -844,6 +886,69 @@ MonoBehaviour:
       Delegate:
         m_PersistentCalls:
           m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Well, enjoy the play, madam.
+    Action: FingerSnap
+    cameraEffect: 0
+    Answers:
+    - Text: '... '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Character, Assembly-CSharp
+            m_MethodName: SetDestination
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
 --- !u!1 &3738357873882991997
@@ -1083,6 +1188,18 @@ MonoBehaviour:
               m_StringArgument: HasMask
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: PutMask
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: HasMask
+              m_BoolArgument: 1
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
 --- !u!1 &4469896676834948052
@@ -1269,6 +1386,56 @@ MonoBehaviour:
   noZMove: 0
   shouldReturnToStart: 0
   lockRotToZ: 0
+--- !u!1 &4858602739883219269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4287380165500507498}
+  - component: {fileID: 3439204265664546317}
+  m_Layer: 6
+  m_Name: Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4287380165500507498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858602739883219269}
+  m_LocalRotation: {x: -0.7367213, y: 0.118454866, z: -0.13402921, w: -0.6521092}
+  m_LocalPosition: {x: 19.046, y: -16.862, z: -25.595041}
+  m_LocalScale: {x: 0.9646401, y: 0.9646398, z: 0.96464}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2262786096897713916}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3439204265664546317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858602739883219269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac74420aecb2224895e19467728ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationLoopTime: 0.2
+  posRange: 0.01
+  rotRange: 0.05
+  noZMove: 0
+  shouldReturnToStart: 0
+  lockRotToZ: 0
 --- !u!1 &4995875029232849657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1544,8 @@ Transform:
   - {fileID: 7092225289382403918}
   - {fileID: 4832324408650117333}
   - {fileID: 159665859492108148}
+  - {fileID: 4287380165500507498}
+  - {fileID: 6600663947811188851}
   m_Father: {fileID: 1220272522387658100}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1811,10 +1980,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: textextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttext
+  m_text: ...Ig
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
-  m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1838,8 +2007,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1874,10 +2043,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 688.26447, z: 0, w: -36.86377}
+  m_margin: {x: -9.266235, y: 692.1792, z: 0, w: -36.86377}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6188156591664081118
@@ -2026,7 +2195,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22382a89b08fba43b3d18e19449e658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinematics: []
+  cinematics:
+  - Data: {fileID: 11400000, guid: 657d5c94d0a278246a45edb6e5e31a15, type: 2}
+    OnEndBeforeBlackScreen:
+      m_PersistentCalls:
+        m_Calls: []
+    OnEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    ChainCinematic: 
+    CinematicPuppets: []
+    CinematicCameraPivots:
+    - {fileID: 6600663947811188851}
   delayBeforeDialogue: 0.3
   delayBetweenLetters: 0.02
   Camera: {fileID: 0}
@@ -2102,7 +2294,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2166,7 +2358,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 688.26447, z: 0, w: 10.226868}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6759984410619936218

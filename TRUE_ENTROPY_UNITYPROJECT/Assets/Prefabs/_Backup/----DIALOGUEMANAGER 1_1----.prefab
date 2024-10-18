@@ -629,6 +629,42 @@ MonoBehaviour:
               m_StringArgument: Well... That's a lot of keys.
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Well... That's a lot of keys.
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: UpdateCondition
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: GotSideRoom
+              m_BoolArgument: 1
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
 --- !u!1 &1245021940068145580
@@ -677,7 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PuppetName: RuthDoor
   Lines:
-  - Text: 'Well, someone has anger issues. '
+  - Text: 'Someone has anger issues. '
     Action: 
     cameraEffect: 0
     Answers:
@@ -2175,6 +2211,82 @@ Transform:
   m_Father: {fileID: 7942269140292841400}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3190393887009869500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6818870198596210059}
+  - component: {fileID: 5512139284894139044}
+  m_Layer: 0
+  m_Name: RuthDoorGlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6818870198596210059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190393887009869500}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4602392021658250928}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5512139284894139044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190393887009869500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: RuthDoor
+  Lines:
+  - Text: ...
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: Let's try the keys..
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 1
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: There's glue in the lock.
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: 'What the hell ? '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &3242927000275882988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -52}
+  m_AnchoredPosition: {x: 0, y: -22}
   m_SizeDelta: {x: 1720, y: 880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &861850503782771761
@@ -2410,8 +2522,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
-  m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2435,8 +2547,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4711,7 +4823,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-    - Text: "Punctuality, gar\xE7on, is the key to succes ! "
+    - Text: "Punctuality, gar\xE7on, is the key to success ! "
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
@@ -5003,8 +5115,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: textextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttext
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
-  m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5028,8 +5140,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5064,7 +5176,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 688.26447, z: 0, w: -36.86377}
+  m_margin: {x: 0, y: 692.1792, z: 0, w: -36.86377}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5393,6 +5505,17 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+    - Text: I got the key.
+      ConditionNeeded: GotSideRoom
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 5
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
     - Text: You too.
       ConditionNeeded: 
       DialogueEnd: 0
@@ -5488,6 +5611,21 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
+  - Text: Amazing. Have fun looking around, sir.
+    Action: FingerSnap
+    cameraEffect: 0
+    Answers:
+    - Text: Yeah, thanks.
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 2
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &8397818970172308302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5677,7 @@ Transform:
   - {fileID: 5879638335402053558}
   - {fileID: 4560894855678867570}
   - {fileID: 1452853997699121715}
+  - {fileID: 6818870198596210059}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5641,6 +5780,7 @@ MonoBehaviour:
   - {fileID: 3977176046249358959}
   - {fileID: 6781230766804879817}
   - {fileID: 9134208182891553481}
+  - {fileID: 5512139284894139044}
   VNInterface: {fileID: 2309589860702690699}
   VNScene: {fileID: 0}
   Specific: {fileID: 8761724724527855969}
@@ -5919,6 +6059,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: UpdateCondition
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MainDoorOpen
             m_BoolArgument: 0
           m_CallState: 2
     ChainCinematic: 
@@ -6325,10 +6477,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: textextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttextextextexttext
+  m_text: ...Ig
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
-  m_sharedMaterial: {fileID: 4096329324081247501, guid: 4bfe2f8ffd022c04d8a13992f2498c92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6352,8 +6504,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6388,7 +6540,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 688.26447, z: 0, w: -36.86377}
+  m_margin: {x: -9.266235, y: 692.1792, z: 0, w: -36.86377}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6776,7 +6928,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: 'Look.  We caused something. I''ve been trying do undo it ever since. '
+  - Text: Look.  We caused something.
     Action: ArmsCrossed3
     cameraEffect: 0
     Answers:

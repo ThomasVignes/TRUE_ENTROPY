@@ -153,8 +153,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
+  m_sharedMaterial: {fileID: 6429243355620650353, guid: f5b13beb844d03e4394c3ac505602257, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   partnerResumeDistance: 3
   partnerRunDistance: 6
   partnerStopRunDistance: 2
-  startPartnerPrefab: {fileID: 8300552358023654478, guid: 6225f4fc4d14e4b4b8068c876cb3155d, type: 3}
+  startPartnerPrefab: {fileID: 6787234278984021374, guid: 3cade5439e97c774191361f7198b261c, type: 3}
   partnerStart: {fileID: 0}
 --- !u!1 &9014151272131184137
 GameObject:

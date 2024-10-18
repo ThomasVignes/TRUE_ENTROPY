@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CeremonyChapterManager : ChapterManagerGeneric
 {
@@ -65,17 +66,7 @@ public class CeremonyChapterManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(5);
 
-        gameManager.ScreenEffects.OumuamuaFade();
-
-        yield return new WaitForSeconds(5);
-
-        gameManager.OverrideAudio.Stop();
-
-        gameManager.WriteComment("THERE IS NO ESCAPE.");
-
-        yield return new WaitForSeconds(4);
-
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     
     IEnumerator C_Start()
