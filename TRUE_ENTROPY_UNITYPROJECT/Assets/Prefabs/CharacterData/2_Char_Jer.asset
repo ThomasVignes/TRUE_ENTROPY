@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72c0b439231fd234dafeb68b45f5e61a, type: 3}
-  m_Name: 2_Char_Cop
+  m_Name: 2_Char_Jer
   m_EditorClassIdentifier: 
-  Name: Cop
+  Name: Jeremiah
   Nickname: 
   Pronoun: 0
   Special: 1

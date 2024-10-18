@@ -7127,7 +7127,7 @@ GameObject:
   - component: {fileID: 8646234827200456356}
   - component: {fileID: 1313884278121897229}
   m_Layer: 0
-  m_Name: 2_Cop
+  m_Name: 2_Jer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
