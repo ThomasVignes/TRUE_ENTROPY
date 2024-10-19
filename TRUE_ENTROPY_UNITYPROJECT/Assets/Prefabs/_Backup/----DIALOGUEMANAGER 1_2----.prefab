@@ -212,6 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6600663947811188851}
+  - component: {fileID: 6269354587450481853}
   m_Layer: 6
   m_Name: Spot (1)
   m_TagString: Untagged
@@ -226,14 +227,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290213764021032966}
-  m_LocalRotation: {x: -0.06911453, y: -0.7163262, z: 0.053753316, w: -0.69225043}
-  m_LocalPosition: {x: 17.593441, y: -20.774363, z: -25.955736}
+  m_LocalRotation: {x: -0.14022626, y: -0.7064642, z: 0.12486536, w: -0.6823881}
+  m_LocalPosition: {x: 17.862, y: -20.455, z: -25.957}
   m_LocalScale: {x: 0.9646401, y: 0.9646398, z: 0.96464}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2262786096897713916}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 12.057, y: 92.098, z: 1.509}
+  m_LocalEulerAnglesHint: {x: 21.58, y: 92.312, z: 1.708}
+--- !u!114 &6269354587450481853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290213764021032966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac74420aecb2224895e19467728ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationLoopTime: 0.2
+  posRange: 0.003
+  rotRange: 0.03
+  noZMove: 0
+  shouldReturnToStart: 0
+  lockRotToZ: 0
 --- !u!1 &1491454649871376961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,7 +2215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinematics:
-  - Data: {fileID: 11400000, guid: 657d5c94d0a278246a45edb6e5e31a15, type: 2}
+  - Data: {fileID: 11400000, guid: 6bc84523b8053be42bf8894aad3e5512, type: 2}
     OnEndBeforeBlackScreen:
       m_PersistentCalls:
         m_Calls: []
@@ -2216,7 +2235,13 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
     ChainCinematic: 
-    CinematicPuppets: []
+    CinematicPuppets:
+    - Name: Jer
+      Puppet: {fileID: 0}
+      Animator: {fileID: 0}
+    - Name: Ray
+      Puppet: {fileID: 0}
+      Animator: {fileID: 0}
     CinematicCameraPivots:
     - {fileID: 6600663947811188851}
   delayBeforeDialogue: 0.3
