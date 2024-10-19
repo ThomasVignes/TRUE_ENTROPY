@@ -130,17 +130,66 @@ MonoBehaviour:
     cameraIndex: 0
     cameraEffect: 0
   - Text: 
-    Duration: 13
+    Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 4
   - Text: '*ding*'
-    Duration: 4
+    Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
   - Text: 
-    Duration: 4
+    Duration: 10
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Jer
+      Action: LookUp
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: ...Ready ?
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Ray
+      Action: UnCross
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: '...Yeah. '
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: Yeah.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+  - Text: 
+    Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0

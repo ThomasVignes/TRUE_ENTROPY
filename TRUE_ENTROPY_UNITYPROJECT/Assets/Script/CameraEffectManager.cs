@@ -15,11 +15,13 @@ public enum CameraEffect
 public class CameraEffectManager : MonoBehaviour
 {
     [SerializeField] CinemachineImpulseSource shake, bump, rumble, elevatorShake, elevatorBump;
+    [SerializeField] bool disableElevatorEffects;
     [SerializeField] Shaking shaker;
     GameManager gm;
 
     bool elevator;
     float elevatorTimer;
+    float multiplier = 1;
 
     public void Init(GameManager man)
     {
@@ -32,14 +34,20 @@ public class CameraEffectManager : MonoBehaviour
         {
             if (elevatorTimer < Time.time)
             {
-                elevatorBump.GenerateImpulse();
+                if (!disableElevatorEffects)
+                    elevatorBump.GenerateImpulse();
+
                 shaker.enabled = false;
                 elevator = false;
             }
             else
             {
-                elevatorShake.GenerateImpulse();
-                elevatorShake.m_DefaultVelocity = new Vector3(elevatorShake.m_DefaultVelocity.x * -1,elevatorShake.m_DefaultVelocity.y * -1, elevatorShake.m_DefaultVelocity.z * -1);
+                if (disableElevatorEffects)
+                    return;
+
+                multiplier *= -1;
+                elevatorShake.GenerateImpulseWithVelocity(new Vector3(elevatorShake.m_DefaultVelocity.x * multiplier, 
+                    elevatorShake.m_DefaultVelocity.y * multiplier, elevatorShake.m_DefaultVelocity.z * multiplier));
             }
         }
     }
@@ -73,9 +81,18 @@ public class CameraEffectManager : MonoBehaviour
     {
         elevatorBump.GenerateImpulse();
 
+        if (disableElevatorEffects)
+            shaker.enabled = false;
+
         yield return new WaitForSeconds(2);
 
         elevator = true;
         elevatorTimer = Time.time + 10f;
+    }
+
+    [ContextMenu("Elevato")]
+    public void ElevatorEffect()
+    {
+        StartCoroutine(C_Elevator());
     }
 }
