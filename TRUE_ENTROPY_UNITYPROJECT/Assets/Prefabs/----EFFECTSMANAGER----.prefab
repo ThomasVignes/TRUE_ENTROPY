@@ -97,6 +97,13 @@ MonoBehaviour:
     loop: 0
     mixerLayer: 
     source: {fileID: 0}
+  - name: Ding
+    clip: {fileID: 8300000, guid: ee9fe84b9eb2a4d4ab56992c3c2ab1e3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}
@@ -132,7 +139,7 @@ Transform:
   - {fileID: 6055004262476004451}
   - {fileID: 4379220878010770370}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2577924485865205203
 MonoBehaviour:

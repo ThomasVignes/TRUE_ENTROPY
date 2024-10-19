@@ -8,8 +8,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Whumpus;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 [System.Serializable]
 public class Conditions
@@ -56,12 +54,11 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] ChapterManagerGeneric startGameManager;
     [SerializeField] private Transform characterStart;
-    [SerializeField] AudioSource overrideAudio, startAudio;
     [SerializeField] GameObject inventoryCanvas;
+    [SerializeField] ThemeManager themeManager;
 
 
     public List<Conditions> conditions = new List<Conditions>();
-    public List<Area> areas = new List<Area>();
 
     PlayerController player;
     Vector3 startPos;
@@ -70,10 +67,6 @@ public class GameManager : MonoBehaviour
     private int clicked;
     private float clicktime;
 
-
-    private string currentArea;
-    private float currentVolume;
-    private AudioSource currentAudioSource;
 
     private CameraZone currentCamZone;
     private CursorManager cursorManager;
@@ -93,8 +86,7 @@ public class GameManager : MonoBehaviour
     public bool Ready { get { return ready; } set { ready = value; } }
     public bool End { get { return end; } set { end = value; } }
     public PlayerController Player { get { return player; } }
-    public CursorManager CursorManager { get { return cursorManager; } }
-    public AudioSource OverrideAudio { get { return overrideAudio; } }
+    public CursorManager CursorManager { get { return cursorManager; } } 
 
 
     bool cinematicMode, vnMode, commentMode, end, overrideAmbiance, ready;
@@ -110,6 +102,7 @@ public class GameManager : MonoBehaviour
 
         player.Init();
 
+        themeManager.Init();
 
         PartnerManager = GetComponent<PartnerManager>();
         PartnerManager.Init(this);
@@ -159,11 +152,6 @@ public class GameManager : MonoBehaviour
         //areas = ChapterData.areas;
         InventoryManager.Init(ChapterData.items);
 
-
-        foreach (var area in areas)
-        {
-            area.OriginalVolume = area.Music.volume;
-        }
 
         if (StartCinematic != "")
         {
@@ -480,71 +468,32 @@ public class GameManager : MonoBehaviour
 
     public void NewArea(string areaName)
     {
-        if (overrideAmbiance)
-            return;
-
-        foreach (var item in areas)
-        {
-            if (item.Name == areaName)
-            {
-                item.Music.volume = item.OriginalVolume;
-
-                if (item.Name != currentArea)
-                {
-                    ghostManager.UpdateGhosts();
-
-                    item.Music.Play();
-
-                    currentAudioSource = item.Music;
-                    currentArea = item.Name;
-                    currentVolume = currentAudioSource.volume;
-                }
-            }
-            else
-                item.Music.Stop();
-        }
+        themeManager.NewArea(areaName);
     }
 
     public void NewArea(string areaName, float volume)
     {
-        if (overrideAmbiance)
-            return;
+        themeManager.NewArea(areaName, volume);
+    }
 
-        foreach (var item in areas)
-        {
-            if (item.Name == areaName)
-            {
-                item.Music.volume = volume;
+    public void StopOverride()
+    {
+        themeManager.StopOverride();
+    }
 
-                if (item.Name != currentArea)
-                {
-                    ghostManager.UpdateGhosts();
-
-                    item.Music.Play();
-
-                    currentAudioSource = item.Music;
-                    currentArea = item.Name;
-                    currentVolume = currentAudioSource.volume;
-                }
-            }
-            else
-                item.Music.Stop();
-        }
+    public void StopOverride(string  areaName)
+    {
+        themeManager.StopOverride(areaName);
     }
 
     public void StopAmbiance()
     {
-        foreach (var item in areas)
-        {
-            item.Music.Stop();
-        }
+        themeManager.StopAmbiance();
     }
 
     public void PlayEndAmbiance()
     {
-        overrideAmbiance = true;
-
-        overrideAudio.Play();
+        themeManager.PlayEndAmbiance();
     }
 
     public void CamZoneQuickUpdate(CameraZone zone)
@@ -617,10 +566,14 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public void OverrideAmbiance(string overrideArea)
+    {
+        themeManager.OverrideAmbiance(overrideArea);
+    }
+
     public void SetAmbianceVolume(float sound)
     {
-        if (currentAudioSource != null)
-            currentAudioSource.volume = currentVolume * sound;
+        themeManager.SetAmbianceVolume(sound);
     }
 
     public void ResetPlayer()

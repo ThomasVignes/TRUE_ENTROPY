@@ -5679,7 +5679,7 @@ Transform:
   - {fileID: 1452853997699121715}
   - {fileID: 6818870198596210059}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6550506773295807635
 MonoBehaviour:
@@ -6990,10 +6990,10 @@ MonoBehaviour:
     Action: ArmsCrossed
     cameraEffect: 0
     Answers:
-    - Text: Tell me about it. (End Demo)
+    - Text: 'Tell me about it. '
       ConditionNeeded: 
       DialogueEnd: 1
-      HideLeavePrompt: 1
+      HideLeavePrompt: 0
       BranchToCurrent: 0
       BranchIndex: 1
       Delegate:

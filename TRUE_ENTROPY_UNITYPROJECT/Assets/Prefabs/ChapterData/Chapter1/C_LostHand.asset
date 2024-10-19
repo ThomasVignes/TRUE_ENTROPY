@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: C_LostHand
   m_EditorClassIdentifier: 
   ID: LostHand
+  Ambience: Corridors
   BlackScreenDuration: 5
   lines:
   - Text: 
@@ -20,11 +21,13 @@ MonoBehaviour:
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Finally back with us, huh ?
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 3
     PuppetActions:
@@ -32,11 +35,13 @@ MonoBehaviour:
       Action: LookRuth
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...What ?
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 3
     PuppetActions:
@@ -44,12 +49,14 @@ MonoBehaviour:
       Action: MoveHips
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: You need to stop sticking your arms in unidentified holes. Unless you want
       to lose your other hand too.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: My...
     Duration: 2
     PuppetActions:
@@ -59,16 +66,19 @@ MonoBehaviour:
       Action: LookArm
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...Oh god.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions:
@@ -76,6 +86,7 @@ MonoBehaviour:
       Action: LookRuth
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions:
@@ -83,11 +94,13 @@ MonoBehaviour:
       Action: Angry
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Gnarly, huh ?
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -95,11 +108,13 @@ MonoBehaviour:
       Action: RestArm
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...Shit.
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions:
@@ -107,25 +122,31 @@ MonoBehaviour:
       Action: CrossAgain
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: I couldn't do better in the time we had, sadly. I'll send someone to fetch
       a prosthesis for you.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...Thanks.
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   EndBlackScreenDuration: 1
+  ResumeTheme: Corridors

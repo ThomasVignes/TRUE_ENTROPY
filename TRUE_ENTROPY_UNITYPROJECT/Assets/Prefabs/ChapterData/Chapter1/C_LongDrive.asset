@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: C_LongDrive
   m_EditorClassIdentifier: 
   ID: LongDrive
+  Ambience: Dream
   BlackScreenDuration: 4
   lines:
   - Text: 
@@ -20,6 +21,7 @@ MonoBehaviour:
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions:
@@ -27,16 +29,19 @@ MonoBehaviour:
       Action: Smoke
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 0.5
     PuppetActions:
@@ -44,11 +49,13 @@ MonoBehaviour:
       Action: LookLeft
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...By the way.
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 0.4
     PuppetActions:
@@ -56,11 +63,13 @@ MonoBehaviour:
       Action: Crossed
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Hm ?
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 0.5
     PuppetActions:
@@ -68,11 +77,13 @@ MonoBehaviour:
       Action: LookRight
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: What do you think that void is made of ?
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -80,16 +91,19 @@ MonoBehaviour:
       Action: UnCross
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Who knows.
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: It could be litteraly anything. Or nothing at all.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -97,11 +111,13 @@ MonoBehaviour:
       Action: Lean
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...I guess so.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -109,11 +125,13 @@ MonoBehaviour:
       Action: LookLeft
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Well. It means I can envision whatever I want to.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -121,11 +139,13 @@ MonoBehaviour:
       Action: Curious
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...Now you got me curious. Tell me.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions:
@@ -133,16 +153,19 @@ MonoBehaviour:
       Action: LookRight
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: A big pile of decent car suspensions...
     Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...A seat that doesn't thrust through my ass...
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -150,14 +173,17 @@ MonoBehaviour:
       Action: Idiot
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Idiot.
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   EndBlackScreenDuration: 1

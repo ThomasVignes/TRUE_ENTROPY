@@ -79,6 +79,7 @@ public class CinematicManager : MonoBehaviour
 
         playing = true;
         gameManager.SetCinematicMode(true);
+        
 
         StartCoroutine(C_PlayCinematic(instaFade));
     }
@@ -86,6 +87,8 @@ public class CinematicManager : MonoBehaviour
     IEnumerator C_PlayCinematic(bool instaFade)
     {
         Cinematic current = cinematics[currentCinematic];
+
+        gameManager.OverrideAmbiance(current.Data.Ambience);
 
         if (instaFade)
             gameManager.ScreenEffects.FadeTo(1, 0.001f);
@@ -151,6 +154,11 @@ public class CinematicManager : MonoBehaviour
             //Play effects
             gameManager.CameraEffectManager.PlayEffect(line.cameraEffect);
 
+            foreach (var s in line.soundEffects)
+            {
+                EffectsManager.Instance.audioManager.Play(s);
+            }
+
             //Wait delay
             yield return new WaitForSeconds(line.Duration);
         }
@@ -181,6 +189,11 @@ public class CinematicManager : MonoBehaviour
 
         playing = false;
         gameManager.SetCinematicMode(false);
+
+        if (cinematics[currentCinematic].Data.ResumeTheme == "")
+            gameManager.StopOverride();
+        else
+            gameManager.StopOverride(cinematics[currentCinematic].Data.ResumeTheme);
 
         if (cinematics[currentCinematic].ChainCinematic != "")
             PlayCinematic(cinematics[currentCinematic].ChainCinematic);

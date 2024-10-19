@@ -919,17 +919,9 @@ MonoBehaviour:
   firstCamZone: {fileID: 0}
   startGameManager: {fileID: 0}
   characterStart: {fileID: 0}
-  overrideAudio: {fileID: 0}
-  startAudio: {fileID: 0}
   inventoryCanvas: {fileID: 4091023351891599364}
+  themeManager: {fileID: 0}
   conditions: []
-  areas:
-  - Name: Corridors
-    Music: {fileID: 0}
-    OriginalVolume: 0
-  - Name: Ballroom
-    Music: {fileID: 0}
-    OriginalVolume: 0
   CinematicManager: {fileID: 0}
   DialogueManager: {fileID: 0}
   ScreenEffects: {fileID: 0}
@@ -1010,6 +1002,10 @@ MonoBehaviour:
   shake: {fileID: 371096901316689129}
   bump: {fileID: 1856550523867116669}
   rumble: {fileID: 371096901316689129}
+  elevatorShake: {fileID: 371096901316689129}
+  elevatorBump: {fileID: 371096901316689129}
+  disableElevatorEffects: 1
+  shaker: {fileID: 0}
 --- !u!114 &480879812855692366
 MonoBehaviour:
   m_ObjectHideFlags: 0

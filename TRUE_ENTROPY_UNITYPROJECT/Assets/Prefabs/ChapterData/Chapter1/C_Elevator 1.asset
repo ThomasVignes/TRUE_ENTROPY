@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: C_Elevator 1
   m_EditorClassIdentifier: 
   ID: Elevator
+  Ambience: Elevator
   BlackScreenDuration: 3
   lines:
   - Text: 
@@ -20,6 +21,7 @@ MonoBehaviour:
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -27,16 +29,19 @@ MonoBehaviour:
       Action: LookUp
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Fucking elevators man.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -44,21 +49,25 @@ MonoBehaviour:
       Action: Lean
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Tell me about it.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 15
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 15
     PuppetActions:
@@ -68,6 +77,7 @@ MonoBehaviour:
       Action: CrossArms
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -75,16 +85,19 @@ MonoBehaviour:
       Action: Why
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Why did I have to stop smoking again ?
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -92,17 +105,20 @@ MonoBehaviour:
       Action: LookJer
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Because someone can't respect the one pack a day rule, and made us run
       out.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -110,16 +126,19 @@ MonoBehaviour:
       Action: LookUp
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: No idea who that is.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 10
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 15
     PuppetActions:
@@ -129,21 +148,26 @@ MonoBehaviour:
       Action: CrossArms
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 4
-  - Text: '*ding*'
+    soundEffects: []
+  - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects:
+    - Ding
   - Text: 
-    Duration: 10
+    Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -151,21 +175,25 @@ MonoBehaviour:
       Action: LookUp
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: ...Ready ?
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions:
@@ -173,24 +201,30 @@ MonoBehaviour:
       Action: UnCross
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: '...Yeah. '
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: Yeah.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   - Text: 
     Duration: 1
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    soundEffects: []
   EndBlackScreenDuration: 2
+  ResumeTheme: Ceremony

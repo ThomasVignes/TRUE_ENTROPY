@@ -6,9 +6,11 @@ using UnityEngine;
 public class CinematicData : ScriptableObject
 {
     public string ID;
+    public string Ambience;
     public float BlackScreenDuration;
     public CinematicLine[] lines;
     public float EndBlackScreenDuration;
+    public string ResumeTheme;
 }
 
 [System.Serializable]
@@ -19,6 +21,7 @@ public class CinematicLine
     public PuppetAction[] PuppetActions;
     public int cameraIndex;
     public CameraEffect cameraEffect;
+    public string[] soundEffects;
 }
 
 [System.Serializable]
