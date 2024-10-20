@@ -188,9 +188,9 @@ Material:
     - _Metalness_X: 0
     - _Metalness_Y: 0
     - _Metalness_Z: 0
-    - _Normal_Strength_X: 1
-    - _Normal_Strength_Y: 1
-    - _Normal_Strength_Z: 1
+    - _Normal_Strength_X: 0.8
+    - _Normal_Strength_Y: 0.8
+    - _Normal_Strength_Z: 0.8
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
