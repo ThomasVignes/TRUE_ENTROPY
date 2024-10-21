@@ -30,7 +30,7 @@ MonoBehaviour:
     cameraIndex: 0
     cameraEffect: 0
     soundEffects: []
-  - Text: ...
+  - Text: 
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
@@ -187,3 +187,4 @@ MonoBehaviour:
     cameraEffect: 0
     soundEffects: []
   EndBlackScreenDuration: 1
+  ResumeTheme: 

@@ -1052,10 +1052,10 @@ Canvas:
   m_GameObject: {fileID: 3830047469560376101}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 0.4
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -2137,7 +2137,7 @@ Transform:
   - {fileID: 8039908999372945181}
   - {fileID: 8434291404931226986}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &291574133828063346
 MonoBehaviour:
