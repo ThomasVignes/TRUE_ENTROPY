@@ -2365,7 +2365,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -278085929633702562, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -3030,7 +3030,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 5060444177187149915, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -3116,7 +3116,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -2537398442032554841, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -4273,7 +4273,7 @@ MonoBehaviour:
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2
-  runMultiplier: 2
+  runMultiplier: 2.2
   injuredMultiplier: 0.8
   moveStateLerp: 4
   minDistanceToMove: 0.1
@@ -4390,7 +4390,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 6657998009922166292, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -4632,7 +4632,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -1357422614337538888, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -4880,7 +4880,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 7666266049737368757, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -5004,7 +5004,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 3532343685780574157, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -5833,7 +5833,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 2959467708922500008, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -5959,7 +5959,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 3900480760133451625, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -6888,7 +6888,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -2685106832852918687, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -7683,7 +7683,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -2232952877369940510, guid: 8f0b4fcc72b12e14f9da9031e411c44d, type: 3}
   m_Bones:
@@ -10389,31 +10389,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.52474123
+      value: 0.5668817
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4739692
+      value: 0.42266476
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5247416
+      value: -0.56688166
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.4739686
+      value: 0.42266417
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 84.179
+      value: 73.416
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.001
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 328601266644008103, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3824322095698462150, guid: 26954f1f9fcc1c2419e2251f78c75ad1, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
