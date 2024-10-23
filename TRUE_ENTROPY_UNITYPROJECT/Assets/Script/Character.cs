@@ -8,6 +8,9 @@ public class Character : MonoBehaviour
     [Header("Special (Common)")]
     [SerializeField] protected CursorType cursorType;
 
+    [Header("Cinematic (Common)")]
+    public bool CanMoveInCinematic;
+
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
     [SerializeField] protected float minAngleToMove, minDistanceToInteract;

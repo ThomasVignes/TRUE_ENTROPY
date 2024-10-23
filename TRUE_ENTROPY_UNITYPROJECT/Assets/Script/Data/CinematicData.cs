@@ -21,6 +21,7 @@ public class CinematicLine
     public PuppetAction[] PuppetActions;
     public int cameraIndex;
     public CameraEffect cameraEffect;
+    public string newAmbience;
     public string[] soundEffects;
 }
 

@@ -833,7 +833,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 1974919467808466739, guid: 0e1ba391be8f48a46a7db74c6a904154, type: 3}
   m_Bones:
@@ -4755,7 +4755,7 @@ Transform:
   m_Children:
   - {fileID: 5793306391389666574}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &4152824667427828883
 GameObject:
@@ -4900,7 +4900,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 1517757969564366345, guid: a610b86053e7bd34889022205bf17748, type: 3}
   m_Bones:
@@ -5411,7 +5411,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 6391266369805317947, guid: 0e1ba391be8f48a46a7db74c6a904154, type: 3}
   m_Bones:

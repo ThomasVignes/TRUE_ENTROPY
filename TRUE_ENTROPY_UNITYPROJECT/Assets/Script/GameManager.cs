@@ -191,6 +191,15 @@ public class GameManager : MonoBehaviour
         {
             CinematicManager.Step();
             cursorManager.SetCursorType(CursorType.Base);
+
+            foreach (Character c in characters)
+            {
+                if (c.CanMoveInCinematic)
+                {
+                    c.Step();
+                    c.ConstantStep();
+                }
+            }
             return;
         }
 
