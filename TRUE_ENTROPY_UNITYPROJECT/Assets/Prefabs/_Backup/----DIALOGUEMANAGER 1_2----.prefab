@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 1290213764021032966}
   m_LocalRotation: {x: -0.14022626, y: -0.7064642, z: 0.12486536, w: -0.6823881}
   m_LocalPosition: {x: 17.862, y: -20.455, z: -25.957}
-  m_LocalScale: {x: 0.9646401, y: 0.9646398, z: 0.96464}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2262786096897713916}
@@ -571,6 +571,78 @@ Transform:
   m_Father: {fileID: 1612351982732956815}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -162.986, z: 0}
+--- !u!1 &2651498880928682747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7703117198187237079}
+  - component: {fileID: 2418031819717104544}
+  m_Layer: 0
+  m_Name: SitDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7703117198187237079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651498880928682747}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1220272522387658100}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2418031819717104544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651498880928682747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: ButlerMasks
+  Lines:
+  - Text: This table's free...
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: ...I'm ready. Let's sit down.
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 1
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: '...I need more time. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &2794148722177942952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1503,7 @@ Transform:
   m_GameObject: {fileID: 4858602739883219269}
   m_LocalRotation: {x: -0.7367213, y: 0.118454866, z: -0.13402921, w: -0.6521092}
   m_LocalPosition: {x: 19.046, y: -16.862, z: -25.595041}
-  m_LocalScale: {x: 0.9646401, y: 0.9646398, z: 0.96464}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2262786096897713916}
@@ -1565,6 +1637,7 @@ Transform:
   - {fileID: 159665859492108148}
   - {fileID: 4287380165500507498}
   - {fileID: 6600663947811188851}
+  - {fileID: 3453061190780317033}
   m_Father: {fileID: 1220272522387658100}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2136,6 +2209,7 @@ Transform:
   - {fileID: 3561673174205438159}
   - {fileID: 8039908999372945181}
   - {fileID: 8434291404931226986}
+  - {fileID: 7703117198187237079}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2174,6 +2248,11 @@ MonoBehaviour:
     PivotIndex: 0
     CameraIndex: 0
     OriginalPos: {x: 0, y: 0, z: 0}
+  - Name: Table
+    VNPuppet: {fileID: 0}
+    PivotIndex: 0
+    CameraIndex: 5
+    OriginalPos: {x: 0, y: 0, z: 0}
   dialogues:
   - {fileID: 1430949634940565981}
   - {fileID: 4645000848103567115}
@@ -2202,6 +2281,7 @@ MonoBehaviour:
   - {fileID: 8768278522511870158}
   - {fileID: 33041724900885937}
   - {fileID: 1507941145754531910}
+  - {fileID: 3453061190780317033}
 --- !u!114 &9050554755146169694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,6 +2329,37 @@ MonoBehaviour:
   Camera: {fileID: 0}
   Interface: {fileID: 5964679712008039896}
   dialogue: {fileID: 7744623721857899121}
+--- !u!1 &6659417379072690998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3453061190780317033}
+  m_Layer: 6
+  m_Name: Spot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3453061190780317033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659417379072690998}
+  m_LocalRotation: {x: -0.13884759, y: 0.8233699, z: -0.49948683, w: -0.23085967}
+  m_LocalPosition: {x: -0.909, y: 9.943603, z: 12.724}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2262786096897713916}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 21.58, y: 92.312, z: 1.708}
 --- !u!1 &6736829581418597750
 GameObject:
   m_ObjectHideFlags: 0
