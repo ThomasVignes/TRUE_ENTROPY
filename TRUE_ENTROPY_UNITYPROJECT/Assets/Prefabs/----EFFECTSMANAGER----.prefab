@@ -104,6 +104,55 @@ MonoBehaviour:
     loop: 0
     mixerLayer: 
     source: {fileID: 0}
+  - name: Clac
+    clip: {fileID: 8300000, guid: 2e40e3befa933204e96aea6d5653fb7a, type: 3}
+    volume: 1.5
+    pitch: 0.7
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: Clac
+    clip: {fileID: 8300000, guid: 2e40e3befa933204e96aea6d5653fb7a, type: 3}
+    volume: 1.5
+    pitch: 0.7
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: Clang
+    clip: {fileID: 8300000, guid: 9ab20018a68fb5f4897f326b031f3573, type: 3}
+    volume: 1
+    pitch: 0.9
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: BigClac
+    clip: {fileID: 8300000, guid: 2e40e3befa933204e96aea6d5653fb7a, type: 3}
+    volume: 1
+    pitch: 0.2
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: SmallClick
+    clip: {fileID: 8300000, guid: 1d086797fd195f446a21708902ec1035, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: SmallValidate
+    clip: {fileID: 8300000, guid: 65795c6c6e185304ba84a9e0f2f442b6, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: ClickLoop
+    clip: {fileID: 8300000, guid: 2432ca40da9521a49b6bd778f4a73ba2, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}
@@ -139,7 +188,7 @@ Transform:
   - {fileID: 6055004262476004451}
   - {fileID: 4379220878010770370}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2577924485865205203
 MonoBehaviour:

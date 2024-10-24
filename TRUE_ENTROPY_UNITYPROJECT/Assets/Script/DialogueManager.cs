@@ -180,7 +180,9 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in text)
         {
             characterDialogue.text += c;
-            
+
+            EffectsManager.Instance.audioManager.Play("SmallClick");
+
             if (skip)
             {
                 break;
@@ -272,6 +274,8 @@ public class DialogueManager : MonoBehaviour
 
         selecting = false;
 
+        EffectsManager.Instance.audioManager.Play("SmallValidate");
+
         Answer answer = dialogues[currentDialogue].Lines[currentLine].Answers[index];
 
         answer.Delegate?.Invoke();
@@ -315,6 +319,8 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in text)
         {
             observationDialogue.text += c;
+
+             EffectsManager.Instance.audioManager.Play("SmallClick");
 
             if (skip)
             {

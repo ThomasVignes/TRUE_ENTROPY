@@ -10002,6 +10002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorType: 0
+  CanMoveInCinematic: 0
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2
