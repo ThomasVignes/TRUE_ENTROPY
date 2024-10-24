@@ -635,4 +635,14 @@ public class GameManager : MonoBehaviour
                 maskManager.PutMask(on);
         }
     }
+
+    public void ExperimentalDeactivatePlayer()
+    {
+        player.transform.root.gameObject.SetActive(false);
+
+        if (PartnerManager.Partner != null)
+        {
+            PartnerManager.Partner.transform.root.gameObject.SetActive(false);
+        }
+    }
 }

@@ -153,6 +153,27 @@ MonoBehaviour:
     loop: 1
     mixerLayer: 
     source: {fileID: 0}
+  - name: GunshotLow
+    clip: {fileID: 8300000, guid: 718903d66d7389d4badf00e0cd6e6d32, type: 3}
+    volume: 1
+    pitch: 1.1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: FleshWhip
+    clip: {fileID: 8300000, guid: 584d9d20e7b00c948b9cbd65da1ddbb3, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: Collapse
+    clip: {fileID: 8300000, guid: d3a3d1bff7e1bb14d90ac8477baf21fa, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}
@@ -188,7 +209,7 @@ Transform:
   - {fileID: 6055004262476004451}
   - {fileID: 4379220878010770370}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2577924485865205203
 MonoBehaviour:
