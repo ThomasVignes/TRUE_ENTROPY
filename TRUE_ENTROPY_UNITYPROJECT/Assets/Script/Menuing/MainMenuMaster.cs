@@ -13,6 +13,7 @@ public class MainMenuMaster : MonoBehaviour
 
     [Header("States")]
     public bool CanInput;
+    public bool AutoQuit;
 
     [Header("References")]
     [SerializeField] private Image BlackScreen;
@@ -47,6 +48,12 @@ public class MainMenuMaster : MonoBehaviour
     {
         if (Input.anyKey || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
+            if (AutoQuit)
+            {
+                QuitGame();
+                return;
+            }
+
             if (!CanInput)
                 return;
 

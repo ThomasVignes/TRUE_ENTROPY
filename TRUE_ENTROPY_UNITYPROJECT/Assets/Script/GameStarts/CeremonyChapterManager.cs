@@ -9,7 +9,9 @@ public class CeremonyChapterManager : ChapterManagerGeneric
 {
     [SerializeField] private float introDelay;
     [SerializeField] GameObject ghostPrefab;
-    [SerializeField] private TextMeshProUGUI endText;
+    [SerializeField] private TextMeshProUGUI endText, introText;
+    [SerializeField] GameObject introUi;
+    [SerializeField] GameObject introTitle;
     bool gettingUp;
     float introTimer;
 
@@ -74,11 +76,32 @@ public class CeremonyChapterManager : ChapterManagerGeneric
         gameManager.ScreenEffects.FadeTo(1, 0.01f);
         AudioListener.volume = 0;
 
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(2f);
 
+        var t = introText.text;
+
+        introText.text = "";
+
+        introTitle.SetActive(false);
+
+        introUi.SetActive(true);
+
+        foreach (char c in t)
+        {
+            yield return new WaitForSeconds(0.1f);
+            EffectsManager.Instance.audioManager.Play("Click");
+
+            introText.text += c;
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        introTitle.SetActive(true);
         EffectsManager.Instance.audioManager.Play("Gunshot");
 
         AudioListener.volume = 1;
+
+        yield return new WaitForSeconds(3f);
 
         RestartGame();
     }
@@ -125,6 +148,13 @@ public class CeremonyChapterManager : ChapterManagerGeneric
         gameManager.ScreenEffects.StartFade();
         Intro = true;
         gameManager.Ready = true;
+
+        if (introUi.activeSelf)
+        {
+            yield return new WaitForSeconds(2);
+
+            introUi.SetActive(false);
+        }
     }
     #endregion
 }

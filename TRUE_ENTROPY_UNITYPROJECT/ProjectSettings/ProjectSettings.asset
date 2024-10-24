@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: WhumpusWu
-  productName: TRUE ENTROPY
+  productName: BUTLER_GUILLOTINE
   defaultCursor: {fileID: 2800000, guid: 5d1e1f19e4533864d8b1384b1ac3a2f6, type: 3}
   cursorHotspot: {x: 18, y: 13}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -81,7 +81,7 @@ PlayerSettings:
   androidFullscreenMode: 1
   defaultIsNativeResolution: 0
   macRetinaSupport: 1
-  runInBackground: 1
+  runInBackground: 0
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
@@ -137,7 +137,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.9.0
+  bundleVersion: 2.1.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.WhumpusWu.TRUE-ENTROPY
+    Standalone: com.WhumpusWu.BUTLER-GUILLOTINE
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -278,7 +278,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 7516c73c72450b04d947303540566084, type: 3}
+      m_Icon: {fileID: 2800000, guid: a9d80175caa29134fb15ec0a2e2916bd, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

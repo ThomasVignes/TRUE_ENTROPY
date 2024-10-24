@@ -64,7 +64,8 @@ public class LocalCinematic : MonoBehaviour
     {
         LocalCinematic current = this;
 
-        gameManager.OverrideAmbiance(current.Ambience);
+        if (current.Ambience != "")
+            gameManager.OverrideAmbiance(current.Ambience);
 
         if (instaFade)
             gameManager.ScreenEffects.FadeTo(1, 0.001f);

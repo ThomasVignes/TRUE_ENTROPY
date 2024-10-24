@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CeremonyAltChapterManager : ChapterManagerGeneric
 {
@@ -48,7 +49,7 @@ public class CeremonyAltChapterManager : ChapterManagerGeneric
 
     public override void EndChapter()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public override void Death(string message)
