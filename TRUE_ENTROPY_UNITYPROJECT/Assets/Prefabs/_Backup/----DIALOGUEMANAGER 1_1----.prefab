@@ -4812,7 +4812,7 @@ MonoBehaviour:
     Action: Idle
     cameraEffect: 0
     Answers:
-    - Text: To be fair, I don't even know know how I got here.
+    - Text: To be fair, I don't even know how I got here.
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
