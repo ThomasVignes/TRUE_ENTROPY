@@ -94,7 +94,7 @@ public class CeremonyChapterManager : ChapterManagerGeneric
             introText.text += c;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         introTitle.SetActive(true);
         EffectsManager.Instance.audioManager.Play("Gunshot");

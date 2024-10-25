@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
         if (cinematicMode)
         {
             CinematicManager.Step();
-            cursorManager.SetCursorType(CursorType.Base);
+            cursorManager.SetCursorType(CursorType.Invisible);
 
             foreach (Character c in characters)
             {

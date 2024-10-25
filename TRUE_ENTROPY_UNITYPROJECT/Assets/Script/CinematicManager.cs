@@ -128,6 +128,8 @@ public class CinematicManager : MonoBehaviour
             {
                 dialogue.text += c;
 
+                EffectsManager.Instance.audioManager.Play("SmallClick");
+
                 if (skip)
                 {
                     break;
