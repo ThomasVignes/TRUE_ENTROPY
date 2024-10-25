@@ -11502,6 +11502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorType: 3
+  CanMoveInCinematic: 0
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2
@@ -11513,7 +11514,7 @@ MonoBehaviour:
   resetPos: {x: -0.00009011149, y: 0.9111375, z: 0.04616464}
   Choppers: []
   shootCD: 0.67
-  drawDelay: 0.3
+  drawDelay: 1
   legIK: {fileID: 7377324655593113487}
   hipGun: {fileID: 4217805012461405945}
   handGun: {fileID: 8957249352980749802}
