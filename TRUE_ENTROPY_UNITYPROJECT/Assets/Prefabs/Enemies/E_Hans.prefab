@@ -652,7 +652,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 5118675221273634472}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2758241015069550000}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -931,7 +931,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 2818334689954930314}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 7763402348615335334}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 411525522723836122}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 6391858833253229918}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -1561,11 +1561,10 @@ GameObject:
   m_Component:
   - component: {fileID: 831376056251074138}
   - component: {fileID: 4120050033701593546}
+  - component: {fileID: 5299403041814404772}
   - component: {fileID: 6205220491560336497}
-  - component: {fileID: 6072144580437486621}
-  - component: {fileID: 1614351971863314842}
   m_Layer: 0
-  m_Name: Butler
+  m_Name: Hans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,11 +1611,24 @@ MonoBehaviour:
   moveStateLerp: 4
   minDistanceToMove: 0.1
   animator: {fileID: 1228516762171661665}
+  archetype: 1
   attackDelay: 0
   attackRange: 0
   loseDelay: 0
   loseRange: 0
   target: {fileID: 0}
+--- !u!114 &5299403041814404772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310218234778470389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53539d1e8c697c4da85d33166eb2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &6205220491560336497
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1639,64 +1651,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6072144580437486621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310218234778470389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1c80b509c7781478efba3514d524ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SetTo: 0
-  Weight: 1.5
-  AdditionalDamping: 1
-  Mass: 1
-  LimitVelocity: 1
-  LimitAngularVelocity: 1
-  MaxVelocity: 1000
-  MaxAngularVelocity: 1000
-  EnableProjection: 1
-  BaseLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  NoColLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  limbs: []
-  forces: []
-  root: {fileID: 2581937358136143981}
-  mainRb: {fileID: 260620130888876352}
---- !u!54 &1614351971863314842
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310218234778470389}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1321616881556131806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,7 +2408,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 2570954270157354253}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 5640986268630355235}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -5784,7 +5738,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 1828979170984317106}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 8818991480809733915}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -6385,7 +6339,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7137931101977475347}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 5694001547886624165}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -6581,7 +6535,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 2714285301269213504}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2218023761406553220}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -6787,7 +6741,7 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2581937358136143981}
-  m_ConnectedBody: {fileID: 1614351971863314842}
+  m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -7104,7 +7058,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7562067321774370901}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 6420060383497262669}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -7460,7 +7414,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 1105258938975081395}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 904975045990403550}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -8470,7 +8424,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7562067321774370901}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 8601157625378887589}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -8894,7 +8848,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 275715755742358394}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 471532739417860412}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -9089,7 +9043,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8208467854838832038}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 1844333859413433615}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -12229,7 +12183,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 910
+  m_VersionIndex: 925
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12802,7 +12756,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 1538681439836695723}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 7743073586651595989}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -13144,7 +13098,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 6845098119117347205}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 499261807951401708}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -13712,7 +13666,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 1424892953780364886}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2079642482556089885}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -13944,7 +13898,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 4086368327796049660}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 805093793861397376}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -17574,7 +17528,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7641178774184893018}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 8155908282013202454}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -18065,7 +18019,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8520134250308387111}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 115375872369342815}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -18261,7 +18215,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7898353976733098998}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 5588119411428982533}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -18585,7 +18539,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 5375768867060256863}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2906428334340979581}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -18843,7 +18797,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8208467854838832038}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2435676892046809976}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -19210,7 +19164,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 6104869093201842437}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 685145273410271345}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -19729,7 +19683,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8208467854838832038}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 6144805934524866158}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -19924,7 +19878,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8208467854838832038}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2103146611075128391}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -20156,7 +20110,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 5292405269957305763}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2817718767481595405}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -20351,7 +20305,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8208467854838832038}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 9105321795212672373}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -20579,7 +20533,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 4491516695389567257}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 203832311122622994}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -20946,7 +20900,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 5666034741281953922}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 6857552693444099990}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -21174,7 +21128,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 4478018726294303002}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 1331747885431692442}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -21370,7 +21324,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8078107465954053045}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 1983427946329739411}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -21565,7 +21519,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7562067321774370901}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 3661996532353413373}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -22022,7 +21976,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 4937202337703325635}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 7884672919620497716}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -22332,7 +22286,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7562067321774370901}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 7939376692458726600}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -22623,7 +22577,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 2220972796624228076}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 3437772510060549763}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -22851,7 +22805,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8923068144538695895}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 4675890557577452527}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -22866,6 +22820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5939267732441791130}
   - component: {fileID: 6233174023914590278}
+  - component: {fileID: 5002541908500398866}
   m_Layer: 0
   m_Name: E_Hans
   m_TagString: Untagged
@@ -22906,6 +22861,37 @@ MonoBehaviour:
   hideOffset: {x: 0, y: -30, z: 0}
   deactivateObjects: []
   rb: {fileID: 260620130888876352}
+--- !u!114 &5002541908500398866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583806759567414687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1c80b509c7781478efba3514d524ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetTo: 0
+  Weight: 1.5
+  AdditionalDamping: 1
+  Mass: 1
+  LimitVelocity: 1
+  LimitAngularVelocity: 1
+  MaxVelocity: 1000
+  MaxAngularVelocity: 1000
+  EnableProjection: 1
+  BaseLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  NoColLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  limbs: []
+  forces: []
+  root: {fileID: 2581937358136143981}
+  mainRb: {fileID: 260620130888876352}
 --- !u!1 &7641253430821728482
 GameObject:
   m_ObjectHideFlags: 0
@@ -23129,7 +23115,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 2348269591087571784}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 3019612144613329397}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -23815,7 +23801,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 7562067321774370901}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 4895117072012772499}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -24291,7 +24277,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 8773641524883558688}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 6653582170492341573}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -24676,7 +24662,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 5212070549410158801}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 3934177905474684544}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
@@ -24940,7 +24926,7 @@ MonoBehaviour:
   LimitVelocity: 0
   LimitAngularVelocity: 0
   targetLimb: {fileID: 4824510135741836936}
-  ragdollManager: {fileID: 6072144580437486621}
+  ragdollManager: {fileID: 0}
   m_ConfigurableJoint: {fileID: 2602578511660882287}
   rb: {fileID: 0}
   connectedRb: {fileID: 0}
