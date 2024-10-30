@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 567181846109372254}
   - component: {fileID: 1477626563233196843}
   - component: {fileID: 343850740556778716}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 9042997485122686809}
   - component: {fileID: 4801658264599201223}
   - component: {fileID: 4539559169419944810}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 2797682507684757965}
   - component: {fileID: 5030305880307544747}
   - component: {fileID: 3773884249045779153}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BlackScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8281037217772915967
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1274437425333444619}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8357808788917493627}
   - component: {fileID: 2395204288161743094}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,6 +732,91 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
+--- !u!1 &7234704457388174602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826214836262327832}
+  - component: {fileID: 5587899068545906398}
+  m_Layer: 0
+  m_Name: PlayerHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &826214836262327832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234704457388174602}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1199123344953743290}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5587899068545906398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234704457388174602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 1
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -0.02, z: 0}
 --- !u!1 &7499088140186883120
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +828,7 @@ GameObject:
   - component: {fileID: 7128772410629637581}
   - component: {fileID: 5430028202660407467}
   - component: {fileID: 8085667511419890081}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BlackScreen (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,9 +983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9304f8a9858c4245a7fc16e45f43a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChapterData: {fileID: 11400000, guid: d044afd94e5423e4a971be46c147cd2f, type: 2}
+  ChapterData: {fileID: 11400000, guid: caf4f40c16bf62649811a01593e20d3c, type: 2}
   StartCinematic: 
-  SpecialActive: 0
+  SpecialActive: 1
   clickdelay: 0.5
   moveLayer:
     serializedVersion: 2
@@ -914,6 +999,9 @@ MonoBehaviour:
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 319
+  hitboxLayer:
+    serializedVersion: 2
+    m_Bits: 4096
   currentCam: {fileID: 0}
   vnCam: {fileID: 0}
   firstCamZone: {fileID: 0}
@@ -921,6 +1009,8 @@ MonoBehaviour:
   characterStart: {fileID: 0}
   inventoryCanvas: {fileID: 4091023351891599364}
   themeManager: {fileID: 0}
+  genericManagers:
+  - {fileID: 0}
   conditions: []
   CinematicManager: {fileID: 0}
   DialogueManager: {fileID: 0}
@@ -1004,6 +1094,7 @@ MonoBehaviour:
   rumble: {fileID: 371096901316689129}
   elevatorShake: {fileID: 371096901316689129}
   elevatorBump: {fileID: 371096901316689129}
+  playerHit: {fileID: 5587899068545906398}
   disableElevatorEffects: 1
   shaker: {fileID: 0}
 --- !u!114 &480879812855692366
@@ -1056,6 +1147,7 @@ Transform:
   m_Children:
   - {fileID: 918331479011376008}
   - {fileID: 3717988450431192482}
+  - {fileID: 826214836262327832}
   m_Father: {fileID: 249023886136405415}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

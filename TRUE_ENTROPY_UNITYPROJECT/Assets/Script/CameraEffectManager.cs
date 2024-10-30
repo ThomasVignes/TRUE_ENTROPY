@@ -9,12 +9,13 @@ public enum CameraEffect
     Shake,
     Bump,
     Rumble,
-    Elevator
+    Elevator,
+    PlayerHit
 }
 
 public class CameraEffectManager : MonoBehaviour
 {
-    [SerializeField] CinemachineImpulseSource shake, bump, rumble, elevatorShake, elevatorBump;
+    [SerializeField] CinemachineImpulseSource shake, bump, rumble, elevatorShake, elevatorBump, playerHit;
     [SerializeField] bool disableElevatorEffects;
     [SerializeField] Shaking shaker;
     GameManager gm;
@@ -73,6 +74,10 @@ public class CameraEffectManager : MonoBehaviour
 
             case CameraEffect.Elevator:
                 StartCoroutine(C_Elevator());
+                break;
+
+            case CameraEffect.PlayerHit:
+                playerHit.GenerateImpulse();
                 break;
         }
     }

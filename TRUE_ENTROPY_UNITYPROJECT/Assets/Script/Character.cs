@@ -36,6 +36,9 @@ public class Character : MonoBehaviour
     protected int targetMoveState;
     protected float currentMoveState;
 
+    protected float stunnedTimer;
+    protected bool stunned;
+
     public NavMeshAgent Agent { get { return agent; } } 
     public bool SpecialMode { get { return specialMode; } }
     public bool Moving { get { if (gameObject.activeInHierarchy && agent.enabled) { return agent.remainingDistance > minDistanceToMove; } else { return false; } } }
@@ -86,6 +89,14 @@ public class Character : MonoBehaviour
 
     public virtual void Step()
     {
+        if (stunned)
+        {
+            if (stunnedTimer < Time.time)
+                stunned = false;
+            else
+                return;
+        }
+
         if (agent.velocity.magnitude > 0.15f && !canInteract && movingToInteractable)
         {
             canInteract = true;
@@ -168,7 +179,7 @@ public class Character : MonoBehaviour
         specialMode = active;
     }
 
-    public virtual void Special(Vector3 spot)
+    public virtual void Special(Vector3 spot, GameObject hitObject)
     {
         if (!specialMode)
             return;
@@ -254,6 +265,14 @@ public class Character : MonoBehaviour
         {
             movingToInteractable = true;
         }
+    }
+
+    public virtual void Stun(float duration)
+    {
+        PausePath();
+
+        stunnedTimer = Time.time + duration;
+        stunned = true;
     }
 
     public void Pause()

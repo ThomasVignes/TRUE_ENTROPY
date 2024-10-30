@@ -6,57 +6,36 @@ using Whumpus;
 
 public class TargetLimb : MonoBehaviour
 {
-    public bool Resistant;
-    public int HP = 4;
+    public Lifeform Lifeform;
+    public int Multiplier = 1;
+    public float StunMultiplier = 1;
+    public float ForceMultiplier = 1;
     public RagdollLimb limb;
-    public bool HasBeenCut;
-    public UnityEvent OnHit, OnCut;
+    public UnityEvent OnHit;
+
+    LimbShield shield;
+
+    public bool Shielded { get { if (shield == null) return false; else return shield.Active; } }
 
     private void Awake()
     {
-        limb = GetComponent<RagdollLimb>();    
+        shield = GetComponent<LimbShield>();
     }
 
-    public void Hit(int damage, float force, Vector3 dir)
+    public void Hit(int damage, float stun, float force, Vector3 dir)
     {
+        Debug.Log(limb.gameObject.name + " hit");
+        
 
-        //Keep leg cutting ?
-        if (!HasBeenCut && ! Resistant)
+        if (shield == null || !shield.Active)
         {
-            HP -= damage;
-
-            if (HP <= 0)
-            {
-                HasBeenCut = true;
-                OnCut.Invoke();
-
-                //HitStop
-                //SlowMoEffector.Instance.Hit(limb.rb, force/4, dir);
-
-                //Gore
-                //BloodManager.Instance.SpawnBlood(limb.transform.position, limb.transform.parent.position + Vector3.Normalize(limb.transform.position - limb.transform.parent.position) * 0.2f, limb.transform.parent);
-
-                limb.CutLimb();
-
-                /*
-                Blood[] bloods = GetComponentsInChildren<Blood>();
-
-                foreach (var item in bloods)
-                {
-                    Destroy(item.gameObject);
-                }
-                */
-            }
-            else
-            {
-                //HitStop
-                //SlowMoEffector.Instance.Hit(limb.rb, force, dir);
-            }
+            Lifeform.Hurt(damage * Multiplier);
+            Lifeform.Stun(stun * StunMultiplier);
+            limb.rb.AddForce(force * dir);
         }
         else
         {
-            //HitStop
-            //SlowMoEffector.Instance.Hit(limb.rb, force, dir);
+            shield.Absorb(damage * Multiplier);
         }
 
         OnHit.Invoke();

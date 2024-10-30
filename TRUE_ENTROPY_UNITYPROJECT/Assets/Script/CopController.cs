@@ -9,7 +9,7 @@ public class CopController : PlayerController
     [SerializeField] float shootCD, drawDelay;
     [SerializeField] Rig legIK;
     [SerializeField] GameObject hipGun, handGun, muzzle;
-    [SerializeField] GameObject shootParticle, muzzleParticle;
+    [SerializeField] GameObject shootParticle, muzzleParticle, bloodDecal;
     LayerMask ignoreLayers;
     bool Aiming, RigOn;
     float shootTimer;
@@ -26,16 +26,32 @@ public class CopController : PlayerController
         handGun.SetActive(false);
     }
 
-    public override void Special(Vector3 spot)
+    public override void Special(Vector3 spot, GameObject hitObject)
     {
         if (shootTimer > Time.time)
             return;
 
         shootTimer = Time.time + shootCD;
 
-        base.Special(spot);
+        base.Special(spot, hitObject);
+
+        TargetLimb targetLimb = hitObject.GetComponent<TargetLimb>();
+
+        if (targetLimb != null)
+        {
+            targetLimb.Hit(1, 1, 2500, transform.forward.normalized);
+
+            if (!targetLimb.Shielded)
+            {
+                GameObject blood = Instantiate(bloodDecal, hitObject.transform);
+                blood.transform.position = spot;
+                blood.transform.forward = transform.forward;
+            }
+        }
 
         animator.SetTrigger("Shoot");
+
+        EffectsManager.Instance.audioManager.Play("JerGun");
 
         GameManager.Instance.HitstopManager.StartHitstop();
 
@@ -77,7 +93,7 @@ public class CopController : PlayerController
 
     public override void Step()
     {
-        if (Aiming)
+        if (Aiming && !stunned)
         {
             RaycastHit hit;
 
@@ -97,9 +113,18 @@ public class CopController : PlayerController
             base.Step();
         }
 
-        if (RigOn)
+        if (RigOn && !stunned)
             legIK.weight = Mathf.Lerp(legIK.weight, 1, Time.deltaTime * 4);
         else
             legIK.weight = Mathf.Lerp(legIK.weight, 0, Time.deltaTime * 4);
+    }
+
+    public override void Stun(float duration)
+    {
+        base.Stun(duration);
+
+        animator.SetTrigger("Punched");
+        GameManager.Instance.HitstopManager.StartHitstop();
+        GameManager.Instance.CameraEffectManager.PlayEffect(CameraEffect.PlayerHit);
     }
 }

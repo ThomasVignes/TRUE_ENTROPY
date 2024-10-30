@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Lifeform : MonoBehaviour
 {
-    int HP;
+    public int HP;
+    public Character character;
 
     public void Hurt()
     {
@@ -18,6 +19,11 @@ public class Lifeform : MonoBehaviour
         if (HP <= 0)
             Death();
 
+    }
+
+    public void Stun(float stunDamage)
+    {
+        character.Stun(stunDamage);
     }
 
     public void Death()

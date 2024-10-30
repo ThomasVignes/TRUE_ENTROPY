@@ -43,7 +43,7 @@ public class RuthController : PlayerController
         }
     }
 
-    public override void Special(Vector3 spot)
+    public override void Special(Vector3 spot, GameObject hitObject)
     {
         if (castTimer > Time.time)
             return;
@@ -51,7 +51,7 @@ public class RuthController : PlayerController
         if (recovery)
             return;
 
-        base.Special(spot);
+        base.Special(spot, hitObject);
 
         animator.SetTrigger("Snap");
         castTimer = Time.time + castTime;

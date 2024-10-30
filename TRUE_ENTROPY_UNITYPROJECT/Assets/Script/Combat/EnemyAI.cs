@@ -36,13 +36,36 @@ public class EnemyAI : Character
 
     [Header("Ai Floating Params")]
     [SerializeField] protected Character target;
+    [SerializeField] protected Hitshape hitshape;
 
+    [Header("Gizmo")]
+    [SerializeField] protected bool showGizmos;
+
+    bool active, aggroed, canMove;
+    bool attacking, recovering;
+    float attackTimer, recoveryTimer;
+
+    public override void Init()
+    {
+        base.Init();
+
+        active = true;
+        target = GameManager.Instance.Player;
+
+        canMove = true;
+    }
 
     public override void Step()
     {
+        if (!active)
+            return;
+
         base.Step();
 
-        if (target == null)
+        if (stunned)
+            return;
+
+        if (!aggroed)
         {
             switch (freeRoamArchetype)
             {
@@ -63,6 +86,32 @@ public class EnemyAI : Character
             return;
         }
 
+        if (attacking)
+        {
+            if (!recovering && attackTimer < Time.time)
+            {
+                animator.SetTrigger("Melee");
+
+                recovering = true;
+                recoveryTimer = Time.time + attackRecovery;
+
+                hitshape.Trigger();
+            }
+
+            if (recovering && recoveryTimer < Time.time)
+            {
+                animator.SetBool("Windup", false);
+                animator.SetTrigger("MeleeRecovery");
+
+                ResumePath();
+                canMove = true;
+                attacking = false;
+                recovering = false;
+            }
+
+            return;
+        }
+
         switch (archetype)
         {
             case EnemyArchetype.Neutral:
@@ -78,6 +127,9 @@ public class EnemyAI : Character
             case EnemyArchetype.Scared:
                 break;
         }
+
+        if (canMove)
+            SetDestination(target.transform.position);
     }
 
     public override void ConstantStep()
@@ -87,7 +139,13 @@ public class EnemyAI : Character
 
     public void Detect()
     {
+        var fromTo = transform.position - target.transform.position;
+        var dist = Vector3.Distance(transform.position, target.transform.position);
 
+        if (dist < searchRange)
+        {
+            aggroed = true;
+        }
     }
 
     public void HeavyLoop()
@@ -96,25 +154,35 @@ public class EnemyAI : Character
 
         if (dist < attackRange)
         {
-            if (dist < windupRange)
-            {
-                if (dist < attackRange)
-                {
-
-                }
-                else
-                {
-
-                }
-            }
-            else
-            {
-
-            }
+            Melee();
         }
         else
         {
-
+            animator.SetBool("Windup", dist < windupRange);
         }
+    }
+
+    void Melee()
+    {
+        animator.SetBool("Windup", true);
+
+        canMove = false;
+        attacking = true;
+        attackTimer = Time.time + attackDelay;
+
+        PausePath();
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, searchRange);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, windupRange);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

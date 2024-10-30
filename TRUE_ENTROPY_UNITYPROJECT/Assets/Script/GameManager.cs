@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Clicking")]
     [SerializeField] private float clickdelay;
-    [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers;
+    [SerializeField] private LayerMask moveLayer, interactLayer, wallLayer, ignoreLayers, hitboxLayer;
 
     [Header("Cameras")]
     [SerializeField] private GameObject currentCam;
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform characterStart;
     [SerializeField] GameObject inventoryCanvas;
     [SerializeField] ThemeManager themeManager;
+    [SerializeField] Manager[] genericManagers;
 
 
     public List<Conditions> conditions = new List<Conditions>();
@@ -152,6 +153,10 @@ public class GameManager : MonoBehaviour
         //areas = ChapterData.areas;
         InventoryManager.Init(ChapterData.items);
 
+        foreach (var item in genericManagers)
+        {
+            item.Init();
+        }
 
         if (StartCinematic != "")
         {
@@ -336,12 +341,21 @@ public class GameManager : MonoBehaviour
         RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
+
+        if (player.SpecialMode)
+        {
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, hitboxLayer))
+            {
+                player.Special(hit.point, hit.transform.gameObject);
+                return;
+            }
+        }
+
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
         {
             if (player.SpecialMode)
             {
-                player.Special(hit.point);
+                player.Special(hit.point, hit.transform.gameObject);
             }
             else
             {
