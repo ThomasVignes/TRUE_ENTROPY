@@ -28,6 +28,7 @@ public class EnemyAI : Character
     [SerializeField] protected float attackDelay;
     [SerializeField] protected float attackRange, windupRange;
     [SerializeField] protected float attackRecovery;
+    [SerializeField] protected float chainDelay;
 
     [Header("AI Search Settings")]
     [SerializeField] protected float searchRange;
@@ -43,7 +44,7 @@ public class EnemyAI : Character
 
     bool active, aggroed, canMove;
     bool attacking, recovering;
-    float attackTimer, recoveryTimer;
+    float attackTimer, recoveryTimer, chainTimer;
 
     public override void Init()
     {
@@ -107,6 +108,8 @@ public class EnemyAI : Character
                 canMove = true;
                 attacking = false;
                 recovering = false;
+
+                chainTimer = Time.time + chainDelay;
             }
 
             return;
@@ -154,12 +157,15 @@ public class EnemyAI : Character
 
         if (dist < attackRange)
         {
-            Melee();
+            if (chainTimer < Time.time)
+                Melee();
         }
         else
         {
             animator.SetBool("Windup", dist < windupRange);
         }
+
+        canMove = dist > attackRange;
     }
 
     void Melee()

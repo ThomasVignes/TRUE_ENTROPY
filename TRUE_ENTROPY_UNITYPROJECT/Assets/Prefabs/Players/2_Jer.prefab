@@ -8785,9 +8785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1217c74f3d16d44bd759f5fd0adec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lifeform: {fileID: 3074778397852717127}
+  Owner: {fileID: 3074778397852717127}
   Multiplier: 1
-  StunMultiplier: 0.3
+  StunMultiplier: 0.8
   ForceMultiplier: 2
   limb: {fileID: 5699123370003286821}
   OnHit:
@@ -11626,6 +11626,7 @@ MonoBehaviour:
   handGun: {fileID: 8957249352980749802}
   muzzle: {fileID: 6491523027586874078}
   shootParticle: {fileID: 1336949550903370, guid: ca5194d3810c6ba40b9ddcdfc6552fb1, type: 3}
+  bloodParticle: {fileID: 1336949550903370, guid: 4fb80429e9717684fb7000f06b38df12, type: 3}
   muzzleParticle: {fileID: 1336949550903370, guid: b53255c3ce9525b4cadcb998f8d5d190, type: 3}
   bloodDecal: {fileID: 6940568010354477028, guid: 17f7077f17d4275418ca80d689a05828, type: 3}
 --- !u!195 &8115798271488374891
@@ -11705,7 +11706,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
-  character: {fileID: 3179036990077564835}
+  Character: {fileID: 3179036990077564835}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8152731452846860111
 GameObject:
   m_ObjectHideFlags: 0

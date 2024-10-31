@@ -11,6 +11,7 @@ public class Hitshape : MonoBehaviour
     [SerializeField] int stun;
     [SerializeField] float force;
     [SerializeField] float linger;
+    [SerializeField] GameObject hitFx;
 
     bool active;
     float lingerTimer;
@@ -48,9 +49,12 @@ public class Hitshape : MonoBehaviour
         {
             TargetLimb targetLimb = other.gameObject.GetComponent<TargetLimb>();
 
-            if (targetLimb != null && targetLimb.Lifeform != owner)
+            if (targetLimb != null && targetLimb.Owner != owner)
             {
                 targetLimb.Hit(damage, stun, force, owner.transform.forward.normalized);
+
+                GameObject go = Instantiate(hitFx, other.ClosestPoint(transform.position), Quaternion.identity);
+                
                 Disable();
             }
         }

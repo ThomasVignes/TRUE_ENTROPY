@@ -9,10 +9,11 @@ public class CopController : PlayerController
     [SerializeField] float shootCD, drawDelay;
     [SerializeField] Rig legIK;
     [SerializeField] GameObject hipGun, handGun, muzzle;
-    [SerializeField] GameObject shootParticle, muzzleParticle, bloodDecal;
+    [SerializeField] GameObject shootParticle, bloodParticle, muzzleParticle, bloodDecal;
     LayerMask ignoreLayers;
     bool Aiming, RigOn;
     float shootTimer;
+    Lifeform lifeform;
 
     public override void Init()
     {
@@ -24,10 +25,15 @@ public class CopController : PlayerController
 
         hipGun.SetActive(true);
         handGun.SetActive(false);
+
+        lifeform = GetComponent<Lifeform>();
     }
 
     public override void Special(Vector3 spot, GameObject hitObject)
     {
+        if (stunned)
+            return;
+
         if (shootTimer > Time.time)
             return;
 
@@ -35,9 +41,12 @@ public class CopController : PlayerController
 
         base.Special(spot, hitObject);
 
+        var shotLifeform = false;
+        var shielded = false;
+
         TargetLimb targetLimb = hitObject.GetComponent<TargetLimb>();
 
-        if (targetLimb != null)
+        if (targetLimb != null && targetLimb.Owner != lifeform)
         {
             targetLimb.Hit(1, 1, 2500, transform.forward.normalized);
 
@@ -47,18 +56,38 @@ public class CopController : PlayerController
                 blood.transform.position = spot;
                 blood.transform.forward = transform.forward;
             }
+
+            shielded = targetLimb.Shielded;
+            shotLifeform = true;
         }
 
         animator.SetTrigger("Shoot");
 
         EffectsManager.Instance.audioManager.Play("JerGun");
-
         GameManager.Instance.HitstopManager.StartHitstop();
 
-        GameObject go = Instantiate(shootParticle, spot, Quaternion.identity);
+        GameObject go = Instantiate(muzzleParticle, muzzle.transform.position, muzzle.transform.rotation);
 
-        go = Instantiate(muzzleParticle, muzzle.transform.position, muzzle.transform.rotation);
+        if (shielded)
+        {
+            go = Instantiate(shootParticle, spot, Quaternion.identity);
+            EffectsManager.Instance.audioManager.Play("Shield");
+        }
+        else
+        {
+            if (shotLifeform)
+            {
+                go = Instantiate(bloodParticle, spot, Quaternion.identity);
+                go.transform.LookAt(transform.position + Vector3.up * 2f);
 
+                EffectsManager.Instance.audioManager.Play("Blood");
+            }
+            else
+            {
+                go = Instantiate(shootParticle, spot, Quaternion.identity);
+                EffectsManager.Instance.audioManager.Play("Surface");
+            }
+        }
     }
 
     public override void ToggleSpecial(bool active)

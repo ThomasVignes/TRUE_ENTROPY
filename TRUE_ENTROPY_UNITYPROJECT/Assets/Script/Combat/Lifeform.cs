@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Lifeform : MonoBehaviour
 {
     public int HP;
-    public Character character;
+    public Character Character;
+    public UnityEvent OnDeath;
 
+
+    bool dead;
     public void Hurt()
     {
         Hurt(1);
@@ -14,6 +18,9 @@ public class Lifeform : MonoBehaviour
 
     public void Hurt(int damage)
     {
+        if (dead)
+            return;
+
         HP -= damage;
 
         if (HP <= 0)
@@ -23,11 +30,19 @@ public class Lifeform : MonoBehaviour
 
     public void Stun(float stunDamage)
     {
-        character.Stun(stunDamage);
+        if (dead)
+            return;
+
+        Character.Stun(stunDamage);
     }
 
     public void Death()
     {
+        if (dead)
+            return;
+        
+        OnDeath?.Invoke();
 
+        dead = true;
     }
 }

@@ -6,7 +6,7 @@ using Whumpus;
 
 public class TargetLimb : MonoBehaviour
 {
-    public Lifeform Lifeform;
+    public Lifeform Owner;
     public int Multiplier = 1;
     public float StunMultiplier = 1;
     public float ForceMultiplier = 1;
@@ -29,8 +29,8 @@ public class TargetLimb : MonoBehaviour
 
         if (shield == null || !shield.Active)
         {
-            Lifeform.Hurt(damage * Multiplier);
-            Lifeform.Stun(stun * StunMultiplier);
+            Owner.Hurt(damage * Multiplier);
+            Owner.Stun(stun * StunMultiplier);
             limb.rb.AddForce(force * dir);
         }
         else
