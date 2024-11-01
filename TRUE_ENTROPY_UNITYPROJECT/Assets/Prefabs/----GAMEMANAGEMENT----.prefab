@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChapterData: {fileID: 11400000, guid: caf4f40c16bf62649811a01593e20d3c, type: 2}
   StartCinematic: 
-  SpecialActive: 1
+  SpecialActive: 0
   clickdelay: 0.5
   moveLayer:
     serializedVersion: 2
@@ -1009,8 +1009,7 @@ MonoBehaviour:
   characterStart: {fileID: 0}
   inventoryCanvas: {fileID: 4091023351891599364}
   themeManager: {fileID: 0}
-  genericManagers:
-  - {fileID: 0}
+  genericManagers: []
   conditions: []
   CinematicManager: {fileID: 0}
   DialogueManager: {fileID: 0}
