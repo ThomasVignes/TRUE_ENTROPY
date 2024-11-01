@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9304f8a9858c4245a7fc16e45f43a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChapterData: {fileID: 11400000, guid: caf4f40c16bf62649811a01593e20d3c, type: 2}
+  ChapterData: {fileID: 11400000, guid: d044afd94e5423e4a971be46c147cd2f, type: 2}
   StartCinematic: 
   SpecialActive: 0
   clickdelay: 0.5

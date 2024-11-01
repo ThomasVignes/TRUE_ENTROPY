@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: LONGEST DAY
   Number: 3
-  StartCharacter: {fileID: 11400000, guid: c1c177c8dd114094a9ebff2ecad45f52, type: 2}
+  StartCharacter: {fileID: 11400000, guid: 2d7c6aa6af5309b459beca857500212d, type: 2}
   conditions: []
   areas: []
   items: []
