@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
 
     [Header("Movement (Common)")]
     [SerializeField] protected float rotationSpeed;
-    [SerializeField] protected float minAngleToMove, minDistanceToInteract;
+    [SerializeField] protected float minAngleToMove, minDistanceToInteract, closeInteractRange;
     [SerializeField] protected float runMultiplier, injuredMultiplier;
 
     [Header("Animation (Common)")]
@@ -243,9 +243,28 @@ public class Character : MonoBehaviour
 
         agent.ResetPath();
 
-        agent.SetDestination(targetPos);
+        float distance = Vector3.Distance(transform.position, targetPos);
+        if (distance <= closeInteractRange)
+        {
+            if (targetInteractable != null)
+            {
+                canInteract = false;
+                movingToInteractable = false;
+                targetInteractable.Interact();
+                targetInteractable = null;
 
-        computing = true;
+                if (willPickUp)
+                {
+                    willPickUp = false;
+                    animator.SetTrigger("PickUp");
+                }
+            }
+        }
+        else
+        {
+            agent.SetDestination(targetPos);
+            computing = true;
+        }
     }
 
     protected virtual void PausePath()

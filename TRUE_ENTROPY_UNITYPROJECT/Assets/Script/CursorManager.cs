@@ -10,6 +10,8 @@ public class CursorManager : MonoBehaviour
 
     public void Init()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+
         current = CursorType.Base;
     }
 
@@ -21,8 +23,10 @@ public class CursorManager : MonoBehaviour
         current = type;
 
         if (type != CursorType.Invisible)
+        {
             Cursor.visible = true;
-
+            Cursor.lockState = CursorLockMode.Confined;
+        }
 
         switch (type) 
         {
@@ -44,6 +48,7 @@ public class CursorManager : MonoBehaviour
 
             case CursorType.Invisible:
                 Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 break;
         }
     }
