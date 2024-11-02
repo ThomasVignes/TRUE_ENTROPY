@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public string StartCinematic;
 
     [Header("Scene Settings")]
+    public bool Paused;
     public bool SpecialActive;
 
     [Header("Clicking")]
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject inventoryCanvas;
     [SerializeField] ThemeManager themeManager;
     [SerializeField] Manager[] genericManagers;
+    public PauseManager PauseManager;
 
 
     public List<Conditions> conditions = new List<Conditions>();
@@ -103,6 +105,7 @@ public class GameManager : MonoBehaviour
 
         player.Init();
 
+        PauseManager.Init(this);
         themeManager.Init();
 
         PartnerManager = GetComponent<PartnerManager>();
@@ -155,7 +158,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var item in genericManagers)
         {
-            item.Init();
+            item.Init(this);
         }
 
         if (StartCinematic != "")
@@ -192,6 +195,19 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        PauseManager.Step();
+
+        if (Paused)
+        {
+            cursorManager.SetCursorType(CursorType.Base);
+            return;
+        }
+
+        foreach (var item in genericManagers)
+        {
+            item.Step();
+        }
+
         if (cinematicMode)
         {
             CinematicManager.Step();

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public virtual void Init()
+    protected GameManager gm;
+
+    public virtual void Init(GameManager gameManager)
+    {
+        gm = gameManager;
+    }
+
+    public virtual void Step()
     {
 
     }

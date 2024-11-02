@@ -6,9 +6,9 @@ public class CombatManager : Manager
 {
     [SerializeField] EnemyAI[] enemies;
 
-    public override void Init()
+    public override void Init(GameManager gameManager)
     {
-        base.Init();
+        base.Init(gameManager);
 
         foreach (EnemyAI enemy in enemies) { enemy.Init(); }
     }
