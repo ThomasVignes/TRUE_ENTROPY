@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     private List<Character> characters = new List<Character>();
     private int clicked;
     private float clicktime;
+    private bool specialActive;
 
 
     private CameraZone currentCamZone;
@@ -287,14 +288,18 @@ public class GameManager : MonoBehaviour
 
         if (SpecialActive)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1) && !specialActive)
             {
                 player.ToggleSpecial(true);
+
+                specialActive = true;
             }
 
-            if (Input.GetMouseButtonUp(1))
+            if (!Input.GetMouseButton(1) && specialActive)
             {
                 player.ToggleSpecial(false);
+
+                specialActive = false;
             }
         }
 

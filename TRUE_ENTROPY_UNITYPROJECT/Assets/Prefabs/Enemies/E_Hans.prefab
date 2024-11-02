@@ -1814,6 +1814,7 @@ MonoBehaviour:
   rotationSpeed: 6
   minAngleToMove: 40
   minDistanceToInteract: 1.2
+  closeInteractRange: 0
   runMultiplier: 2.1
   injuredMultiplier: 1
   moveStateLerp: 4
