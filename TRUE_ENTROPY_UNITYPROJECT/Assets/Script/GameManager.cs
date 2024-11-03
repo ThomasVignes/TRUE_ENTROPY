@@ -547,6 +547,10 @@ public class GameManager : MonoBehaviour
 
     public void SetCamZone(CameraZone zone)
     {
+        //Safety
+        if (currentCamZone == null)
+            currentCamZone = firstCamZone;
+
         //Update zone specific objects
         List<GameObject> previous = currentCamZone.ShotSpecificObjects;
         List<GameObject> next = zone.ShotSpecificObjects;

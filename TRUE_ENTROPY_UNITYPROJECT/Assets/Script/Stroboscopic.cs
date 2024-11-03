@@ -7,22 +7,31 @@ public class Stroboscopic : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float flashDelay;
     [SerializeField] float flashDuration;
-    [SerializeField] int flashesBeforeMove;
+    [SerializeField] int flashesBeforeMove, flashesAfterMove;
     [SerializeField] float finalDuration;
+    [SerializeField] bool escalating;
+    [SerializeField] float escalateAmount, minAmount;
 
     [Header("Cams")]
     [SerializeField] GameObject finalCam;
     [SerializeField] GameObject[] orderedCams;
 
-    [Header("References")]
+    [Header("Black Screen")]
     [SerializeField] GameObject overrideBlackScreen;
 
     float delayTimer;
     float durationTimer;
-    bool active, flashing, final;
+    bool active, flashing, final, afterFlash;
 
     int flashes, moves;
     float finalTimer;
+
+    float originalDuration;
+
+    private void Awake()
+    {
+        originalDuration = flashDuration;   
+    }
 
     void Update()
     {
@@ -31,13 +40,52 @@ public class Stroboscopic : MonoBehaviour
 
         if (final)
         {
-            if (finalTimer < Time.time)
+            if (afterFlash)
             {
-                finalCam.SetActive(false);
-                final = false;
-                active = false;
-            }
+                if (delayTimer < Time.time)
+                {
+                    if (!flashing)
+                    {
+                        flashing = true;
+                        finalCam.SetActive(false);
+                        durationTimer = Time.time + flashDuration;
+                    }
+                    else
+                    {
+                        if (durationTimer < Time.time)
+                        {
+                            if (overrideBlackScreen != null)
+                                overrideBlackScreen.SetActive(false);
 
+                            flashing = false;
+
+                            if (flashes < flashesAfterMove)
+                            {
+                                flashes++;
+                                delayTimer = Time.time + flashDelay;
+                                finalCam.SetActive(true);
+                            }
+                            else
+                            {
+                                finalCam.SetActive(true);
+                                afterFlash = false;
+                            }
+                        }
+                    }
+                }
+
+                //Reset timer
+                finalTimer = Time.time + finalDuration;
+            }
+            else
+            {
+                if (finalTimer < Time.time)
+                {
+                    finalCam.SetActive(false);
+                    final = false;
+                    active = false;
+                }
+            }
             return;
         }
 
@@ -58,6 +106,14 @@ public class Stroboscopic : MonoBehaviour
 
                 finalCam.SetActive(false);
 
+                if (escalating && (flashes >= flashesBeforeMove))
+                {
+                    flashDuration -= escalateAmount;
+
+                    if (flashDuration < minAmount)
+                        flashDuration = minAmount;
+                }
+
                 durationTimer = Time.time + flashDuration;
             }
             else
@@ -71,6 +127,7 @@ public class Stroboscopic : MonoBehaviour
                     delayTimer = Time.time + flashDelay;
 
                     UpdateImage();
+
                 }
             }
         }
@@ -83,6 +140,7 @@ public class Stroboscopic : MonoBehaviour
 
         moves = 0;
         flashes = 0;
+        flashDuration = originalDuration;
 
         finalCam.SetActive(false);
     }
@@ -112,6 +170,7 @@ public class Stroboscopic : MonoBehaviour
             else
             {
                 final = true;
+                afterFlash = true;
                 orderedCams[orderedCams.Length - 1].SetActive(false);
 
                 finalCam.SetActive(true);

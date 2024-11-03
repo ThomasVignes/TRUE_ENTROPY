@@ -12,7 +12,7 @@ public class EventArea : MonoBehaviour
 
     public GameObject Specific;
 
-    public bool Repeatable, OnExit;
+    public bool Repeatable, OnExit, StopsPlayer;
 
     public float Delay;
 
@@ -42,6 +42,11 @@ public class EventArea : MonoBehaviour
     public void PlayEvent()
     {
         OnTrigger.Invoke();
+
+        if (StopsPlayer)
+        {
+            GameManager.Instance.PausePlayerPath();
+        }
 
         if (!Repeatable)
         {

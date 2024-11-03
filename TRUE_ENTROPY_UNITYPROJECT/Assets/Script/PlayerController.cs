@@ -59,7 +59,7 @@ public class PlayerController : Character
 
     public void ResetState()
     {
-        agent.enabled = false;
+        //agent.enabled = false;
         animator.SetTrigger("Reset");
 
         /*

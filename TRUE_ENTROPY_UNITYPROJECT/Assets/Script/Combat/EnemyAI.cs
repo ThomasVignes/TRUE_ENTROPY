@@ -151,6 +151,14 @@ public class EnemyAI : Character
         }
     }
 
+    public void ManualAggro()
+    {
+        if (target == null)
+            return;
+
+        aggroed = true;
+    }
+
     public void HeavyLoop()
     {
         var dist = Vector3.Distance(transform.position, target.transform.position);
