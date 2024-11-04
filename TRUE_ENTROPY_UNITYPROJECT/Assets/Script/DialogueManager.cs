@@ -253,7 +253,9 @@ public class DialogueManager : MonoBehaviour
         if (currentAnimator != null)
             currentAnimator.SetTrigger("Reset");
 
-        puppets[currentPuppetIndex].ResetPos();
+        if (puppets.Count > 0)
+            puppets[currentPuppetIndex].ResetPos();
+
         Camera.transform.position = cameraPosOriginal;
 
         currentDialogue = 0;

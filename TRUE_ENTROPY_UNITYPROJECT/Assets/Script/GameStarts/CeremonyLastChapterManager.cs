@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CeremonyLastChapterManager : ChapterManagerGeneric
 {
@@ -48,7 +49,17 @@ public class CeremonyLastChapterManager : ChapterManagerGeneric
 
     public override void EndChapter()
     {
+        StartCoroutine(C_EndChapter());
+    }
 
+
+    IEnumerator C_EndChapter()
+    {
+        gameManager.ScreenEffects.FadeTo(1, 2.9f);
+
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator C_Start()

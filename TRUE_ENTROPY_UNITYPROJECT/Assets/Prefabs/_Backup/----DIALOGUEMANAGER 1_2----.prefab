@@ -629,7 +629,19 @@ MonoBehaviour:
       BranchIndex: 1
       Delegate:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: LocalCinematic, Assembly-CSharp
+            m_MethodName: PlayLocal
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
     - Text: '...I need more time. '
@@ -1258,7 +1270,7 @@ MonoBehaviour:
     Action: Speak
     cameraEffect: 0
     Answers:
-    - Text: Come on Ray, let's go.
+    - Text: Come on Raymond, let's go.
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
@@ -2258,6 +2270,7 @@ MonoBehaviour:
   - {fileID: 4645000848103567115}
   - {fileID: 3466404256633485009}
   - {fileID: 128343182537611068}
+  - {fileID: 2418031819717104544}
   VNInterface: {fileID: 3236417487552200253}
   VNScene: {fileID: 0}
   Specific: {fileID: 1491454649871376961}
@@ -2353,7 +2366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6659417379072690998}
   m_LocalRotation: {x: -0.13884759, y: 0.8233699, z: -0.49948683, w: -0.23085967}
-  m_LocalPosition: {x: -0.909, y: 9.943603, z: 12.724}
+  m_LocalPosition: {x: -1.155, y: 9.041, z: 12.323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
