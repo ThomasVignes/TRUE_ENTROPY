@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CeremonyLastChapterManager : ChapterManagerGeneric
 {
+    public string startCinematic;
     [SerializeField] private float introDelay;
     [SerializeField] Stroboscopic stroboscopic;
     bool gettingUp;
@@ -12,7 +13,10 @@ public class CeremonyLastChapterManager : ChapterManagerGeneric
 
     public override void StartGame()
     {
-        StartCoroutine(C_Start());
+        if (startCinematic == "")
+            StartCoroutine(C_Start());
+        else
+            gameManager.CinematicManager.PlayCinematic(startCinematic);
     }
     public override void IntroStep()
     {

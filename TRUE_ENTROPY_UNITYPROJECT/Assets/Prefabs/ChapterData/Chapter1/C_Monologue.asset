@@ -15,6 +15,22 @@ MonoBehaviour:
   ID: Monologue
   Ambience: 
   BlackScreenDuration: 5
-  lines: []
+  lines:
+  - Text: 
+    Duration: 10
+    PuppetActions:
+    - PuppetName: Jer
+      Action: FingerTap
+    cameraIndex: 1
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 10
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
   EndBlackScreenDuration: 1
   ResumeTheme: 
