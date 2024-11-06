@@ -79,7 +79,7 @@ public class CinematicManager : MonoBehaviour
 
         playing = true;
         gameManager.SetCinematicMode(true);
-        
+        cinematics[currentCinematic].OnStart?.Invoke();
 
         StartCoroutine(C_PlayCinematic(instaFade));
     }
@@ -113,7 +113,13 @@ public class CinematicManager : MonoBehaviour
         gameManager.ScreenEffects.FadeTo(0, 1f);
 
         foreach (var line in current.Data.lines)
-        {
+        {        
+            //Position camera
+            pivot = current.CinematicCameraPivots[line.cameraIndex];
+
+            Camera.transform.SetParent(pivot, true);
+            Camera.transform.position = pivot.position;
+            Camera.transform.rotation = pivot.rotation;
             //Write text
             #region Write text
             yield return new WaitForSeconds(delayBeforeDialogue);
@@ -219,6 +225,7 @@ public class Cinematic
 {
     [Header("Settings")]
     public CinematicData Data;
+    public UnityEvent OnStart;
     public UnityEvent OnEndBeforeBlackScreen;
     public UnityEvent OnEnd;
     public string ChainCinematic;
