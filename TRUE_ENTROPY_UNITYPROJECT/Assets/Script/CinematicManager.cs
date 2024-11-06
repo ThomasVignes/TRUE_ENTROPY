@@ -97,6 +97,8 @@ public class CinematicManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
+        cinematics[currentCinematic].OnStartAfterBlackScreen?.Invoke();
+
         Camera.SetActive(true);
 
         //Position camera
@@ -226,6 +228,7 @@ public class Cinematic
     [Header("Settings")]
     public CinematicData Data;
     public UnityEvent OnStart;
+    public UnityEvent OnStartAfterBlackScreen;
     public UnityEvent OnEndBeforeBlackScreen;
     public UnityEvent OnEnd;
     public string ChainCinematic;
