@@ -22,6 +22,8 @@ public class ThemeManager : MonoBehaviour
         {
             area.OriginalVolume = area.Music.volume;
         }
+
+        startAudio.Play();
     }
 
     public void NewArea(string areaName)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_Monologue
   m_EditorClassIdentifier: 
   ID: Monologue
-  Ambience: 
+  Ambience: Despair
   BlackScreenDuration: 5
   lines:
   - Text: 
@@ -155,7 +155,8 @@ MonoBehaviour:
     cameraIndex: 0
     cameraEffect: 0
     newAmbience: 
-    soundEffects: []
+    soundEffects:
+    - Gunshot
   - Text: 
     Duration: 12
     PuppetActions: []
@@ -164,4 +165,4 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   EndBlackScreenDuration: 1
-  ResumeTheme: 
+  ResumeTheme: Revenge
