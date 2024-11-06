@@ -139,7 +139,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 8.5
+    Duration: 8.4
     PuppetActions:
     - PuppetName: Jer
       Action: Drink
@@ -157,7 +157,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 99
+    Duration: 12
     PuppetActions: []
     cameraIndex: 2
     cameraEffect: 0

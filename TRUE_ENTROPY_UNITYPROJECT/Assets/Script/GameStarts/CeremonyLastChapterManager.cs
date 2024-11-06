@@ -59,9 +59,9 @@ public class CeremonyLastChapterManager : ChapterManagerGeneric
 
     IEnumerator C_EndChapter()
     {
-        gameManager.ScreenEffects.FadeTo(1, 2.9f);
+        gameManager.ScreenEffects.FadeTo(1, 0f);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
