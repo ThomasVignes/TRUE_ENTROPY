@@ -154,7 +154,7 @@ MonoBehaviour:
     mixerLayer: 
     source: {fileID: 0}
   - name: GunshotLow
-    clip: {fileID: 8300000, guid: 718903d66d7389d4badf00e0cd6e6d32, type: 3}
+    clip: {fileID: 8300000, guid: 1c7072d1e31ec214abf184e637e1e891, type: 3}
     volume: 1
     pitch: 1.1
     loop: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: JerGun
     clip: {fileID: 8300000, guid: 718903d66d7389d4badf00e0cd6e6d32, type: 3}
-    volume: 0.4
+    volume: 0.6
     pitch: 1.1
     loop: 0
     mixerLayer: 
