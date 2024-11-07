@@ -162,6 +162,9 @@ public class GameManager : MonoBehaviour
             item.Init(this);
         }
 
+
+        CursorManager.SetCursorType(CursorType.Base);
+
         if (StartCinematic != "")
         {
             CinematicManager.PlayCinematic(StartCinematic);
