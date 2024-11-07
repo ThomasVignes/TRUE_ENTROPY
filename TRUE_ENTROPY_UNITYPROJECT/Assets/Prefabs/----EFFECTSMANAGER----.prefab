@@ -181,6 +181,20 @@ MonoBehaviour:
     loop: 0
     mixerLayer: 
     source: {fileID: 0}
+  - name: Blood
+    clip: {fileID: 8300000, guid: 5d14b512b39e6f4409bb2a79ef08104f, type: 3}
+    volume: 0.8
+    pitch: 0.8
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
+  - name: Shield
+    clip: {fileID: 8300000, guid: 3f766bde7ed9beb46bcf57d15882f313, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    mixerLayer: 
+    source: {fileID: 0}
   playingAudio: []
   notPlayingAudio: []
   AudioObject: {fileID: 2317613366410218912, guid: 32ab84ad90cb4d444864fe418273ddfe, type: 3}
