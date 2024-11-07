@@ -982,7 +982,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: I'm not doing this again. Neither me or my butler made you come.
+  - Text: I'm not doing this again. Neither me or my butlers made you come.
     Action: You2
     cameraEffect: 0
     Answers:
@@ -3870,6 +3870,18 @@ MonoBehaviour:
               m_StringArgument: NeedsBackstageKey
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: NeedsBackstageKey
+              m_BoolArgument: 1
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
   - Text: That's not possible sir. There are no guests here. Maybe you got scared
@@ -4402,7 +4414,7 @@ MonoBehaviour:
       ConditionNeeded: 
       DialogueEnd: 1
       HideLeavePrompt: 0
-      BranchToCurrent: 1
+      BranchToCurrent: 0
       BranchIndex: 0
       Delegate:
         m_PersistentCalls:
@@ -4445,7 +4457,7 @@ MonoBehaviour:
       DialogueEnd: 1
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 2
+      BranchIndex: 0
       Delegate:
         m_PersistentCalls:
           m_Calls: []
@@ -4471,7 +4483,7 @@ MonoBehaviour:
       DialogueEnd: 1
       HideLeavePrompt: 0
       BranchToCurrent: 0
-      BranchIndex: 2
+      BranchIndex: 0
       Delegate:
         m_PersistentCalls:
           m_Calls: []
@@ -6026,6 +6038,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinematics:
   - Data: {fileID: 11400000, guid: 2a0c0e6ab3743734183ca132e9b39ba4, type: 2}
+    OnStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnStartAfterBlackScreen:
+      m_PersistentCalls:
+        m_Calls: []
     OnEndBeforeBlackScreen:
       m_PersistentCalls:
         m_Calls: []
@@ -6047,6 +6065,12 @@ MonoBehaviour:
     - {fileID: 1763478653673361454}
     - {fileID: 1489411515945308168}
   - Data: {fileID: 11400000, guid: d2b5a1cf918d2514aae1d444985258d2, type: 2}
+    OnStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnStartAfterBlackScreen:
+      m_PersistentCalls:
+        m_Calls: []
     OnEndBeforeBlackScreen:
       m_PersistentCalls:
         m_Calls:
