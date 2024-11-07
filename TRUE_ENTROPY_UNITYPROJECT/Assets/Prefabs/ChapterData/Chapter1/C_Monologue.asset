@@ -158,7 +158,7 @@ MonoBehaviour:
     soundEffects:
     - Gunshot
   - Text: 
-    Duration: 12
+    Duration: 18
     PuppetActions: []
     cameraIndex: 2
     cameraEffect: 0

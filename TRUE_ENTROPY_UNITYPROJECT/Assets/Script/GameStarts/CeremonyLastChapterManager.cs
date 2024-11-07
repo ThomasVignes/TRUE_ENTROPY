@@ -13,6 +13,8 @@ public class CeremonyLastChapterManager : ChapterManagerGeneric
 
     public override void StartGame()
     {
+        gameManager.CursorManager.SetCursorType(CursorType.Base);
+
         if (startCinematic == "")
             StartCoroutine(C_Start());
         else
