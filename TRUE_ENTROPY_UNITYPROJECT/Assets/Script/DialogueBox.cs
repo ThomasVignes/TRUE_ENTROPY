@@ -14,8 +14,13 @@ public class DialogueBox : Interactable
     [SerializeField] private string puppet;
     [SerializeField] private int dialogueReference;
 
+    bool pressed;
+
     protected override void InteractEffects()
     {
+        if (pressed)
+            return;
+
         StartCoroutine(C_SwitchDialogue());
     }
 
@@ -31,6 +36,8 @@ public class DialogueBox : Interactable
     {
         yield return new WaitForSeconds(delayBeforeDelegates);
 
+        pressed = false;
+
         OnDialogueEnd?.Invoke();
 
         if (once)
@@ -39,6 +46,7 @@ public class DialogueBox : Interactable
 
     IEnumerator C_SwitchDialogue()
     {
+        pressed = true;
         GameManager.Instance.PausePlayerPath();
 
         yield return new WaitForSeconds(delayBeforeSwitch);
