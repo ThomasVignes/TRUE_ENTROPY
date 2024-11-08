@@ -163,7 +163,6 @@ public class GameManager : MonoBehaviour
         }
 
 
-        CursorManager.SetCursorType(CursorType.Base);
 
         if (StartCinematic != "")
         {

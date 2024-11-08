@@ -68,6 +68,7 @@ public class CeremonyLastChapterManager : ChapterManagerGeneric
 
     IEnumerator C_Start()
     {
+        gameManager.CursorManager.SetCursorType(CursorType.Base);
         gameManager.ScreenEffects.FadeTo(1, 0.01f);
 
         yield return new WaitForSeconds(3f);

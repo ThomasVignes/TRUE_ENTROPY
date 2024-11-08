@@ -49,6 +49,9 @@ public class CeremonyAltChapterManager : ChapterManagerGeneric
 
     public override void EndChapter()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
