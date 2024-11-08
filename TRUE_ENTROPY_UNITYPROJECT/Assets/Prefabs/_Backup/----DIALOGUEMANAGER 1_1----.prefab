@@ -3833,17 +3833,6 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-    - Text: Great. (Leave)
-      ConditionNeeded: 
-      DialogueEnd: 1
-      HideLeavePrompt: 0
-      BranchToCurrent: 0
-      BranchIndex: 1
-      Delegate:
-        m_PersistentCalls:
-          m_Calls: []
-      JumpDialogue: 0
-      DialogueIndex: 0
   - Text: Naturally, I've left the room keys in the backstage. One of my colleagues
       should have the key to it.
     Action: Etiquette
