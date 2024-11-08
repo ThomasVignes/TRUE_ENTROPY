@@ -12,6 +12,7 @@ public class Hitshape : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] float linger;
     [SerializeField] GameObject hitFx;
+    [SerializeField] string hitSound;
 
     bool active;
     float lingerTimer;
@@ -54,6 +55,9 @@ public class Hitshape : MonoBehaviour
                 targetLimb.Hit(damage, stun, force, owner.transform.forward.normalized);
 
                 GameObject go = Instantiate(hitFx, other.ClosestPoint(transform.position), Quaternion.identity);
+
+                if (hitSound != null) 
+                    EffectsManager.Instance.audioManager.Play(hitSound);
                 
                 Disable();
             }
