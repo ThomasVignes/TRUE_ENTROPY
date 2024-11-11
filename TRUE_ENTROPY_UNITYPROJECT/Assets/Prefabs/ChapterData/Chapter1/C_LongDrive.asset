@@ -21,6 +21,7 @@ MonoBehaviour:
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 2
@@ -29,18 +30,21 @@ MonoBehaviour:
       Action: Smoke
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 0.5
@@ -49,12 +53,14 @@ MonoBehaviour:
       Action: LookLeft
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: ...By the way.
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 0.4
@@ -63,88 +69,101 @@ MonoBehaviour:
       Action: Crossed
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: Hm ?
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 0.5
+    Duration: 2.5
     PuppetActions:
     - PuppetName: Eric
       Action: LookRight
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: What do you think that void is made of ?
-    Duration: 8
+    Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 1
+    Duration: 2
     PuppetActions:
     - PuppetName: Ruth
       Action: UnCross
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: Who knows.
     Duration: 4
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: It could be litteraly anything. Or nothing at all.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 1
+    Duration: 2
     PuppetActions:
     - PuppetName: Eric
       Action: Lean
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: ...I guess so.
-    Duration: 8
+    Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 1
+    Duration: 1.5
     PuppetActions:
     - PuppetName: Eric
       Action: LookLeft
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: Well. It means I can envision whatever I want to.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 1
+    Duration: 1.5
     PuppetActions:
     - PuppetName: Ruth
       Action: Curious
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: ...Now you got me curious. Tell me.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 2
@@ -153,18 +172,21 @@ MonoBehaviour:
       Action: LookRight
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: A big pile of decent car suspensions...
     Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: ...A seat that doesn't thrust through my ass...
-    Duration: 8
+    Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 1
@@ -173,18 +195,21 @@ MonoBehaviour:
       Action: Idiot
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: Idiot.
     Duration: 6
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 2
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
+    newAmbience: 
     soundEffects: []
   EndBlackScreenDuration: 1
   ResumeTheme: 
