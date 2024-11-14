@@ -849,6 +849,7 @@ Transform:
   - {fileID: 4341945391040597040}
   - {fileID: 2468804668182568457}
   - {fileID: 5128619612148328898}
+  - {fileID: 2991250272522329919}
   m_Father: {fileID: 4602392021658250928}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5420,6 +5421,108 @@ Transform:
   m_Father: {fileID: 7942269140292841400}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8218007219004601666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2991250272522329919}
+  - component: {fileID: 6067476577509349741}
+  m_Layer: 0
+  m_Name: RuthHandChop2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2991250272522329919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218007219004601666}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2354683043381508954}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6067476577509349741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218007219004601666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d41db661459949ba4dc491c4520b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuppetName: Ruth
+  Lines:
+  - Text: After you.
+    Action: Idle
+    cameraEffect: 0
+    Answers:
+    - Text: No. After you.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+    - Text: 'Okay. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 0
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: I need to make sure you can actually put a foot in front of the other.
+    Action: IdleAlt
+    cameraEffect: 0
+    Answers:
+    - Text: Hey. I'm not on my deathbed.
+      ConditionNeeded: 
+      DialogueEnd: 0
+      HideLeavePrompt: 0
+      BranchToCurrent: 1
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
+  - Text: Mhm.
+    Action: 
+    cameraEffect: 0
+    Answers:
+    - Text: 'Ugh. Fine. '
+      ConditionNeeded: 
+      DialogueEnd: 1
+      HideLeavePrompt: 0
+      BranchToCurrent: 0
+      BranchIndex: 1
+      Delegate:
+        m_PersistentCalls:
+          m_Calls: []
+      JumpDialogue: 0
+      DialogueIndex: 0
 --- !u!1 &8332454822620013543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,6 +6093,7 @@ MonoBehaviour:
   - {fileID: 9134208182891553481}
   - {fileID: 5512139284894139044}
   - {fileID: 6575639152578055374}
+  - {fileID: 6067476577509349741}
   VNInterface: {fileID: 2309589860702690699}
   VNScene: {fileID: 0}
   Specific: {fileID: 8761724724527855969}
@@ -7212,7 +7316,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: On stage... reality... shattered. I can't really explain it. You dissapeared,
+  - Text: On stage... reality... shattered. I can't really explain it. You disappeared,
       kept coming back and dying again, losing parts of your memory as you did.
     Action: ArmsCrossed
     cameraEffect: 0

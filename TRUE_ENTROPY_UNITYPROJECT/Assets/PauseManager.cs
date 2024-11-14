@@ -18,6 +18,9 @@ public class PauseManager : Manager
         baseScale = Time.timeScale;
 
         canPause = true;
+
+        if (PersistentData.Instance != null)
+            AudioListener.volume = PersistentData.Instance.Volume;
     }
 
     public override void Step()
@@ -53,6 +56,9 @@ public class PauseManager : Manager
     public void UpdateVolume()
     {
         AudioListener.volume = masterVolume.value;
+
+        if (PersistentData.Instance != null)
+            PersistentData.Instance.Volume = AudioListener.volume;
     }
 
     public void QuitGame()

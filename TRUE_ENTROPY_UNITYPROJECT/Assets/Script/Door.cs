@@ -69,4 +69,9 @@ public class Door : Interactable
     {
         CanOpen = true;
     }
+
+    public void ChangeLockMessage(string message)
+    {
+        lockedMessage = message;
+    }
 }

@@ -110,7 +110,7 @@ MonoBehaviour:
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  - Text: It could be litteraly anything. Or nothing at all.
+  - Text: It could be literally anything. Or nothing at all.
     Duration: 8
     PuppetActions: []
     cameraIndex: 0

@@ -9,6 +9,8 @@ public class PersistentData : MonoBehaviour
     public bool FullScreen;
     public bool SoundOn;
 
+    public float Volume = 1;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
