@@ -11543,8 +11543,8 @@ MonoBehaviour:
   animator: {fileID: 1735109562235365949}
   resetPos: {x: 0, y: 0, z: 0}
   Choppers: []
-  drawDelay: 0
-  castTime: 0
+  drawDelay: 0.1
+  castTime: 0.9
   canMoveDuringCast: 0
   delayBeforeArmCross: 1.2
 --- !u!54 &5030443471988108844

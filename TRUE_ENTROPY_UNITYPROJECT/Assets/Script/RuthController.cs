@@ -45,9 +45,6 @@ public class RuthController : PlayerController
 
     public override void Special(Vector3 spot, GameObject hitObject)
     {
-        if (castTimer > Time.time)
-            return;
-
         if (recovery)
             return;
 
@@ -69,7 +66,7 @@ public class RuthController : PlayerController
             if (canMoveDuringCast)
                 ToggleRun(false);
 
-            castTime = Time.time + drawDelay;
+            castTimer = Time.time + drawDelay;
         }
 
         base.ToggleSpecial(active);
