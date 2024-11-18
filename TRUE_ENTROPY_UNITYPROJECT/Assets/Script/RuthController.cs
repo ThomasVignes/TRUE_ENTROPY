@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations.Rigging;
+using static Cinemachine.CinemachineOrbitalTransposer;
 
 public class RuthController : PlayerController
 {
@@ -11,7 +13,10 @@ public class RuthController : PlayerController
     [SerializeField] bool canMoveDuringCast;
     [SerializeField] float delayBeforeArmCross;
     [SerializeField] ParticleSystem snapFx;
+    [SerializeField] Rig rig;
+    [SerializeField] Transform aimTarg;
 
+    LayerMask ignoreLayers;
 
     bool casting, recovery;
     float castTimer;
@@ -21,6 +26,9 @@ public class RuthController : PlayerController
     public override void Init()
     {
         base.Init();
+
+        ignoreLayers = GameManager.Instance.IgnoreLayers;
+
     }
 
     public override void Step()
@@ -33,6 +41,35 @@ public class RuthController : PlayerController
             crossTimer = 0;
 
         animator.SetBool("ArmsCrossed", crossTimer > delayBeforeArmCross);
+
+        if (casting)
+        {
+            rig.weight = Mathf.Lerp(rig.weight, 1, 4f * Time.deltaTime);
+
+            RaycastHit hit;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~ignoreLayers))
+            {
+                Vector3 targPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                //aimTarg.position = targPos;
+                Vector3 dir = targPos - aimTarg.position;
+
+                aimTarg.position += dir.normalized * 10f * Time.deltaTime;
+
+                /*
+                Vector3 dir = aimTarg.position - transform.position;
+
+                var dot = Vector3.Dot(dir, transform.forward);
+
+                if (dot > 0)
+                    aimTarg.position = targPos;
+                */
+            }
+        }
+        else
+            rig.weight = Mathf.Lerp(rig.weight, 0, 4f * Time.deltaTime);
 
 
         if (recovery)
