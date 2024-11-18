@@ -40,6 +40,9 @@ public class RuthController : PlayerController
         else
             crossTimer = 0;
 
+        if (Input.GetKeyDown(KeyCode.G))
+            animator.SetTrigger("Clap");
+
         animator.SetBool("ArmsCrossed", crossTimer > delayBeforeArmCross);
 
         if (casting)
