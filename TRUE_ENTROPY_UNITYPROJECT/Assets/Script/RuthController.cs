@@ -10,6 +10,7 @@ public class RuthController : PlayerController
     [SerializeField] float castTime;
     [SerializeField] bool canMoveDuringCast;
     [SerializeField] float delayBeforeArmCross;
+    [SerializeField] ParticleSystem snapFx;
 
 
     bool casting, recovery;
@@ -51,6 +52,8 @@ public class RuthController : PlayerController
         base.Special(spot, hitObject);
 
         animator.SetTrigger("Snap");
+        snapFx.Play();
+
         castTimer = Time.time + castTime;
 
         recovery = true;
