@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b0cdbcdd5ad6d488c68dcef45efeeb, type: 3}
+  m_Name: C_LostHand
+  m_EditorClassIdentifier: 
+  ID: LostHand
+  Ambience: Corridors
+  BlackScreenDuration: 5
+  lines:
+  - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Finally back with us, huh ?
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookRuth
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: ...What ?
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: MoveHips
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You need to stop sticking your arms in unidentified holes. Unless you want
+      to lose your other hand too.
+    Duration: 9
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: My...
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookArm
+    - PuppetName: Eric
+      Action: LookArm
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2.7
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: ...Oh god.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Camera
+      Action: LookRuth
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: Angry
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Gnarly, huh ?
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Eric
+      Action: RestArm
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: ...Shit.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Ruth
+      Action: CrossAgain
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: I couldn't do better in the time we had, sadly. I'll send someone to fetch
+      a prosthesis for you.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: ...Thanks.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  EndBlackScreenDuration: 1
+  ResumeTheme: Corridors
