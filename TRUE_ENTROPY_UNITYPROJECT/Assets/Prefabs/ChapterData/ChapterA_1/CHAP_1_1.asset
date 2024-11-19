@@ -32,6 +32,8 @@ MonoBehaviour:
     Met: 0
   - Name: GotSideRoom
     Met: 0
+  - Name: DiedToRuth
+    Met: 1
   areas:
   - Name: Corridors
     Music: {fileID: 0}

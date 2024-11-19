@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public CameraEffectManager CameraEffectManager;
     [HideInInspector] public PartnerManager PartnerManager;
 
+    public LayerMask MoveLayer {  get { return moveLayer; } }
     public LayerMask IgnoreLayers { get { return ignoreLayers; } }
     public bool CinematicMode { get { return cinematicMode; } }
     public bool VNMode { get { return vnMode; } }

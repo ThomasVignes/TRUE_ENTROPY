@@ -1249,7 +1249,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: Oh, sorry sir. I was absorbed in thought. Are you in need of assitance
+  - Text: Oh, sorry sir. I was absorbed in thought. Are you in need of assistance
       ?
     Action: Look
     cameraEffect: 0
@@ -1724,7 +1724,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 1
       DialogueIndex: 4
-  - Text: At least you still have so honesty left in you. That's something.
+  - Text: At least you still have some honesty left in you. That's something.
     Action: Idle
     cameraEffect: 0
     Answers:
@@ -3872,6 +3872,30 @@ MonoBehaviour:
               m_StringArgument: NeedsBackstageKey
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: ChangeLockMessage
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: One of the butlers must have the key.
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Door, Assembly-CSharp
+            m_MethodName: ChangeLockMessage
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: One of the butlers must have the key.
+              m_BoolArgument: 1
+            m_CallState: 2
       JumpDialogue: 0
       DialogueIndex: 0
   - Text: That's not possible sir. There are no guests here. Maybe you got scared
@@ -3982,7 +4006,7 @@ MonoBehaviour:
           m_Calls: []
       JumpDialogue: 0
       DialogueIndex: 0
-  - Text: Definetly.
+  - Text: Definitly.
     Action: Speak
     cameraEffect: 0
     Answers:
@@ -4641,6 +4665,18 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0.5
               m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+            m_MethodName: FalseCondition
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0.5
+              m_StringArgument: DiedToRuth
               m_BoolArgument: 0
             m_CallState: 2
       JumpDialogue: 0
@@ -7048,7 +7084,7 @@ MonoBehaviour:
       JumpDialogue: 0
       DialogueIndex: 0
     - Text: No ! You're going to tell me what's going on !
-      ConditionNeeded: 
+      ConditionNeeded: DiedToRuth
       DialogueEnd: 0
       HideLeavePrompt: 0
       BranchToCurrent: 0
@@ -7321,7 +7357,7 @@ MonoBehaviour:
     Action: ArmsCrossed
     cameraEffect: 0
     Answers:
-    - Text: The more I died. The more reality became scarce, and terrfying.
+    - Text: The more I died. The more reality became scarce, and terrifying.
       ConditionNeeded: 
       DialogueEnd: 0
       HideLeavePrompt: 0
@@ -7366,7 +7402,7 @@ MonoBehaviour:
     - Text: 'Tell me about it. '
       ConditionNeeded: 
       DialogueEnd: 1
-      HideLeavePrompt: 0
+      HideLeavePrompt: 1
       BranchToCurrent: 0
       BranchIndex: 1
       Delegate:

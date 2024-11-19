@@ -11711,8 +11711,11 @@ MonoBehaviour:
   animator: {fileID: 1735109562235365949}
   resetPos: {x: 0, y: 0, z: 0}
   Choppers: []
+  orderableLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   drawDelay: 0.1
-  castTime: 0.9
+  castTime: 0.5
   canMoveDuringCast: 0
   delayBeforeArmCross: 1.2
   snapFx: {fileID: 8138327756524895047}
