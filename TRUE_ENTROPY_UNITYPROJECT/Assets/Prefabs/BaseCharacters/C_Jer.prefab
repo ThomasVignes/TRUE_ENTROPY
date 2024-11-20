@@ -9148,7 +9148,7 @@ GameObject:
   - component: {fileID: 3377608674417551611}
   - component: {fileID: 5118161155182095607}
   m_Layer: 0
-  m_Name: C_Cop
+  m_Name: C_Jer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9170,7 +9170,7 @@ Transform:
   - {fileID: 9023083535424184975}
   - {fileID: 1298975242839487151}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 184.259, z: 0}
 --- !u!114 &5118161155182095607
 MonoBehaviour:
@@ -9859,6 +9859,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 790cf6b4c7f724a43af7f4b4f57a7237, type: 2}
   - {fileID: 1362570969132626037, guid: 57b9641037dfcb4469db4c9dd100812e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
