@@ -17,7 +17,7 @@ MonoBehaviour:
   BlackScreenDuration: 5
   lines:
   - Text: 
-    Duration: 5
+    Duration: 99
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
