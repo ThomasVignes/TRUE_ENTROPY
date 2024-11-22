@@ -110,9 +110,50 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 99
+    Duration: 0.5
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Warn
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Try anything and I'll blow your dick off.
+    Duration: 6
     PuppetActions: []
     cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.1
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Cmon
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You're... misunderstanding the situation, Jeremiah.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Aggressive
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: How do you know my name ?
+    Duration: 99
+    PuppetActions: []
+    cameraIndex: 5
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
