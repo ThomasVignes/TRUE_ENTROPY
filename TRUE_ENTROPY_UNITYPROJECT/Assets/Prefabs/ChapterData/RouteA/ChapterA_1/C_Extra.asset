@@ -42,7 +42,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 5
+    Duration: 6
     PuppetActions: []
     cameraIndex: 3
     cameraEffect: 0
