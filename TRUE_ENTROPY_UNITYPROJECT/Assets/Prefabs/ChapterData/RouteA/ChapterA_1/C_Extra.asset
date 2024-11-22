@@ -42,6 +42,13 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
     Duration: 6
     PuppetActions: []
     cameraIndex: 3
@@ -49,7 +56,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 2
+    Duration: 3
     PuppetActions:
     - PuppetName: Bartender
       Action: Look
@@ -58,16 +65,54 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 99
+    Duration: 1
     PuppetActions: []
     cameraIndex: 2
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 99
+    Duration: 5
+    PuppetActions:
+    - PuppetName: GlassDrop
+      Action: Drop
+    - PuppetName: BartenderProps
+      Action: Hide
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 8
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: WakeUp
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Ah
+    - PuppetName: Jer
+      Action: Up
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
     PuppetActions: []
     cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 99
+    PuppetActions: []
+    cameraIndex: 4
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
