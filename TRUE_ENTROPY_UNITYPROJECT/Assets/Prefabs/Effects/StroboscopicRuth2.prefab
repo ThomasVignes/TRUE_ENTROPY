@@ -6451,6 +6451,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 790cf6b4c7f724a43af7f4b4f57a7237, type: 2}
   - {fileID: 1362570969132626037, guid: 57b9641037dfcb4469db4c9dd100812e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -16325,7 +16326,7 @@ Transform:
   - {fileID: 6914281282274460202}
   - {fileID: 8352980219415891862}
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2183447384977545288
 MonoBehaviour:

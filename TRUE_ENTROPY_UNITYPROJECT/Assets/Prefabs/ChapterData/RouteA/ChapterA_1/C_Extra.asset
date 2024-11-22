@@ -17,16 +17,57 @@ MonoBehaviour:
   BlackScreenDuration: 5
   lines:
   - Text: 
-    Duration: 99
+    Duration: 5
+    PuppetActions: []
+    cameraIndex: 1
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 7
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
   - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Ready
+    - PuppetName: BartenderProps
+      Action: Ready
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 5
+    PuppetActions: []
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Look
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
     Duration: 99
     PuppetActions: []
-    cameraIndex: 1
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 99
+    PuppetActions: []
+    cameraIndex: 3
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
