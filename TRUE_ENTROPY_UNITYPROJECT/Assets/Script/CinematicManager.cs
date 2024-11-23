@@ -132,6 +132,8 @@ public class CinematicManager : MonoBehaviour
 
             writing = true;
 
+            char last = 'a';
+
             foreach (char c in text)
             {
                 dialogue.text += c;
@@ -144,6 +146,13 @@ public class CinematicManager : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(delayBetweenLetters);
+
+                /*
+                if (c == '.' && last != c)
+                    yield return new WaitForSeconds(delayBetweenLetters);
+                */
+
+                last = c;
             }
 
             writing = false;

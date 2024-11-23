@@ -105,7 +105,7 @@ MonoBehaviour:
   - Text: 
     Duration: 1
     PuppetActions: []
-    cameraIndex: 3
+    cameraIndex: 6
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
@@ -151,9 +151,41 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: How do you know my name ?
-    Duration: 99
+    Duration: 7
     PuppetActions: []
     cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Poise
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You told me. Before passing out. Simple as that.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Menace
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: I literally shot myself.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 0
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
