@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_Extra
   m_EditorClassIdentifier: 
   ID: Extra
-  Ambience: Despair
+  Ambience: Bar
   BlackScreenDuration: 5
   lines:
   - Text: 
@@ -177,17 +177,56 @@ MonoBehaviour:
     Duration: 0.2
     PuppetActions:
     - PuppetName: Jer
-      Action: Menace
-    cameraIndex: 0
+      Action: Sigh
+    - PuppetName: Cam
+      Action: Move
+    cameraIndex: 5
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  - Text: I literally shot myself.
+  - Text: 'That''s not possible. '
     Duration: 7
     PuppetActions: []
-    cameraIndex: 0
+    cameraIndex: 7
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  EndBlackScreenDuration: 1
-  ResumeTheme: Revenge
+  - Text: 'I died. I died right ? '
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Lean
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You look pretty alive to me.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  EndBlackScreenDuration: 2
+  ResumeTheme: Empty

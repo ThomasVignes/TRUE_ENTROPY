@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/1_CEREMONY/CEREMONY_3.unity
     guid: d3e5bac670dc6da4699902938c2d771d
   - enabled: 1
+    path: Assets/Scenes/1_CEREMONY/Extra.unity
+    guid: afedaa6d65799264dac5440366425252
+  - enabled: 1
     path: Assets/Scenes/_Menuing/EndDemoMenu.unity
     guid: 59f9eb12373e4694eafdd59d963738c9
   m_configObjects: {}
