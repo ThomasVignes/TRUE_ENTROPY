@@ -86,8 +86,6 @@ public class LongestDayFirstManager : ChapterManagerGeneric
             endText.text += c;
         }
 
-        Cursor.visible = false;
-
         yield return new WaitForSeconds(2.3f);
 
         endTitle.SetActive(true);
