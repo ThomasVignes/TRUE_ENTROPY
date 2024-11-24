@@ -18,6 +18,9 @@ public class CinematicManager : MonoBehaviour
     [SerializeField] GameObject Interface;
     [SerializeField] TextMeshProUGUI dialogue;
 
+    [Header("Experimental")]
+    [SerializeField] bool lastCinematic;
+
     GameManager gameManager;
 
     bool playing, writing, skip, cinematicDone;
@@ -184,7 +187,8 @@ public class CinematicManager : MonoBehaviour
 
         cinematicDone = true;
 
-        gameManager.ScreenEffects.FadeTo(1, 0.2f);
+        if (!lastCinematic)
+            gameManager.ScreenEffects.FadeTo(1, 0.2f);
 
         yield return new WaitForSeconds(0.2f);
 

@@ -24,7 +24,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 7
+    Duration: 8.5
     PuppetActions: []
     cameraIndex: 0
     cameraEffect: 0
@@ -35,21 +35,21 @@ MonoBehaviour:
     PuppetActions:
     - PuppetName: Bartender
       Action: Ready
-    - PuppetName: BartenderProps
-      Action: Ready
     cameraIndex: 0
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
   - Text: 
     Duration: 3
-    PuppetActions: []
+    PuppetActions:
+    - PuppetName: BartenderProps
+      Action: Ready
     cameraIndex: 3
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 6
+    Duration: 3
     PuppetActions: []
     cameraIndex: 3
     cameraEffect: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 1
+    Duration: 2
     PuppetActions: []
     cameraIndex: 2
     cameraEffect: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: Try anything and I'll blow your dick off.
-    Duration: 6
+    Duration: 7
     PuppetActions: []
     cameraIndex: 4
     cameraEffect: 0
@@ -166,8 +166,15 @@ MonoBehaviour:
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  - Text: You told me. Before passing out. Simple as that.
-    Duration: 7
+  - Text: 'You told me. Before passing out. '
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Simple as that.
+    Duration: 6
     PuppetActions: []
     cameraIndex: 5
     cameraEffect: 0
@@ -191,7 +198,7 @@ MonoBehaviour:
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  - Text: 'I died. I died right ? '
+  - Text: 'I died. I died, right ? '
     Duration: 8
     PuppetActions: []
     cameraIndex: 7
@@ -206,7 +213,7 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 0.2
+    Duration: 0.6
     PuppetActions:
     - PuppetName: Bartender
       Action: Lean
@@ -222,11 +229,11 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 6
+    Duration: 7
     PuppetActions: []
     cameraIndex: 7
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  EndBlackScreenDuration: 2
-  ResumeTheme: Empty
+  EndBlackScreenDuration: 1000
+  ResumeTheme: Bar
