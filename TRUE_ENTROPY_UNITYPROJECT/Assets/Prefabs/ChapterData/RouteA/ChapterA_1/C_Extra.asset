@@ -229,8 +229,17 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   - Text: 
-    Duration: 7
+    Duration: 3
     PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 4
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Resign
     cameraIndex: 7
     cameraEffect: 0
     newAmbience: 
