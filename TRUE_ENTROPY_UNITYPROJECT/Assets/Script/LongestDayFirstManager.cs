@@ -91,11 +91,11 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         endTitle.SetActive(true);
         gameManager.OverrideAmbiance("Empty");
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
 
         endUi.SetActive(false);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         gameManager.ScreenEffects.FadeTo(1, 2f);
 

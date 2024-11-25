@@ -247,7 +247,11 @@ public class GameManager : MonoBehaviour
 
         if (!ready || end)
         {
-            cursorManager.SetCursorType(CursorType.Base);
+            if (end)
+                cursorManager.SetCursorType(CursorType.Invisible);
+            else
+                cursorManager.SetCursorType(CursorType.Base);
+
             return;
         }
 
