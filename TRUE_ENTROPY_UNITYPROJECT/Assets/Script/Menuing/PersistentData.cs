@@ -8,6 +8,7 @@ public class PersistentData : MonoBehaviour
 
     public bool FullScreen;
     public bool SoundOn;
+    public bool CopyrightFree;
 
     public float Volume = 1;
 

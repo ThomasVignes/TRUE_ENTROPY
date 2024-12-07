@@ -7,6 +7,7 @@ public class ThemeManager : MonoBehaviour
 {
     [SerializeField] List<Area> areas = new List<Area>();
     [SerializeField] AudioSource overrideAudio, startAudio;
+    [SerializeField] string startAreaExperimental;
 
     string currentArea;
     float currentVolume;
@@ -20,10 +21,13 @@ public class ThemeManager : MonoBehaviour
     {
         foreach (var area in areas)
         {
-            area.OriginalVolume = area.Music.volume;
+            area.Init();
         }
 
-        startAudio.Play();
+        if (startAudio != null)
+            startAudio.Play();
+        else if (startAreaExperimental != "")
+            NewArea(startAreaExperimental);
     }
 
     public void NewArea(string areaName)
@@ -60,7 +64,8 @@ public class ThemeManager : MonoBehaviour
         {
             if (item.Name == areaName)
             {
-                item.Music.volume = volume;
+                if (!item.ImmuneExperimental)
+                    item.Music.volume = volume;
 
                 if (item.Name != currentArea)
                 {

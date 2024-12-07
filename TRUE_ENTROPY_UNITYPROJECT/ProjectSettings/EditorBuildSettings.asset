@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/_Menuing/CopyrightWarning.unity
+    guid: d3eef5a6860846e4fac5647220a14fa7
+  - enabled: 1
     path: Assets/Scenes/_Menuing/MainMenu.unity
     guid: 2c3da65a97629dc448a093226f2839cf
   - enabled: 1

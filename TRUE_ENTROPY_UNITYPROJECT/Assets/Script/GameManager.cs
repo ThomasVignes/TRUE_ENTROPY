@@ -27,7 +27,20 @@ public class Area
 {
     public string Name;
     public AudioSource Music;
+    public AudioSource CopyrightFree;
+    public bool ImmuneExperimental;
     [HideInInspector] public float OriginalVolume;
+
+    public void Init()
+    {
+        if (PersistentData.Instance != null && PersistentData.Instance.CopyrightFree)
+        {
+            Music = CopyrightFree;
+            ImmuneExperimental = true;
+        }
+
+        OriginalVolume = Music.volume;
+    }
 }
 
 public class GameManager : MonoBehaviour
