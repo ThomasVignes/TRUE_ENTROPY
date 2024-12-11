@@ -76175,7 +76175,7 @@ MonoBehaviour:
   StartCinematic: 
   Paused: 0
   SpecialActive: 1
-  clickdelay: 0.3
+  clickdelay: 0.5
   moveLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -360,6 +360,16 @@ public class GameManager : MonoBehaviour
 
     private bool HandleDoubleClick()
     {
+        /*
+        if (player.Running)
+        {
+            if (Time.time - clicktime < clickdelay)
+            {
+
+            }
+        }
+        */
+
         if (Time.time - clicktime > clickdelay)
             clicked = 0;
 
@@ -368,11 +378,17 @@ public class GameManager : MonoBehaviour
 
         if (clicked > 1 && Time.time - clicktime < clickdelay)
         {
-            clicked = 0;
-            clicktime = 0;
+            //clicked = 0;
+            //clicktime = 0;
+
+            clicktime = Time.time;
             return true;
         }
-        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+        else if (Time.time - clicktime > clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+        }
 
         return false;
     }
