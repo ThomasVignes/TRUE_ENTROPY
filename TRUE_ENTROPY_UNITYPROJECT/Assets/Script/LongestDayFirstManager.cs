@@ -15,6 +15,9 @@ public class LongestDayFirstManager : ChapterManagerGeneric
     [SerializeField] GameObject endUi;
     [SerializeField] GameObject endTitle;
 
+    [Header("Skip")]
+    [SerializeField] private List<GameObject> destroyOnSkip;
+
     public override void Init(GameManager gameManager)
     {
         base.Init(gameManager);
@@ -30,6 +33,11 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         if (Skip)
         {
             gameManager.Ready = true;
+
+            foreach (var item in destroyOnSkip)
+            {
+                Destroy(item);
+            }
             return;
         }
 
