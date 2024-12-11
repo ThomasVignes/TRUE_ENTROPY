@@ -37,7 +37,7 @@ public class CameraZone : MonoBehaviour
 
     [Header("Behaviour Specific Params")]
     [SerializeField] float PathDamping = 1f;
-    public float Offset;
+    public Vector3 Offset;
     [SerializeField] private GameObject switchObject;
 
     private GameObject target;
@@ -127,12 +127,12 @@ public class CameraZone : MonoBehaviour
             {
                 if (Template == Template.PathAiming)
                 {
-                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
+                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position + Offset, 0, -1, 40), PathDamping);
                 }
 
                 if (Behaviour == Behaviour.Path && Template == Template.None)
                 {
-                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position, 0, -1, 40), PathDamping);
+                    dollyCart.m_Position = Mathf.Lerp(dollyCart.m_Position, path.FindClosestPoint(target.transform.position + Offset, 0, -1, 40), PathDamping);
                 }
             }
         }
