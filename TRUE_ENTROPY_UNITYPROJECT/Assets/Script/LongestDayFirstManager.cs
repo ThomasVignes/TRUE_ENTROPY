@@ -130,6 +130,7 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(2f);
 
+        gameManager.StopOverride();
         gameManager.ScreenEffects.FadeTo(0, 0.8f);
         startDialogue.Interact();
 
