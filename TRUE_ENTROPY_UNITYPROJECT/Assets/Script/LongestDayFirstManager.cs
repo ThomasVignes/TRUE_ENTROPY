@@ -10,13 +10,16 @@ public class LongestDayFirstManager : ChapterManagerGeneric
     public bool Skip;
     [SerializeField] private string startCinematic;
 
+    [Header("StartDialogue")]
+    [SerializeField] DialogueBox startDialogue;
+
     [Header("Title")]
     [SerializeField] private TextMeshProUGUI endText;
     [SerializeField] GameObject endUi;
     [SerializeField] GameObject endTitle;
 
     [Header("Skip")]
-    [SerializeField] private List<GameObject> destroyOnSkip;
+    [SerializeField] private List<GameObject> toDestroy;
 
     public override void Init(GameManager gameManager)
     {
@@ -34,10 +37,13 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         {
             gameManager.Ready = true;
 
-            foreach (var item in destroyOnSkip)
+            foreach (var item in toDestroy)
             {
                 Destroy(item);
             }
+
+            startDialogue.Interact();
+
             return;
         }
 
@@ -46,6 +52,8 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     IEnumerator C_Start()
     {
+        gameManager.HidePlayer(true);
+
         gameManager.ScreenEffects.FadeTo(1, 0.01f);
         AudioListener.volume = 0;
 
@@ -64,12 +72,17 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     public override void EndChapter()
     {
-        StartCoroutine(C_Title());
+
     }
 
     public override void Death(string message)
     {
 
+    }
+
+    public void Title()
+    {
+        StartCoroutine(C_Title());
     }
 
     IEnumerator C_Title()
@@ -109,9 +122,22 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(2f);
 
+        foreach (var item in toDestroy)
+        {
+            Destroy(item);
+        }
+
+        gameManager.HidePlayer(false);
+
+        yield return new WaitForSeconds(2f);
+
+        gameManager.ScreenEffects.FadeTo(0, 1.2f);
+
+        yield return new WaitForSeconds(1f);
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        startDialogue.Interact();
     }
 }

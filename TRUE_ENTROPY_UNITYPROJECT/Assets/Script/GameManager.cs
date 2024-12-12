@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     [Header("Scene Settings")]
     public bool Paused;
     public bool SpecialActive;
+    public bool ManualPlayerSpawn;
 
     [Header("Clicking")]
     [SerializeField] private float clickdelay;
@@ -198,6 +199,11 @@ public class GameManager : MonoBehaviour
             else
                 ready = true;
         }
+    }
+
+    public void HidePlayer(bool masked)
+    {
+        player.Hide(masked);
     }
 
     public void PlayerReady()
