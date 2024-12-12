@@ -248,7 +248,7 @@ public class DialogueManager : MonoBehaviour
     {
         VNInterface.SetActive(false);
         VNScene.SetActive(false);
-        GameManager.Instance.SetVNMode(false);
+        GameManager.Instance.SetVNMode(false, false);
 
         if (currentAnimator != null)
             currentAnimator.SetTrigger("Reset");

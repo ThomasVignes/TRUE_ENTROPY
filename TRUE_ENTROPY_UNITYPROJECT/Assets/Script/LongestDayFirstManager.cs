@@ -12,6 +12,7 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     [Header("StartDialogue")]
     [SerializeField] DialogueBox startDialogue;
+    [SerializeField] Jukebox jukebox;
 
     [Header("Title")]
     [SerializeField] private TextMeshProUGUI endText;
@@ -43,6 +44,10 @@ public class LongestDayFirstManager : ChapterManagerGeneric
             }
 
             startDialogue.Interact();
+
+
+            gameManager.StopOverride();
+            jukebox.Activate();
 
             return;
         }
@@ -131,6 +136,7 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         yield return new WaitForSeconds(2f);
 
         gameManager.StopOverride();
+        jukebox.Activate();
         gameManager.ScreenEffects.FadeTo(0, 0.8f);
         startDialogue.Interact();
 

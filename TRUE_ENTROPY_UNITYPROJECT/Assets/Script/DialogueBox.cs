@@ -13,6 +13,7 @@ public class DialogueBox : Interactable
     [SerializeField] private float delayBeforeSwitch;
     [SerializeField] private string puppet;
     [SerializeField] private int dialogueReference;
+    [SerializeField] bool noCam;
 
     bool pressed;
 
@@ -51,7 +52,7 @@ public class DialogueBox : Interactable
 
         yield return new WaitForSeconds(delayBeforeSwitch);
 
-        GameManager.Instance.SetVNMode(true);
+        GameManager.Instance.SetVNMode(true, noCam);
         GameManager.Instance.PausePlayerPath();
         GameManager.Instance.DialogueManager.StartDialogue(puppet, dialogueReference, this);
 

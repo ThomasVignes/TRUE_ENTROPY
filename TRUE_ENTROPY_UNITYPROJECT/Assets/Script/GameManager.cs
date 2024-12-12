@@ -488,12 +488,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetVNMode(bool yes)
+    public void SetVNMode(bool yes, bool noCam)
     {
         vnMode = yes;
 
         //currentCam.SetActive(!yes);
-        vnCam.SetActive(yes);
+        if (noCam)
+            vnCam.SetActive(false);
+        else
+            vnCam.SetActive(yes);
 
         currentCamZone.active = !yes;
 
