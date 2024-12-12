@@ -62,7 +62,6 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         AudioListener.volume = 1;
 
         gameManager.CinematicManager.PlayCinematic(startCinematic);
-        gameManager.Ready = true;
     }
 
     public override void RestartGame()
@@ -131,13 +130,16 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(2f);
 
-        gameManager.ScreenEffects.FadeTo(0, 1.2f);
+        gameManager.ScreenEffects.FadeTo(0, 0.8f);
+        startDialogue.Interact();
 
-        yield return new WaitForSeconds(1f);
+        gameManager.Ready = true;
+
+        yield return new WaitForSeconds(0.8f);
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        startDialogue.Interact();
+        
     }
 }
