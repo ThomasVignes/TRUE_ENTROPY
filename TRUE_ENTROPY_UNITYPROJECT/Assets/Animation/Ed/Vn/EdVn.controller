@@ -29,7 +29,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Poise
+  m_Name: RestPos
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 1a266ecae02112e4f8932eca21573fc6, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 17b7729b806a4d346b5f22082b11b3ad, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
