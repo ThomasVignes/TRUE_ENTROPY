@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     public bool Paused;
     public bool SpecialActive;
     public bool ManualPlayerSpawn;
+    public bool LockSpecial;
+    public string LockSpecialComment;
 
     [Header("Clicking")]
     [SerializeField] private float clickdelay;
@@ -407,6 +409,13 @@ public class GameManager : MonoBehaviour
 
         if (player.SpecialMode)
         {
+            if (LockSpecial)
+            {
+                WriteComment(LockSpecialComment);
+                player.Pause();
+                return;
+            }
+
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, hitboxLayer))
             {
                 player.Special(hit.point, hit.transform.gameObject);

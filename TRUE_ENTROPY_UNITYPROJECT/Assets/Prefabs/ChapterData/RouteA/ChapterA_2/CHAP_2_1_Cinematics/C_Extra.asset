@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b0cdbcdd5ad6d488c68dcef45efeeb, type: 3}
+  m_Name: C_Extra
+  m_EditorClassIdentifier: 
+  ID: Extra
+  Ambience: Bar
+  BlackScreenDuration: 5
+  lines:
+  - Text: 
+    Duration: 5
+    PuppetActions: []
+    cameraIndex: 1
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 8.5
+    PuppetActions: []
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Ready
+    cameraIndex: 0
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: BartenderProps
+      Action: Ready
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Look
+    cameraIndex: 3
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 2
+    PuppetActions: []
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 5
+    PuppetActions:
+    - PuppetName: GlassDrop
+      Action: Drop
+    - PuppetName: BartenderProps
+      Action: Hide
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 8
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: WakeUp
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Ah
+    - PuppetName: Jer
+      Action: Up
+    cameraIndex: 2
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 1
+    PuppetActions: []
+    cameraIndex: 6
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.5
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Warn
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Try anything and I'll blow your head off.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.1
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Cmon
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You're... misunderstanding the situation, Jeremiah.
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Aggressive
+    cameraIndex: 4
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: How do you know my name ?
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Poise
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 'You told me. Before passing out. '
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: Simple as that.
+    Duration: 6
+    PuppetActions: []
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.2
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Sigh
+    - PuppetName: Cam
+      Action: Move
+    cameraIndex: 5
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 'That''s not possible. '
+    Duration: 7
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 'I died. I died, right ? '
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 4
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 0.6
+    PuppetActions:
+    - PuppetName: Bartender
+      Action: Lean
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: You look pretty alive to me.
+    Duration: 8
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 3
+    PuppetActions: []
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  - Text: 
+    Duration: 4
+    PuppetActions:
+    - PuppetName: Jer
+      Action: Resign
+    cameraIndex: 7
+    cameraEffect: 0
+    newAmbience: 
+    soundEffects: []
+  EndBlackScreenDuration: 1000
+  ResumeTheme: Bar
