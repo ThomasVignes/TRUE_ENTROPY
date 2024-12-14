@@ -17,7 +17,10 @@ public class RagdollHider : MonoBehaviour
     {
         originalPos = transform.position;
 
-        agent = GetComponentInChildren<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
+
+        if (agent == null)
+            agent = GetComponentInChildren<NavMeshAgent>();
     }
 
     private void Start()

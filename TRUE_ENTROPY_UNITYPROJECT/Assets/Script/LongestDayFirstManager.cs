@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LongestDayFirstManager : ChapterManagerGeneric
@@ -19,8 +20,9 @@ public class LongestDayFirstManager : ChapterManagerGeneric
     [SerializeField] GameObject endUi;
     [SerializeField] GameObject endTitle;
 
-    [Header("Skip")]
+    [Header("Changes on start")]
     [SerializeField] private List<GameObject> toDestroy;
+    [SerializeField] RagdollHider bartenderHider;
 
     public override void Init(GameManager gameManager)
     {
@@ -45,12 +47,13 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
             startDialogue.Interact();
 
-
             gameManager.StopOverride();
             jukebox.Activate();
 
             return;
         }
+        else
+            bartenderHider.Hide();
 
         StartCoroutine(C_Start());
     }
@@ -125,6 +128,8 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         gameManager.ScreenEffects.FadeTo(1, 2f);
 
         yield return new WaitForSeconds(2f);
+
+        bartenderHider.Show();
 
         foreach (var item in toDestroy)
         {
