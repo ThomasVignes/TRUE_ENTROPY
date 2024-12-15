@@ -10015,6 +10015,7 @@ MonoBehaviour:
   resetPos: {x: -0.00009011149, y: 0.9111375, z: 0.04616464}
   Choppers:
   - {fileID: 7058887352943844991}
+  Maskables: []
 --- !u!54 &313358518662223948
 Rigidbody:
   m_ObjectHideFlags: 0

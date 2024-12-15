@@ -149,9 +149,6 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(0.8f);
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-
-        
+        gameManager.CursorManager.SetCursorType(CursorType.Base);
     }
 }

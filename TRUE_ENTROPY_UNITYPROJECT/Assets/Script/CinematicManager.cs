@@ -187,7 +187,7 @@ public class CinematicManager : MonoBehaviour
 
         cinematicDone = true;
 
-        if (!lastCinematic)
+        if (!current.Data.NoEndBlackscreen)
             gameManager.ScreenEffects.FadeTo(1, 0.2f);
 
         yield return new WaitForSeconds(0.2f);
@@ -195,7 +195,7 @@ public class CinematicManager : MonoBehaviour
         Camera.SetActive(false);
         Interface.SetActive(false);
 
-        cinematics[currentCinematic].OnEndBeforeBlackScreen?.Invoke();
+        current.OnEndBeforeBlackScreen?.Invoke();
 
         yield return new WaitForSeconds(current.Data.BlackScreenDuration);
         

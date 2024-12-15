@@ -13,14 +13,11 @@ public class RagdollHider : MonoBehaviour
     Vector3 originalPos;
     NavMeshAgent agent;
 
+    bool init;
+
     private void Awake()
     {
-        originalPos = transform.position;
-
-        agent = GetComponent<NavMeshAgent>();
-
-        if (agent == null)
-            agent = GetComponentInChildren<NavMeshAgent>();
+        Init();
     }
 
     private void Start()
@@ -29,8 +26,27 @@ public class RagdollHider : MonoBehaviour
             Hide();
     }
 
+    private void Init()
+    {
+        if (init)
+            return;
+
+        init = true;
+
+        originalPos = transform.position;
+
+        agent = GetComponent<NavMeshAgent>();
+
+        if (agent == null)
+            agent = GetComponentInChildren<NavMeshAgent>();
+    }
+
     public void Hide()
     {
+        if (agent == null)
+            Init();
+
+
         if (agent != null)
             agent.enabled = false;
 

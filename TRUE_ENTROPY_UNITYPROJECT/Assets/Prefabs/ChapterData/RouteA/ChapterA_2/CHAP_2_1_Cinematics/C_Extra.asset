@@ -245,4 +245,6 @@ MonoBehaviour:
     newAmbience: 
     soundEffects: []
   EndBlackScreenDuration: 1000
+  NoEndBlackscreen: 1
   ResumeTheme: Bar
+  KeepCursorHiddenExperimental: 1

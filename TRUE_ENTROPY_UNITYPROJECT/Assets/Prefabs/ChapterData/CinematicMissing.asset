@@ -23,5 +23,5 @@ MonoBehaviour:
     cameraEffect: 0
     newAmbience: 
     soundEffects: []
-  EndBlackScreenDuration: 0.1
+  EndBlackScreenDuration: 1
   ResumeTheme: Bar
