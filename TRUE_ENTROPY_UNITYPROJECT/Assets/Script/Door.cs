@@ -12,6 +12,7 @@ public class Door : Interactable
     [SerializeField] private Animator animator;
 
     public UnityEvent OnOpen;
+    [SerializeField] bool reversedOpen;
 
     public bool CanOpen;
 
@@ -39,6 +40,7 @@ public class Door : Interactable
     public void ToggleDoor(bool open)
     {
         animator.SetBool("Open", open);
+        animator.SetBool("Reversed", reversedOpen);
 
         isOpen = open;
 
