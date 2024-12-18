@@ -16,13 +16,21 @@ public class LongestDayFirstManager : ChapterManagerGeneric
     [SerializeField] Jukebox jukebox;
 
     [Header("Title")]
-    [SerializeField] private TextMeshProUGUI endText;
-    [SerializeField] GameObject endUi;
-    [SerializeField] GameObject endTitle;
+    [SerializeField] private TextMeshProUGUI actText;
+    [SerializeField] GameObject titleUI;
+    [SerializeField] GameObject titleText;
 
     [Header("Changes on start")]
     [SerializeField] private List<GameObject> toDestroy;
     [SerializeField] RagdollHider bartenderHider;
+
+    [Header("Restart")]
+    [SerializeField] private float introDelay;
+    bool gettingUp;
+    float introTimer;
+    [SerializeField] TextMeshProUGUI deathText;
+    [SerializeField] GameObject deathUI;
+
 
     public override void Init(GameManager gameManager)
     {
@@ -31,7 +39,24 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     public override void IntroStep()
     {
+        gameManager.CursorManager.SetCursorType(CursorType.Base);
 
+        if (Input.GetMouseButtonDown(0) && !gettingUp)
+        {
+            gettingUp = true;
+            introTimer = Time.time + introDelay;
+
+            gameManager.Player.WakeUp();
+        }
+
+        if (introTimer < Time.time && gettingUp)
+        {
+            gettingUp = false;
+            Intro = false;
+
+            gameManager.WriteComment("My head's killing me. Ugh.");
+            gameManager.PlayerReady();
+        }
     }
 
     public override void StartGame()
@@ -74,18 +99,15 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     public override void RestartGame()
     {
-
+        StartCoroutine(C_Restart());
     }
+
 
     public override void EndChapter()
     {
 
     }
 
-    public override void Death(string message)
-    {
-
-    }
 
     public void Title()
     {
@@ -98,30 +120,30 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
         yield return new WaitForSeconds(4f);
 
-        var t = endText.text;
+        var t = actText.text;
 
-        endText.text = "";
+        actText.text = "";
 
-        endTitle.SetActive(false);
+        titleText.SetActive(false);
 
-        endUi.SetActive(true);
+        titleUI.SetActive(true);
 
         foreach (char c in t)
         {
             yield return new WaitForSeconds(0.1f);
             EffectsManager.Instance.audioManager.Play("Click");
 
-            endText.text += c;
+            actText.text += c;
         }
 
         yield return new WaitForSeconds(2.3f);
 
-        endTitle.SetActive(true);
+        titleText.SetActive(true);
         gameManager.OverrideAmbiance("Empty");
 
         yield return new WaitForSeconds(6f);
 
-        endUi.SetActive(false);
+        titleUI.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
@@ -150,5 +172,58 @@ public class LongestDayFirstManager : ChapterManagerGeneric
         yield return new WaitForSeconds(0.8f);
 
         gameManager.CursorManager.SetCursorType(CursorType.Base);
+    }
+
+    public override void Death(string message)
+    {
+        gameManager.End = true;
+
+        StartCoroutine(C_DeathCinematic(message));
+    }
+
+    IEnumerator C_DeathCinematic(string message)
+    {
+        gameManager.SetAmbianceVolume(0f);
+        gameManager.ScreenEffects.FadeTo(1, 0.3f);
+
+        yield return new WaitForSeconds(1.4f);
+        deathUI.SetActive(true);
+
+        deathText.text = "";
+
+        foreach (char c in message)
+        {
+            yield return new WaitForSeconds(0.06f);
+            EffectsManager.Instance.audioManager.Play("Click");
+
+            deathText.text += c;
+        }
+
+        yield return new WaitForSeconds(2.3f);
+
+        deathText.text = "";
+        EffectsManager.Instance.audioManager.Play("Gunshot");
+
+        deathUI.SetActive(false);
+
+
+        gameManager.ResetPlayer();
+
+        gameManager.End = false;
+
+        RestartGame();
+    }
+
+    IEnumerator C_Restart()
+    {
+        yield return new WaitForSeconds(3f);
+
+        gameManager.DialogueManager.TryEndDialogue();
+        gameManager.SetAmbianceVolume(1f);
+        gameManager.ScreenEffects.StartFade();
+
+        gameManager.Ready = true;
+
+        Intro = true;
     }
 }

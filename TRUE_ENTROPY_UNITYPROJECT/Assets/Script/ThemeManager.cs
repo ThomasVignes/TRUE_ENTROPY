@@ -184,5 +184,8 @@ public class ThemeManager : MonoBehaviour
     {
         if (currentAudioSource != null)
             currentAudioSource.volume = currentVolume * sound;
+
+        if (overrideAmbiance)
+            overrideAudio.volume = currentVolume * sound;
     }
 }

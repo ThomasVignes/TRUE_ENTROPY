@@ -564,6 +564,15 @@ public class GameManager : MonoBehaviour
         commentMode = false;
     }
 
+    public void MoveStart(Transform target)
+    {
+        characterStart.position = target.position;
+        characterStart.rotation = target.rotation;
+
+        startPos = player.transform.position;
+        startRot = player.transform.rotation;
+    }
+
     public void NewArea(string areaName)
     {
         themeManager.NewArea(areaName);

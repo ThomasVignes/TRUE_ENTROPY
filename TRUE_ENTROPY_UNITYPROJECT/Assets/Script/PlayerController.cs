@@ -58,7 +58,7 @@ public class PlayerController : Character
         */
     }
 
-    public void ResetState()
+    public virtual void ResetState()
     {
         agent.enabled = false;
         animator.SetTrigger("Reset");
