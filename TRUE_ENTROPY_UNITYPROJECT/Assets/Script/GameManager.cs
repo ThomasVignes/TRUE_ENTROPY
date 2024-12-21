@@ -687,6 +687,17 @@ public class GameManager : MonoBehaviour
         themeManager.SetAmbianceVolume(sound);
     }
 
+    [ContextMenu("Unlock all doors")]
+    public void UnlockAllDoors()
+    {
+        Door[] doors = FindObjectsOfType<Door>();
+
+        foreach (var item in doors)
+        {
+            item.ToggleDoorNoEvent(true);
+        }
+    }
+
     public void ResetPlayer()
     {
         player.transform.position = startPos;
