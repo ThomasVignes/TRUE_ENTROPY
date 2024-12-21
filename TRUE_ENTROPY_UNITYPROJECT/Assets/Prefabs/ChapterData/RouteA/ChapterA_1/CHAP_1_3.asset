@@ -18,6 +18,8 @@ MonoBehaviour:
   conditions:
   - Name: RuthishKilled
     Met: 0
+  - Name: NeedDress
+    Met: 0
   areas:
   - Name: Death
     Music: {fileID: 0}
