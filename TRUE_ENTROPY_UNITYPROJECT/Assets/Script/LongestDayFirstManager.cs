@@ -105,7 +105,17 @@ public class LongestDayFirstManager : ChapterManagerGeneric
 
     public override void EndChapter()
     {
+        StartCoroutine(C_EndChapter());
+    }
 
+
+    IEnumerator C_EndChapter()
+    {
+        gameManager.ScreenEffects.FadeTo(1, 2.9f);
+
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 

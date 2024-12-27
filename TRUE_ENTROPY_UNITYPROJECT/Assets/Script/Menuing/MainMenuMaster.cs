@@ -46,6 +46,11 @@ public class MainMenuMaster : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene(5);
+        }
+
         if (Input.anyKey || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             if (AutoQuit)
@@ -64,6 +69,8 @@ public class MainMenuMaster : MonoBehaviour
             else
                 StartGame();
         }
+
+
     }
 
     public void OpenOptions()
