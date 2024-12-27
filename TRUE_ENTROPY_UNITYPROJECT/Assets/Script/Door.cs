@@ -11,7 +11,8 @@ public class Door : Interactable
     [SerializeField] private string lockedMessage;
     [SerializeField] private Animator animator;
 
-    public UnityEvent OnOpen;
+    public UnityEvent OnOpen, OnUnlock;
+
     [SerializeField] bool reversedOpen;
 
     public bool CanOpen;
@@ -70,6 +71,8 @@ public class Door : Interactable
     public void Unlock()
     {
         CanOpen = true;
+
+        OnUnlock?.Invoke();
     }
 
     public void ChangeLockMessage(string message)
