@@ -51,6 +51,8 @@ public class CameraZone : MonoBehaviour
     [HideInInspector]
     public bool active = false;
 
+    bool lastActive;
+
     //Accessors
     public Transform Direction
     {
@@ -112,6 +114,11 @@ public class CameraZone : MonoBehaviour
 
         if (active)
         {
+            if (!lastActive)
+            {
+                FirstActiveFrame();
+            }
+
             if (!Vcam.gameObject.activeInHierarchy)
             {
                 Vcam.gameObject.SetActive(true);
@@ -147,6 +154,24 @@ public class CameraZone : MonoBehaviour
             {
                 if (switchObject.gameObject.activeSelf)
                     switchObject.gameObject.SetActive(false);
+            }
+        }
+
+        lastActive = active;
+    }
+
+    private void FirstActiveFrame()
+    {
+        if (target != null)
+        {
+            if (Template == Template.PathAiming)
+            {
+                dollyCart.m_Position = path.FindClosestPoint(target.transform.position + Offset, 0, -1, 40);
+            }
+
+            if (Behaviour == Behaviour.Path && Template == Template.None)
+            {
+                dollyCart.m_Position = path.FindClosestPoint(target.transform.position + Offset, 0, -1, 40);
             }
         }
     }
