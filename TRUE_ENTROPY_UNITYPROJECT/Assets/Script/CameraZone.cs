@@ -68,7 +68,7 @@ public class CameraZone : MonoBehaviour
 
         if (CustomColliders.Count > 0)
         {
-            baseCol.enabled = false;
+            //baseCol.enabled = false;
 
             foreach (var CustomCollider in CustomColliders)
             {

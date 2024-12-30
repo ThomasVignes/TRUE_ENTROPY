@@ -49,6 +49,22 @@ public class CameraDetector : MonoBehaviour
 
     private void SwitchCam(CameraZone camZone)
     {
+        if (CurrentCam != null)
+        {
+            CurrentCam.active = false;
+            LastCam = CurrentCam;
+        }
+
+        CameraZone thisCameraZone = camZone;
+        if (!thisCameraZone.active)
+        {
+            thisCameraZone.active = true;
+            CurrentCam = thisCameraZone;
+        }
+
+        GameManager.Instance.SetCamZone(CurrentCam);
+
+        return;
         if (CurrentCam != camZone)
         {
             if (CurrentCam != null)
@@ -57,7 +73,7 @@ public class CameraDetector : MonoBehaviour
                 LastCam = CurrentCam;
             }
 
-            CameraZone thisCameraZone = camZone;
+            thisCameraZone = camZone;
             if (!thisCameraZone.active)
             {
                 thisCameraZone.active = true;
@@ -80,7 +96,7 @@ public class CameraDetector : MonoBehaviour
         else
             GameManager.Instance.NewArea(exitedCamerazone.Ambiance);
 
-        if (LastCam != null)
+        if (LastCam != null && LastCam != exitedCamerazone)
         {
             LastCam = exitedCamerazone;
             LastCam.active = false;
