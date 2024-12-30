@@ -10,7 +10,7 @@ public class CinematicData : ScriptableObject
     public float BlackScreenDuration;
     public CinematicLine[] lines;
     public float EndBlackScreenDuration;
-    public bool NoEndBlackscreen;
+    public bool NoEndBlackscreen, NoFadeOut;
     public string ResumeTheme;
 }
 
