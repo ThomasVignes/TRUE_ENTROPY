@@ -63,25 +63,6 @@ public class CameraDetector : MonoBehaviour
         }
 
         GameManager.Instance.SetCamZone(CurrentCam);
-
-        return;
-        if (CurrentCam != camZone)
-        {
-            if (CurrentCam != null)
-            {
-                CurrentCam.active = false;
-                LastCam = CurrentCam;
-            }
-
-            thisCameraZone = camZone;
-            if (!thisCameraZone.active)
-            {
-                thisCameraZone.active = true;
-                CurrentCam = thisCameraZone;
-            }
-
-            GameManager.Instance.SetCamZone(CurrentCam);
-        }
     }
 
     private void LastCamCheck(CameraZone exitedCamerazone)

@@ -20,7 +20,7 @@ public class LongestDaySecondManager : ChapterManagerGeneric
     [SerializeField] private List<GameObject> toDestroy;
 
     [Header("Restart")]
-    [SerializeField] private float introDelay;
+    [SerializeField] private float respawnDelay;
     bool gettingUp;
     float introTimer;
     [SerializeField] TextMeshProUGUI deathText;
@@ -39,7 +39,7 @@ public class LongestDaySecondManager : ChapterManagerGeneric
         if (Input.GetMouseButtonDown(0) && !gettingUp)
         {
             gettingUp = true;
-            introTimer = Time.time + introDelay;
+            introTimer = Time.time + respawnDelay;
 
             gameManager.Player.WakeUp();
         }
@@ -75,16 +75,21 @@ public class LongestDaySecondManager : ChapterManagerGeneric
 
     IEnumerator C_Start()
     {
-        gameManager.HidePlayer(true);
+        Intro = true;
 
         gameManager.ScreenEffects.FadeTo(1, 0.01f);
-        AudioListener.volume = 0;
 
         yield return new WaitForSeconds(2.3f);
 
-        AudioListener.volume = 1;
+        if (startCinematic != "")
+            gameManager.CinematicManager.PlayCinematic(startCinematic);
 
-        gameManager.CinematicManager.PlayCinematic(startCinematic);
+        gameManager.ScreenEffects.FadeTo(0, 4f);
+
+        yield return new WaitForSeconds(2.6f);
+
+        Intro = false;
+        gameManager.Ready = true;
     }
 
     public override void RestartGame()

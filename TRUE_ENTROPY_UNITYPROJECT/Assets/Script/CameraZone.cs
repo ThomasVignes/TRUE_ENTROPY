@@ -48,7 +48,7 @@ public class CameraZone : MonoBehaviour
 
     [HideInInspector]
     public CinemachineVirtualCamera Vcam;
-    [HideInInspector]
+
     public bool active = false;
 
     bool lastActive;
@@ -68,8 +68,6 @@ public class CameraZone : MonoBehaviour
 
         if (CustomColliders.Count > 0)
         {
-            //baseCol.enabled = false;
-
             foreach (var CustomCollider in CustomColliders)
             {
                 if (CustomCollider.GetComponent<MeshRenderer>() != null)
